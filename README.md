@@ -1,10 +1,10 @@
-# ContactBridge by Tsambasis
+# ContactBridge
 
 ![ContactBridge icon](assets/plugin-icon.png)
 
 A free WordPress contact-form plugin with email, Telegram and WhatsApp delivery. No ads, paid features or plugin tracking.
 
-The German interface is named **ContactBridge von Tsambasis**. Built by [Tsambasis & Tsambasis](https://tsambasis.net/).
+Built by [Tsambasis & Tsambasis](https://tsambasis.net/). The interface uses the name **ContactBridge** in English and German.
 
 ## Features
 
@@ -26,7 +26,7 @@ The German interface is named **ContactBridge von Tsambasis**. Built by [Tsambas
 
 1. Download the packaged **[contact-bridge-1.0.0.zip](https://github.com/tsambasis-tsambasis/tsambasis-contact-bridge/raw/refs/heads/main/dist/contact-bridge-1.0.0.zip)**. GitHub's automatically generated **Source code** archives are not the installation package.
 2. In WordPress, open **Plugins → Add New → Upload Plugin**, upload that ZIP and activate it.
-3. Open **Settings → ContactBridge by Tsambasis** (German: **Einstellungen → ContactBridge von Tsambasis**).
+3. Open **Settings → ContactBridge** (German: **Einstellungen → ContactBridge**).
 4. Configure at least one delivery channel, save the settings and send a connection test.
 5. Add a Shortcode block to a page:
 
