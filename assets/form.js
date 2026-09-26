@@ -1,4 +1,4 @@
-/* ContactBridge by Tsambasis. Native POST remains available without JavaScript. */
+/* ContactBridge. Native POST remains available without JavaScript. */
 (function () {
 	'use strict';
 
