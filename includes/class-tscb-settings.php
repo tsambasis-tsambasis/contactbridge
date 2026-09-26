@@ -1,6 +1,6 @@
 <?php
 /**
- * Administrator settings for ContactBridge by Tsambasis.
+ * Administrator settings for ContactBridge.
  *
  * @package ContactBridge
  */
@@ -69,8 +69,8 @@ class TSCB_Settings {
 	/** Add the settings page. */
 	public static function menu() {
 		add_options_page(
-			__( 'ContactBridge by Tsambasis', 'tsambasis-contact-bridge' ),
-			__( 'ContactBridge by Tsambasis', 'tsambasis-contact-bridge' ),
+			__( 'ContactBridge', 'tsambasis-contact-bridge' ),
+			__( 'ContactBridge', 'tsambasis-contact-bridge' ),
 			'manage_options',
 			'tsambasis-contact-bridge',
 			array( __CLASS__, 'render' )
@@ -628,7 +628,7 @@ class TSCB_Settings {
 			<header class="tscb-admin-header">
 				<div class="tscb-admin-brand">
 					<img class="tscb-admin-logo" src="<?php echo esc_url( TSCB_URL . 'assets/plugin-icon.png' ); ?>" alt="" width="52" height="52" decoding="async" />
-					<p class="tscb-eyebrow"><?php esc_html_e( 'ContactBridge by Tsambasis', 'tsambasis-contact-bridge' ); ?></p>
+					<p class="tscb-eyebrow"><?php esc_html_e( 'ContactBridge', 'tsambasis-contact-bridge' ); ?></p>
 				</div>
 				<h1><?php esc_html_e( 'One form. Your channels.', 'tsambasis-contact-bridge' ); ?></h1>
 				<p><?php esc_html_e( 'Receive contact inquiries by email, Telegram, or WhatsApp. Easily add the form to your website.', 'tsambasis-contact-bridge' ); ?></p>

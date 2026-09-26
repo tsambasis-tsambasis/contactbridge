@@ -36,7 +36,7 @@ final class TSCB_Plugin_Info {
 	/** WordPress already loads the native ThickBox assets on its installed-plugins screen. */
 	public static function row_meta( $links, $file, $data, $status ) {
 		if ( plugin_basename( TSCB_FILE ) !== $file || ! self::active() || ! current_user_can( 'install_plugins' ) || ! empty( $data['slug'] ) || self::directory_known() ) { return $links; }
-		$name = __( 'ContactBridge by Tsambasis', 'tsambasis-contact-bridge' );
+		$name = __( 'ContactBridge', 'tsambasis-contact-bridge' );
 		$url = add_query_arg( array( 'tab' => 'plugin-information', 'plugin' => self::SLUG, 'tscb_local_details' => '1', 'TB_iframe' => 'true', 'width' => 772, 'height' => 600 ), network_admin_url( 'plugin-install.php' ) );
 		/* translators: %s: The plugin's translated name. */
 		$label = sprintf( __( 'View details about %s', 'tsambasis-contact-bridge' ), $name );
@@ -66,7 +66,7 @@ final class TSCB_Plugin_Info {
 	/** Supply only explicit local information; every other API action/result stays untouched. */
 	public static function information( $result, $action, $args ) {
 		if ( false !== $result || 'plugin_information' !== $action || ! is_object( $args ) || ! isset( $args->slug ) || self::SLUG !== $args->slug || ! self::local_request() ) { return $result; }
-		$name = __( 'ContactBridge by Tsambasis', 'tsambasis-contact-bridge' );
+		$name = __( 'ContactBridge', 'tsambasis-contact-bridge' );
 		$icon = '<p><img class="tscb-local-info-icon" src="' . esc_url( TSCB_URL . 'assets/plugin-icon.png' ) . '" alt="' . esc_attr( $name ) . '" /></p>';
 		$description = $icon . '<p>' . esc_html__( 'A free, ad-free contact form for your WordPress website. Build your fields, choose a design and add the form with a shortcode.', 'tsambasis-contact-bridge' ) . '</p><p>' . esc_html__( 'Receive inquiries by email, Telegram or WhatsApp. Email works with your existing WordPress mail setup or optional authenticated SMTP for this plugin.', 'tsambasis-contact-bridge' ) . '</p><p>' . esc_html__( 'This information comes from the installed plugin. It does not represent a WordPress.org listing, rating or download count.', 'tsambasis-contact-bridge' ) . '</p><p>' . self::more_link() . '</p>';
 		$installation = '<ol><li>' . esc_html__( 'Open the plugin settings and select your delivery channels. Save the recipient and connection details, then send a test message.', 'tsambasis-contact-bridge' ) . '</li><li>' . esc_html__( 'Choose a preset or customize the fields and appearance. The live preview shows your draft without sending any messages.', 'tsambasis-contact-bridge' ) . '</li><li>' . esc_html__( 'Add this shortcode to a page or a Shortcode block:', 'tsambasis-contact-bridge' ) . ' <code>[contact_bridge]</code></li></ol>';
