@@ -1,7 +1,7 @@
 # WordPress.org directory graphics
 
-Icons, banners and screenshots for ContactBridge by Tsambasis 1.0.0.
-The German product name is ContactBridge von Tsambasis.
+Icons, banners and screenshots for ContactBridge 1.0.0.
+Published by [Tsambasis & Tsambasis](https://tsambasis.net/).
 
 The numbered screenshots correspond to the captions in the plugin's `readme.txt`.
 Files with the `-de_DE` suffix are the German variants.
