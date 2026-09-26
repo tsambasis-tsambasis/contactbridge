@@ -1,0 +1,17 @@
+# Local credentials, installations and development output must stay private.
+.env
+.env.*
+!.env.example
+wp-config.php
+auth.json
+*.log
+*.sqlite
+*.sqlite3
+*.sql
+*.pem
+*.key
+node_modules/
+vendor/
+tmp/
+.DS_Store
+Thumbs.db
