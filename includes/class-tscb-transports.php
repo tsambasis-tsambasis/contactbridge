@@ -100,7 +100,7 @@ class TSCB_Transports {
 		$settings = TSCB_Settings::get();
 		$result = new WP_Error( 'disabled', __( 'Please enable the delivery channel and save your settings first.', 'tsambasis-contact-bridge' ) );
 		if ( in_array( $channel, $settings['channels'], true ) ) {
-			$result = self::send( $channel, array( 'name' => __( 'Plugin test', 'tsambasis-contact-bridge' ), 'email' => '', 'subject' => __( 'ContactBridge by Tsambasis – Test', 'tsambasis-contact-bridge' ), 'message' => __( 'The connection works. This is a test message from the WordPress settings.', 'tsambasis-contact-bridge' ) ), $settings, 'test' );
+			$result = self::send( $channel, array( 'name' => __( 'Plugin test', 'tsambasis-contact-bridge' ), 'email' => '', 'subject' => __( 'ContactBridge – Test', 'tsambasis-contact-bridge' ), 'message' => __( 'The connection works. This is a test message from the WordPress settings.', 'tsambasis-contact-bridge' ) ), $settings, 'test' );
 		}
 		self::status( $channel, $result );
 		if ( 'email' === $channel ) {

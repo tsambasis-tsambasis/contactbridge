@@ -12,7 +12,7 @@ Free contact forms with email, Telegram, WhatsApp, a field builder and optional 
 
 == Description ==
 
-ContactBridge by Tsambasis connects a flexible WordPress contact form to email, Telegram and the WhatsApp Cloud API. Enable any combination of channels, or send private notifications that link to an encrypted local inbox. The German interface uses the name ContactBridge von Tsambasis.
+ContactBridge connects a flexible WordPress contact form to email, Telegram and the WhatsApp Cloud API. Enable any combination of channels, or send private notifications that link to an encrypted local inbox.
 
 * Free: no ads, paid features, analytics or remote assets.
 * WordPress mail/TLS SMTP, Telegram and WhatsApp Cloud API.
@@ -88,7 +88,7 @@ SMTP passwords use salt-based encryption or `TSCB_SMTP_PASSWORD`; changed salts 
 == Installation ==
 
 1. Upload/activate the ZIP in Plugins > Add New.
-2. Open Settings > ContactBridge by Tsambasis (German: ContactBridge von Tsambasis).
+2. Open Settings > ContactBridge (German: Einstellungen > ContactBridge).
 3. Configure channels, privacy and retention; save and test.
 4. Add `[contact_bridge]` to a Shortcode block.
 5. Adapt your privacy notice; test the public form and inbox.

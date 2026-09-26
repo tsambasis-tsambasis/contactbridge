@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ContactBridge by Tsambasis 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/tsambasis-contact-bridge\n"
-"POT-Creation-Date: 2026-09-26 15:19+0000\n"
-"PO-Revision-Date: 2026-09-26 15:19+0000\n"
+"POT-Creation-Date: 2026-09-26 18:15+0000\n"
+"PO-Revision-Date: 2026-09-26 18:15+0000\n"
 "Last-Translator: Tsambasis & Tsambasis\n"
 "Language-Team: German\n"
 "Language: de_DE\n"
@@ -13,17 +13,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: ContactBridge by Tsambasis catalog builder / WP-CLI\n"
+"X-Generator: ContactBridge catalog builder / WP-CLI\n"
 "X-Domain: tsambasis-contact-bridge\n"
 
 #. Plugin Name of the plugin
 #: tsambasis-contact-bridge.php
-#: includes/class-tscb-plugin-info.php:39
-#: includes/class-tscb-plugin-info.php:69
-#: includes/class-tscb-settings.php:72
-#: includes/class-tscb-settings.php:73
-#: includes/class-tscb-settings.php:631
-#: tsambasis-contact-bridge.php:116
 msgid "ContactBridge by Tsambasis"
 msgstr "ContactBridge von Tsambasis"
 
@@ -681,6 +675,15 @@ msgstr "Die E-Mail konnte nicht an den Maildienst übergeben werden. Prüfen Sie
 #: includes/class-tscb-plugin-info.php:16
 msgid "More information"
 msgstr "Mehr Informationen"
+
+#: includes/class-tscb-plugin-info.php:39
+#: includes/class-tscb-plugin-info.php:69
+#: includes/class-tscb-settings.php:72
+#: includes/class-tscb-settings.php:73
+#: includes/class-tscb-settings.php:631
+#: tsambasis-contact-bridge.php:116
+msgid "ContactBridge"
+msgstr "ContactBridge"
 
 #. translators: %s: The plugin's translated name.
 #: includes/class-tscb-plugin-info.php:42
@@ -1706,8 +1709,8 @@ msgid "Plugin test"
 msgstr "Plugin-Test"
 
 #: includes/class-tscb-transports.php:103
-msgid "ContactBridge by Tsambasis – Test"
-msgstr "ContactBridge von Tsambasis – Test"
+msgid "ContactBridge – Test"
+msgstr "ContactBridge – Test"
 
 #: includes/class-tscb-transports.php:103
 msgid "The connection works. This is a test message from the WordPress settings."

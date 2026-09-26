@@ -1,4 +1,4 @@
-# ContactBridge von Tsambasis (ContactBridge by Tsambasis) – Einrichtung und Einreichung
+# ContactBridge – Einrichtung und Einreichung
 
 Erstveröffentlichung 1.0.0 · Stand: 26. September 2026
 
@@ -7,7 +7,7 @@ Das Plugin erstellt ein anpassbares Kontaktformular für WordPress. Nachrichten 
 ## Schnellstart
 
 1. In WordPress **Plugins → Neues Plugin hinzufügen → Plugin hochladen** öffnen, die Plugin-ZIP auswählen und aktivieren.
-2. **Einstellungen → ContactBridge von Tsambasis** öffnen; auf Englisch heißt das Plugin **ContactBridge by Tsambasis**.
+2. **Einstellungen → ContactBridge** öffnen; der Name lautet in beiden Sprachen **ContactBridge**.
 3. Mindestens einen Versandkanal aktivieren, Ziel und Zugangsdaten hinterlegen, speichern und einen Test senden.
 4. Auf der Kontaktseite einen **Shortcode-Block** einfügen:
 
@@ -263,7 +263,7 @@ Bei der Deinstallation werden **gespeicherte Anfragen immer gelöscht**, unabhä
 
 Die installierbare ZIP ist das technische Paket für die manuelle Prüfung. Eine Freigabe kann ausschließlich das WordPress.org-Plugin-Team erteilen. Folgendes bleibt vom Herausgeber zu erledigen:
 
-1. Als öffentlicher Autor und Hersteller ist **[Tsambasis & Tsambasis](https://tsambasis.net/)** eingetragen. Das technische WordPress.org-Konto und der `Contributors`-Eintrag lauten **solutionfirst**. Der englische Plugin-Name lautet **ContactBridge by Tsambasis**, der deutsche **ContactBridge von Tsambasis**; der vorgesehene Verzeichnis-Slug ist `tsambasis-contact-bridge`. Die endgültige Vergabe entscheidet WordPress.org.
+1. Als öffentlicher Autor und Hersteller ist **[Tsambasis & Tsambasis](https://tsambasis.net/)** eingetragen. Das technische WordPress.org-Konto und der `Contributors`-Eintrag lauten **solutionfirst**. Die Oberfläche verwendet **ContactBridge**. Der formelle Verzeichnisname lautet **ContactBridge by Tsambasis**, in deutschen Plugin-Metadaten **ContactBridge von Tsambasis**; der vorgesehene Verzeichnis-Slug ist `tsambasis-contact-bridge`. Die endgültige Vergabe entscheidet WordPress.org.
 2. Das mitgelieferte Prüfprotokoll lesen; dort sind tatsächlich ausgeführte Tests und verbleibende Grenzen dokumentiert. Echten E-Mail-, Telegram- und WhatsApp-Versand mit den eigenen Produktionszugängen prüfen.
 3. Den bestätigten Prüfstand einschließlich des offiziellen **Plugin Check** im Prüfprotokoll kontrollieren. Bei späteren Codeänderungen oder WordPress-Versionen erneut prüfen und den `Tested up to`-Wert nur entsprechend tatsächlich ausgeführter Tests anpassen.
 4. Aktuelle [Plugin-Richtlinien](https://developer.wordpress.org/plugins/wordpress-org/detailed-plugin-guidelines/) beachten. Das Readme dokumentiert externe Dienste, übermittelte Daten, Lizenz und Servicebedingungen. Alle Quelldateien sind enthalten.
