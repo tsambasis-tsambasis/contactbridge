@@ -1,0 +1,3 @@
+32b85759bee38cd4a1bd86968ebc33f8065cb719975c56ae5cceeeb3c288a4ac  contact-bridge-1.0.0.zip
+37916cb734882b5efac54878fdfa725caae25f9cb316f22bc75c0ce734ad5ba9  README.md
+ceb2ec7ae978b3d66ce845ec892441ae49cb1bec7ffb409759d274c6557d6117  ../README.md
