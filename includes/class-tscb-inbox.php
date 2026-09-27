@@ -16,7 +16,7 @@ final class TSCB_Inbox {
 
 	public static function register() {
 		$caps = array_fill_keys( array( 'edit_post', 'read_post', 'delete_post', 'edit_posts', 'edit_others_posts', 'publish_posts', 'read_private_posts', 'delete_posts', 'delete_private_posts', 'delete_published_posts', 'delete_others_posts', 'edit_private_posts', 'edit_published_posts', 'create_posts', 'read' ), 'manage_options' );
-		register_post_type( self::TYPE, array( 'label' => __( 'Contact inquiries', 'tsambasis-contact-bridge' ), 'public' => false, 'publicly_queryable' => false, 'show_ui' => false, 'show_in_rest' => false, 'show_in_menu' => false, 'query_var' => false, 'rewrite' => false, 'exclude_from_search' => true, 'can_export' => false, 'supports' => false, 'capabilities' => $caps, 'map_meta_cap' => false, 'delete_with_user' => false ) );
+		register_post_type( self::TYPE, array( 'label' => __( 'Contact inquiries', 'contactbridge' ), 'public' => false, 'publicly_queryable' => false, 'show_ui' => false, 'show_in_rest' => false, 'show_in_menu' => false, 'query_var' => false, 'rewrite' => false, 'exclude_from_search' => true, 'can_export' => false, 'supports' => false, 'capabilities' => $caps, 'map_meta_cap' => false, 'delete_with_user' => false ) );
 	}
 
 	public static function supports_storage() {
@@ -32,12 +32,12 @@ final class TSCB_Inbox {
 
 	private static function error( $code = 'inbox_storage' ) {
 		$messages = array(
-			'inbox_storage' => __( 'The inquiry could not be stored securely. Please try again later.', 'tsambasis-contact-bridge' ),
-			'inbox_forbidden' => __( 'You do not have permission to view or delete inquiries.', 'tsambasis-contact-bridge' ),
-			'inbox_missing' => __( 'This inquiry is unavailable or its retention period has ended.', 'tsambasis-contact-bridge' ),
-			'inbox_decrypt' => __( 'This inquiry could not be decrypted. The WordPress security keys may have changed.', 'tsambasis-contact-bridge' ),
-			'inbox_privacy_state' => __( 'The inquiry privacy task expired or its page order changed. Please restart the export or erasure request.', 'tsambasis-contact-bridge' ),
-			'inbox_retention' => __( 'This server cannot represent the selected retention period. Choose fewer days or unlimited retention.', 'tsambasis-contact-bridge' ),
+			'inbox_storage' => __( 'The inquiry could not be stored securely. Please try again later.', 'contactbridge' ),
+			'inbox_forbidden' => __( 'You do not have permission to view or delete inquiries.', 'contactbridge' ),
+			'inbox_missing' => __( 'This inquiry is unavailable or its retention period has ended.', 'contactbridge' ),
+			'inbox_decrypt' => __( 'This inquiry could not be decrypted. The WordPress security keys may have changed.', 'contactbridge' ),
+			'inbox_privacy_state' => __( 'The inquiry privacy task expired or its page order changed. Please restart the export or erasure request.', 'contactbridge' ),
+			'inbox_retention' => __( 'This server cannot represent the selected retention period. Choose fewer days or unlimited retention.', 'contactbridge' ),
 		);
 		return new WP_Error( $code, isset( $messages[ $code ] ) ? $messages[ $code ] : $messages['inbox_storage'] );
 	}
@@ -149,11 +149,11 @@ final class TSCB_Inbox {
 		if ( (int) $id > 0 ) { $args['inquiry'] = (int) $id; }
 		return add_query_arg( $args, admin_url( 'options-general.php' ) );
 	}
-	public static function menu() { add_options_page( __( 'Contact inquiries', 'tsambasis-contact-bridge' ), __( 'Contact inquiries', 'tsambasis-contact-bridge' ), 'manage_options', 'tscb-inquiries', array( __CLASS__, 'render' ) ); }
+	public static function menu() { add_options_page( __( 'Contact inquiries', 'contactbridge' ), __( 'Contact inquiries', 'contactbridge' ), 'manage_options', 'tscb-inquiries', array( __CLASS__, 'render' ) ); }
 
 	public static function handle_delete() {
 		if ( ! current_user_can( 'manage_options' ) ) { wp_die( esc_html( self::error( 'inbox_forbidden' )->get_error_message() ), '', array( 'response' => 403 ) ); }
-		if ( ! isset( $_SERVER['REQUEST_METHOD'] ) || 'POST' !== $_SERVER['REQUEST_METHOD'] ) { wp_die( esc_html__( 'Please submit the form.', 'tsambasis-contact-bridge' ), '', array( 'response' => 405 ) ); }
+		if ( ! isset( $_SERVER['REQUEST_METHOD'] ) || 'POST' !== $_SERVER['REQUEST_METHOD'] ) { wp_die( esc_html__( 'Please submit the form.', 'contactbridge' ), '', array( 'response' => 405 ) ); }
 		$id = isset( $_POST['inquiry'] ) && is_scalar( $_POST['inquiry'] ) ? absint( $_POST['inquiry'] ) : 0;
 		check_admin_referer( 'tscb_delete_inquiry_' . $id );
 		self::delete( $id );
@@ -162,7 +162,7 @@ final class TSCB_Inbox {
 	}
 
 	private static function delete_form( $id ) {
-		?><form method="post" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>"><input type="hidden" name="action" value="tscb_delete_inquiry" /><input type="hidden" name="inquiry" value="<?php echo esc_attr( (string) $id ); ?>" /><?php wp_nonce_field( 'tscb_delete_inquiry_' . $id ); ?><button type="submit" class="button"><?php esc_html_e( 'Permanently delete inquiry', 'tsambasis-contact-bridge' ); ?></button></form><?php
+		?><form method="post" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>"><input type="hidden" name="action" value="tscb_delete_inquiry" /><input type="hidden" name="inquiry" value="<?php echo esc_attr( (string) $id ); ?>" /><?php wp_nonce_field( 'tscb_delete_inquiry_' . $id ); ?><button type="submit" class="button"><?php esc_html_e( 'Permanently delete inquiry', 'contactbridge' ); ?></button></form><?php
 	}
 	private static function date( $timestamp ) { return gmdate( 'Y-m-d H:i', $timestamp ) . ' UTC'; }
 
@@ -175,28 +175,28 @@ final class TSCB_Inbox {
 		$id = isset( $_GET['inquiry'] ) && is_scalar( $_GET['inquiry'] ) ? absint( $_GET['inquiry'] ) : 0;
 		$page = isset( $_GET['paged'] ) && is_scalar( $_GET['paged'] ) ? max( 1, absint( $_GET['paged'] ) ) : 1;
 		// phpcs:enable WordPress.Security.NonceVerification.Recommended
-		?><div class="wrap"><h1><?php esc_html_e( 'Contact inquiries', 'tsambasis-contact-bridge' ); ?></h1><p><?php esc_html_e( 'Messages are encrypted in your WordPress database and are visible only to administrators. Expired inquiries are automatically deleted. Unrestricted retention keeps inquiries until you delete them.', 'tsambasis-contact-bridge' ); ?></p><?php
+		?><div class="wrap"><h1><?php esc_html_e( 'Contact inquiries', 'contactbridge' ); ?></h1><p><?php esc_html_e( 'Messages are encrypted in your WordPress database and are visible only to administrators. Expired inquiries are automatically deleted. Unrestricted retention keeps inquiries until you delete them.', 'contactbridge' ); ?></p><?php
 		if ( $id ) {
 			$record = self::get( $id );
-			?><p><a href="<?php echo esc_url( self::admin_url() ); ?>"><?php esc_html_e( 'Back to all inquiries', 'tsambasis-contact-bridge' ); ?></a></p><?php
+			?><p><a href="<?php echo esc_url( self::admin_url() ); ?>"><?php esc_html_e( 'Back to all inquiries', 'contactbridge' ); ?></a></p><?php
 			if ( is_wp_error( $record ) ) { ?><div class="notice notice-error"><p><?php echo esc_html( $record->get_error_message() ); ?></p></div><?php }
 			else {
-				?><p><strong><?php esc_html_e( 'Received', 'tsambasis-contact-bridge' ); ?>:</strong> <?php echo esc_html( self::date( $record['created'] ) ); ?> · <strong><?php esc_html_e( 'Automatic deletion', 'tsambasis-contact-bridge' ); ?>:</strong> <?php echo esc_html( $record['expires'] ? self::date( $record['expires'] ) : __( 'No time limit', 'tsambasis-contact-bridge' ) ); ?></p><table class="widefat striped"><tbody><?php
+				?><p><strong><?php esc_html_e( 'Received', 'contactbridge' ); ?>:</strong> <?php echo esc_html( self::date( $record['created'] ) ); ?> · <strong><?php esc_html_e( 'Automatic deletion', 'contactbridge' ); ?>:</strong> <?php echo esc_html( $record['expires'] ? self::date( $record['expires'] ) : __( 'No time limit', 'contactbridge' ) ); ?></p><table class="widefat striped"><tbody><?php
 				foreach ( $record['fields'] as $field ) { ?><tr><th scope="row" style="width:25%;overflow-wrap:anywhere"><?php echo esc_html( $field['label'] ); ?></th><td style="white-space:pre-wrap;overflow-wrap:anywhere"><?php echo esc_html( $field['value'] ); ?></td></tr><?php }
-				?></tbody></table><p><?php esc_html_e( 'Deleting an inquiry is permanent.', 'tsambasis-contact-bridge' ); ?></p><?php
+				?></tbody></table><p><?php esc_html_e( 'Deleting an inquiry is permanent.', 'contactbridge' ); ?></p><?php
 			}
 			$post = get_post( $id );
 			if ( $post && self::TYPE === $post->post_type ) { self::delete_form( $id ); }
 		} else {
 			// phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_query -- The administrator-only inbox must exclude expired records before pagination; query only this private CPT and decrypt at most 20 returned IDs.
 			$query = new WP_Query( array( 'post_type' => self::TYPE, 'post_status' => 'private', 'posts_per_page' => 20, 'paged' => $page, 'orderby' => 'ID', 'order' => 'DESC', 'fields' => 'ids', 'meta_query' => array( 'relation' => 'OR', array( 'key' => '_tscb_expires', 'value' => 0, 'compare' => '=', 'type' => 'NUMERIC' ), array( 'key' => '_tscb_expires', 'value' => time(), 'compare' => '>', 'type' => 'NUMERIC' ) ) ) );
-			if ( ! $query->posts ) { ?><p><?php esc_html_e( 'No inquiries are currently stored.', 'tsambasis-contact-bridge' ); ?></p><?php }
+			if ( ! $query->posts ) { ?><p><?php esc_html_e( 'No inquiries are currently stored.', 'contactbridge' ); ?></p><?php }
 			else {
-				?><table class="widefat striped"><thead><tr><th><?php esc_html_e( 'Received', 'tsambasis-contact-bridge' ); ?></th><th><?php esc_html_e( 'Subject', 'tsambasis-contact-bridge' ); ?></th><th><?php esc_html_e( 'Automatic deletion', 'tsambasis-contact-bridge' ); ?></th><th><?php esc_html_e( 'Actions', 'tsambasis-contact-bridge' ); ?></th></tr></thead><tbody><?php
+				?><table class="widefat striped"><thead><tr><th><?php esc_html_e( 'Received', 'contactbridge' ); ?></th><th><?php esc_html_e( 'Subject', 'contactbridge' ); ?></th><th><?php esc_html_e( 'Automatic deletion', 'contactbridge' ); ?></th><th><?php esc_html_e( 'Actions', 'contactbridge' ); ?></th></tr></thead><tbody><?php
 				foreach ( $query->posts as $record_id ) {
 					$record = self::get( $record_id );
 					if ( is_wp_error( $record ) && 'inbox_missing' === $record->get_error_code() ) { continue; }
-					?><tr><td><?php echo esc_html( is_wp_error( $record ) ? '—' : self::date( $record['created'] ) ); ?></td><td style="overflow-wrap:anywhere"><a href="<?php echo esc_url( self::admin_url( $record_id ) ); ?>"><?php echo esc_html( is_wp_error( $record ) ? __( 'Encrypted inquiry', 'tsambasis-contact-bridge' ) : ( '' !== trim( $record['subject'] ) ? $record['subject'] : __( 'Contact inquiry', 'tsambasis-contact-bridge' ) ) ); ?></a></td><td><?php echo esc_html( is_wp_error( $record ) ? '—' : ( $record['expires'] ? self::date( $record['expires'] ) : __( 'No time limit', 'tsambasis-contact-bridge' ) ) ); ?></td><td><?php self::delete_form( $record_id ); ?></td></tr><?php
+					?><tr><td><?php echo esc_html( is_wp_error( $record ) ? '—' : self::date( $record['created'] ) ); ?></td><td style="overflow-wrap:anywhere"><a href="<?php echo esc_url( self::admin_url( $record_id ) ); ?>"><?php echo esc_html( is_wp_error( $record ) ? __( 'Encrypted inquiry', 'contactbridge' ) : ( '' !== trim( $record['subject'] ) ? $record['subject'] : __( 'Contact inquiry', 'contactbridge' ) ) ); ?></a></td><td><?php echo esc_html( is_wp_error( $record ) ? '—' : ( $record['expires'] ? self::date( $record['expires'] ) : __( 'No time limit', 'contactbridge' ) ) ); ?></td><td><?php self::delete_form( $record_id ); ?></td></tr><?php
 				}
 				?></tbody></table><?php
 				$links = paginate_links( array( 'base' => add_query_arg( 'paged', '%#%', self::admin_url() ), 'format' => '', 'current' => $page, 'total' => (int) $query->max_num_pages ) );
@@ -206,8 +206,8 @@ final class TSCB_Inbox {
 		?></div><?php
 	}
 
-	public static function exporters( $exporters ) { $exporters['tscb-inquiries'] = array( 'exporter_friendly_name' => __( 'Contact inquiries', 'tsambasis-contact-bridge' ), 'callback' => array( __CLASS__, 'export_personal_data' ) ); return $exporters; }
-	public static function erasers( $erasers ) { $erasers['tscb-inquiries'] = array( 'eraser_friendly_name' => __( 'Contact inquiries', 'tsambasis-contact-bridge' ), 'callback' => array( __CLASS__, 'erase_personal_data' ) ); return $erasers; }
+	public static function exporters( $exporters ) { $exporters['tscb-inquiries'] = array( 'exporter_friendly_name' => __( 'Contact inquiries', 'contactbridge' ), 'callback' => array( __CLASS__, 'export_personal_data' ) ); return $exporters; }
+	public static function erasers( $erasers ) { $erasers['tscb-inquiries'] = array( 'eraser_friendly_name' => __( 'Contact inquiries', 'contactbridge' ), 'callback' => array( __CLASS__, 'erase_personal_data' ) ); return $erasers; }
 
 	private static function matches_email( $record, $email ) {
 		if ( isset( $record['email'] ) && 0 === strcasecmp( trim( $record['email'] ), $email ) ) { return true; }
@@ -241,9 +241,9 @@ final class TSCB_Inbox {
 			$record = self::read( $id );
 			if ( is_wp_error( $record ) && 'inbox_decrypt' === $record->get_error_code() ) { return $record; }
 			if ( is_wp_error( $record ) || ! self::matches_email( $record, $email ) ) { continue; }
-			$values = array( array( 'name' => __( 'Received', 'tsambasis-contact-bridge' ), 'value' => self::date( $record['created'] ) ), array( 'name' => __( 'Automatic deletion', 'tsambasis-contact-bridge' ), 'value' => $record['expires'] ? self::date( $record['expires'] ) : __( 'No time limit', 'tsambasis-contact-bridge' ) ) );
+			$values = array( array( 'name' => __( 'Received', 'contactbridge' ), 'value' => self::date( $record['created'] ) ), array( 'name' => __( 'Automatic deletion', 'contactbridge' ), 'value' => $record['expires'] ? self::date( $record['expires'] ) : __( 'No time limit', 'contactbridge' ) ) );
 			foreach ( $record['fields'] as $field ) { $values[] = array( 'name' => $field['label'], 'value' => $field['value'] ); }
-			$items[] = array( 'group_id' => 'tscb-inquiries', 'group_label' => __( 'Contact inquiries', 'tsambasis-contact-bridge' ), 'item_id' => 'tscb-inquiry-' . $id, 'data' => $values );
+			$items[] = array( 'group_id' => 'tscb-inquiries', 'group_label' => __( 'Contact inquiries', 'contactbridge' ), 'item_id' => 'tscb-inquiry-' . $id, 'data' => $values );
 		}
 		return array( 'data' => $items, 'done' => $done );
 	}
@@ -259,6 +259,6 @@ final class TSCB_Inbox {
 			if ( is_wp_error( $record ) || ! self::matches_email( $record, $email ) ) { continue; }
 			if ( self::remove( $id ) ) { $removed = true; } else { $retained = true; }
 		}
-		return array( 'items_removed' => $removed, 'items_retained' => $retained, 'messages' => $retained ? array( __( 'Some inquiries could not be decrypted or deleted, so their personal data could not be fully checked. Please ask the site administrator to review them.', 'tsambasis-contact-bridge' ) ) : array(), 'done' => $done );
+		return array( 'items_removed' => $removed, 'items_retained' => $retained, 'messages' => $retained ? array( __( 'Some inquiries could not be decrypted or deleted, so their personal data could not be fully checked. Please ask the site administrator to review them.', 'contactbridge' ) ) : array(), 'done' => $done );
 	}
 }

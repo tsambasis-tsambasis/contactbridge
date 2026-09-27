@@ -25,7 +25,7 @@ class TSCB_I18n {
 
 	/** Select only this domain's files; never change the WordPress/user locale. */
 	public static function translation_file( $file, $domain, $locale ) {
-		if ( 'tsambasis-contact-bridge' !== $domain ) {
+		if ( 'contactbridge' !== $domain ) {
 			return $file;
 		}
 		$selected = 'wordpress' === self::language() ? $locale : self::language();
@@ -33,21 +33,21 @@ class TSCB_I18n {
 			return $file;
 		}
 		$extension = '.mo' === substr( $file, -3 ) ? '.mo' : '.l10n.php';
-		$pack = WP_LANG_DIR . '/plugins/tsambasis-contact-bridge-' . $selected . $extension;
+		$pack = WP_LANG_DIR . '/plugins/contactbridge-' . $selected . $extension;
 		if ( is_readable( $pack ) ) {
 			return $pack;
 		}
-		$pack_mo = WP_LANG_DIR . '/plugins/tsambasis-contact-bridge-' . $selected . '.mo';
+		$pack_mo = WP_LANG_DIR . '/plugins/contactbridge-' . $selected . '.mo';
 		if ( '.l10n.php' === $extension && is_readable( $pack_mo ) ) {
 			return $pack_mo;
 		}
-		$bundled = TSCB_PATH . 'languages/tsambasis-contact-bridge-' . $selected . $extension;
+		$bundled = TSCB_PATH . 'languages/contactbridge-' . $selected . $extension;
 		if ( is_readable( $bundled ) ) {
 			return $bundled;
 		}
 		// Regional German and English locales use the complete bundled base catalogs.
 		$base = 0 === strpos( $selected, 'de_' ) ? 'de_DE' : 'en_US';
-		$fallback = TSCB_PATH . 'languages/tsambasis-contact-bridge-' . $base . $extension;
+		$fallback = TSCB_PATH . 'languages/contactbridge-' . $base . $extension;
 		return is_readable( $fallback ) ? $fallback : $file;
 	}
 
@@ -55,9 +55,9 @@ class TSCB_I18n {
 	public static function load() {
 		// An explicit plugin language may change while WordPress keeps the same locale.
 		// Core's reloadable unload retains catalog caches, so clear this domain only.
-		WP_Translation_Controller::get_instance()->unload_textdomain( 'tsambasis-contact-bridge' );
-		unload_textdomain( 'tsambasis-contact-bridge', true );
-		load_textdomain( 'tsambasis-contact-bridge', TSCB_PATH . 'languages/tsambasis-contact-bridge-' . self::locale() . '.mo', determine_locale() );
+		WP_Translation_Controller::get_instance()->unload_textdomain( 'contactbridge' );
+		unload_textdomain( 'contactbridge', true );
+		load_textdomain( 'contactbridge', TSCB_PATH . 'languages/contactbridge-' . self::locale() . '.mo', determine_locale() );
 	}
 
 	public static function switch_site() {

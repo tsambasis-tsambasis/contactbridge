@@ -18,25 +18,25 @@ class TSCB_Design {
 			'theme' => 'light',
 			'shape' => 'rounded',
 			'accent' => '#22624b',
-			'heading' => __( 'Let\'s get in touch.', 'tsambasis-contact-bridge' ),
-			'intro' => __( 'Send us a message. We look forward to hearing from you.', 'tsambasis-contact-bridge' ),
-			'eyebrow' => __( 'Get in touch', 'tsambasis-contact-bridge' ),
-			'submit_label' => __( 'Send message', 'tsambasis-contact-bridge' ),
-			'success_message' => __( 'Thank you! Your inquiry has been received.', 'tsambasis-contact-bridge' ),
-			'label_name' => __( 'Your name', 'tsambasis-contact-bridge' ),
-			'label_email' => __( 'Your email address', 'tsambasis-contact-bridge' ),
-			'label_subject' => __( 'What is it about?', 'tsambasis-contact-bridge' ),
-			'label_message' => __( 'Your message', 'tsambasis-contact-bridge' ),
+			'heading' => __( 'Let\'s get in touch.', 'contactbridge' ),
+			'intro' => __( 'Send us a message. We look forward to hearing from you.', 'contactbridge' ),
+			'eyebrow' => __( 'Get in touch', 'contactbridge' ),
+			'submit_label' => __( 'Send message', 'contactbridge' ),
+			'success_message' => __( 'Thank you! Your inquiry has been received.', 'contactbridge' ),
+			'label_name' => __( 'Your name', 'contactbridge' ),
+			'label_email' => __( 'Your email address', 'contactbridge' ),
+			'label_subject' => __( 'What is it about?', 'contactbridge' ),
+			'label_message' => __( 'Your message', 'contactbridge' ),
 			'placeholder_name' => '',
 			'placeholder_email' => '',
 			'placeholder_subject' => '',
 			'placeholder_message' => '',
-			'required_note' => __( 'Fields marked with * are required.', 'tsambasis-contact-bridge' ),
+			'required_note' => __( 'Fields marked with * are required.', 'contactbridge' ),
 			/* translators: Keep {max}; it is replaced with the maximum allowed character count. */
-			'message_hint' => __( 'Maximum {max} characters. Please do not send sensitive information.', 'tsambasis-contact-bridge' ),
+			'message_hint' => __( 'Maximum {max} characters. Please do not send sensitive information.', 'contactbridge' ),
 			/* translators: Keep {privacy_link}; it is replaced with the configured privacy notice link. */
-			'privacy_label' => __( 'I have read the {privacy_link} and agree to my information being processed to respond to my inquiry.', 'tsambasis-contact-bridge' ),
-			'privacy_link_text' => __( 'privacy notice', 'tsambasis-contact-bridge' ),
+			'privacy_label' => __( 'I have read the {privacy_link} and agree to my information being processed to respond to my inquiry.', 'contactbridge' ),
+			'privacy_link_text' => __( 'privacy notice', 'contactbridge' ),
 			'privacy_url' => get_privacy_policy_url(),
 			'privacy_new_tab' => true,
 			'require_consent' => true,
@@ -68,10 +68,10 @@ class TSCB_Design {
 	public static function presets() {
 		$base = array( 'layout' => 'two-column', 'width' => 740, 'spacing' => 'comfortable', 'font_size' => 16, 'button_align' => 'left', 'button_arrow' => true, 'show_counter' => true, 'show_required_note' => true, 'shadow' => true, 'custom_colors' => false );
 		return array(
-			'forest' => array( 'label' => __( 'Forest', 'tsambasis-contact-bridge' ), 'description' => __( 'Light, soft, and welcoming.', 'tsambasis-contact-bridge' ), 'settings' => array_merge( $base, array( 'theme' => 'light', 'shape' => 'rounded', 'accent' => '#22624b' ) ) ),
-			'midnight' => array( 'label' => __( 'Midnight', 'tsambasis-contact-bridge' ), 'description' => __( 'Dark with a fresh accent.', 'tsambasis-contact-bridge' ), 'settings' => array_merge( $base, array( 'theme' => 'dark', 'shape' => 'rounded', 'accent' => '#a8dec0' ) ) ),
-			'studio' => array( 'label' => __( 'Studio', 'tsambasis-contact-bridge' ), 'description' => __( 'Clean edges and bold blue.', 'tsambasis-contact-bridge' ), 'settings' => array_merge( $base, array( 'theme' => 'light', 'shape' => 'square', 'accent' => '#2451ce' ) ) ),
-			'minimal' => array( 'label' => __( 'Minimal', 'tsambasis-contact-bridge' ), 'description' => __( 'Compact, single-column, and minimal.', 'tsambasis-contact-bridge' ), 'settings' => array_merge( $base, array( 'theme' => 'light', 'shape' => 'square', 'accent' => '#26312c', 'width' => 640, 'layout' => 'single-column', 'spacing' => 'compact', 'button_align' => 'stretch', 'button_arrow' => false, 'shadow' => false ) ) ),
+			'forest' => array( 'label' => __( 'Forest', 'contactbridge' ), 'description' => __( 'Light, soft, and welcoming.', 'contactbridge' ), 'settings' => array_merge( $base, array( 'theme' => 'light', 'shape' => 'rounded', 'accent' => '#22624b' ) ) ),
+			'midnight' => array( 'label' => __( 'Midnight', 'contactbridge' ), 'description' => __( 'Dark with a fresh accent.', 'contactbridge' ), 'settings' => array_merge( $base, array( 'theme' => 'dark', 'shape' => 'rounded', 'accent' => '#a8dec0' ) ) ),
+			'studio' => array( 'label' => __( 'Studio', 'contactbridge' ), 'description' => __( 'Clean edges and bold blue.', 'contactbridge' ), 'settings' => array_merge( $base, array( 'theme' => 'light', 'shape' => 'square', 'accent' => '#2451ce' ) ) ),
+			'minimal' => array( 'label' => __( 'Minimal', 'contactbridge' ), 'description' => __( 'Compact, single-column, and minimal.', 'contactbridge' ), 'settings' => array_merge( $base, array( 'theme' => 'light', 'shape' => 'square', 'accent' => '#26312c', 'width' => 640, 'layout' => 'single-column', 'spacing' => 'compact', 'button_align' => 'stretch', 'button_arrow' => false, 'shadow' => false ) ) ),
 		);
 	}
 
@@ -170,7 +170,7 @@ class TSCB_Design {
 		ob_start();
 		$styles->do_items( array( 'tscb-preview-form' ) );
 		$stylesheet = ob_get_clean();
-		$html = '<!doctype html><html lang="' . esc_attr( str_replace( '_', '-', TSCB_I18n::locale() ) ) . '"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>' . esc_html__( 'Form preview', 'tsambasis-contact-bridge' ) . '</title>';
+		$html = '<!doctype html><html lang="' . esc_attr( str_replace( '_', '-', TSCB_I18n::locale() ) ) . '"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>' . esc_html__( 'Form preview', 'contactbridge' ) . '</title>';
 		$html .= $stylesheet . '</head><body>';
 		$html .= TSCB_Form::preview( $settings, $state );
 		return $html . '</body></html>';
@@ -179,7 +179,7 @@ class TSCB_Design {
 	/** Read-only preview endpoint: capability and CSRF checks precede all rendering. */
 	public static function preview_request() {
 		if ( ! current_user_can( 'manage_options' ) ) {
-			wp_send_json_error( array( 'message' => __( 'You do not have permission to view the preview.', 'tsambasis-contact-bridge' ) ), 403 );
+			wp_send_json_error( array( 'message' => __( 'You do not have permission to view the preview.', 'contactbridge' ) ), 403 );
 		}
 		check_ajax_referer( 'tscb_preview', 'nonce' );
 		// phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- The bounded appearance-only schema below is the shared sanitization boundary.

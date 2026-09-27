@@ -40,32 +40,32 @@ class TSCB_Submission {
 	/** Testable entry point; caller supplies already-unslashed input. */
 	public static function process( $input ) {
 		if ( ! wp_verify_nonce( self::value( $input, 'tscb_nonce' ), 'tscb_submit' ) ) {
-			return self::error( 'expired', __( 'The form has expired. Please reload the page and try again.', 'tsambasis-contact-bridge' ) );
+			return self::error( 'expired', __( 'The form has expired. Please reload the page and try again.', 'contactbridge' ) );
 		}
 		if ( '' !== self::value( $input, 'tscb_company' ) ) {
-			return self::error( 'spam', __( 'The message could not be accepted.', 'tsambasis-contact-bridge' ) );
+			return self::error( 'spam', __( 'The message could not be accepted.', 'contactbridge' ) );
 		}
 		$started = absint( self::value( $input, 'tscb_started' ) );
 		if ( $started > time() - 2 || 0 === $started ) {
-			return self::error( 'spam', __( 'Please wait a moment and submit again.', 'tsambasis-contact-bridge' ) );
+			return self::error( 'spam', __( 'Please wait a moment and submit again.', 'contactbridge' ) );
 		}
 		$id = self::value( $input, 'tscb_id' );
 		if ( ! preg_match( '/^[a-f0-9-]{36}$/Di', $id ) ) {
-			return self::error( 'invalid', __( 'Please reload the page.', 'tsambasis-contact-bridge' ) );
+			return self::error( 'invalid', __( 'Please reload the page.', 'contactbridge' ) );
 		}
 		$settings = TSCB_Settings::get();
 		$data = TSCB_Fields::validate( $input, $settings );
 		if ( is_wp_error( $data ) ) { return $data; }
 		$fields = array();
 		if ( $settings['require_consent'] && '1' !== self::value( $input, 'tscb_consent' ) ) {
-			$fields['tscb_consent'] = __( 'Please confirm the privacy notice.', 'tsambasis-contact-bridge' );
+			$fields['tscb_consent'] = __( 'Please confirm the privacy notice.', 'contactbridge' );
 		}
 		if ( $fields ) {
-			return self::error( 'invalid', __( 'Please check the highlighted details.', 'tsambasis-contact-bridge' ), $fields );
+			return self::error( 'invalid', __( 'Please check the highlighted details.', 'contactbridge' ), $fields );
 		}
 		$channels = array_values( array_intersect( array( 'email', 'telegram', 'whatsapp' ), $settings['channels'] ) );
 		if ( ! $channels ) {
-			return self::error( 'unconfigured', __( 'The contact form has not been set up yet. Please use another way to get in touch.', 'tsambasis-contact-bridge' ) );
+			return self::error( 'unconfigured', __( 'The contact form has not been set up yet. Please use another way to get in touch.', 'contactbridge' ) );
 		}
 		$address = isset( $_SERVER['REMOTE_ADDR'] ) ? sanitize_text_field( wp_unslash( $_SERVER['REMOTE_ADDR'] ) ) : 'unknown';
 		$key = hash_hmac( 'sha256', $address . $id . wp_json_encode( $data ), wp_salt( 'nonce' ) );
@@ -76,7 +76,7 @@ class TSCB_Submission {
 		$client = hash_hmac( 'sha256', $address, wp_salt( 'auth' ) );
 		$client_lock = self::lock( $client );
 		if ( ! $client_lock ) {
-			return self::error( 'rate', __( 'A request is already being processed. Please wait a moment.', 'tsambasis-contact-bridge' ) );
+			return self::error( 'rate', __( 'A request is already being processed. Please wait a moment.', 'contactbridge' ) );
 		}
 		try {
 			if ( get_transient( 'tscb_done_' . $key ) ) {
@@ -88,13 +88,13 @@ class TSCB_Submission {
 				$rate = array( 'count' => 0, 'until' => time() + 10 * MINUTE_IN_SECONDS );
 			}
 			if ( $rate['count'] >= 5 ) {
-				return self::error( 'rate', __( 'Too many requests. Please try again in ten minutes.', 'tsambasis-contact-bridge' ) );
+				return self::error( 'rate', __( 'Too many requests. Please try again in ten minutes.', 'contactbridge' ) );
 			}
 			++$rate['count'];
 			set_transient( $rate_key, $rate, max( 1, $rate['until'] - time() ) );
 			$message_lock = self::lock( $key );
 			if ( ! $message_lock ) {
-				return self::error( 'rate', __( 'This message is already being processed. Please wait a moment.', 'tsambasis-contact-bridge' ) );
+				return self::error( 'rate', __( 'This message is already being processed. Please wait a moment.', 'contactbridge' ) );
 			}
 			try {
 				$accepted = false;
@@ -107,9 +107,9 @@ class TSCB_Submission {
 							$inquiry_id = false;
 						}
 						if ( ! is_int( $inquiry_id ) || $inquiry_id < 1 ) {
-							$result = self::error( 'failed', __( 'The inquiry could not be stored securely. Please try again later or use another way to get in touch.', 'tsambasis-contact-bridge' ) );
+							$result = self::error( 'failed', __( 'The inquiry could not be stored securely. Please try again later or use another way to get in touch.', 'contactbridge' ) );
 							foreach ( $channels as $blocked_channel ) {
-								TSCB_Transports::status( $blocked_channel, new WP_Error( 'privacy_storage', __( 'The inquiry could not be stored securely. No notification was sent.', 'tsambasis-contact-bridge' ) ) );
+								TSCB_Transports::status( $blocked_channel, new WP_Error( 'privacy_storage', __( 'The inquiry could not be stored securely. No notification was sent.', 'contactbridge' ) ) );
 							}
 							return $result;
 						}
@@ -124,7 +124,7 @@ class TSCB_Submission {
 					try {
 						$result = TSCB_Transports::send( $channel, $data, $settings );
 					} catch ( Throwable $error ) {
-						$result = new WP_Error( 'delivery_failed', __( 'The notification could not be sent. Please check the delivery settings.', 'tsambasis-contact-bridge' ) );
+						$result = new WP_Error( 'delivery_failed', __( 'The notification could not be sent. Please check the delivery settings.', 'contactbridge' ) );
 					}
 					TSCB_Transports::status( $channel, $result );
 					$accepted = $accepted || ! is_wp_error( $result );
@@ -133,7 +133,7 @@ class TSCB_Submission {
 					set_transient( 'tscb_done_' . $key, 1, HOUR_IN_SECONDS );
 					return true;
 				}
-				return self::error( 'failed', __( 'The message could not be passed to a delivery service right now. Please try again later or use another way to get in touch.', 'tsambasis-contact-bridge' ) );
+				return self::error( 'failed', __( 'The message could not be passed to a delivery service right now. Please try again later or use another way to get in touch.', 'contactbridge' ) );
 			} finally {
 				self::unlock( $key, $message_lock );
 			}
@@ -195,7 +195,7 @@ class TSCB_Submission {
 	public static function handle() {
 		nocache_headers();
 		if ( ! isset( $_SERVER['REQUEST_METHOD'] ) || 'POST' !== $_SERVER['REQUEST_METHOD'] ) {
-			wp_die( esc_html__( 'Please submit the form.', 'tsambasis-contact-bridge' ), '', array( 'response' => 405 ) );
+			wp_die( esc_html__( 'Please submit the form.', 'contactbridge' ), '', array( 'response' => 405 ) );
 		}
 		// Nonce and every consumed field are validated inside process().
 		// phpcs:ignore WordPress.Security.NonceVerification.Missing, WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- Validation boundary is process(), not the untrusted request read.
