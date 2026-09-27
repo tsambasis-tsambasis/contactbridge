@@ -2,36 +2,62 @@
 # This file is distributed under the GPL-2.0-or-later.
 msgid ""
 msgstr ""
-"Project-Id-Version: ContactBridge by Tsambasis 1.0.0\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/tsambasis-contact-bridge\n"
+"Project-Id-Version: ContactBridge 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/contactbridge\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-09-26T18:15:32+00:00\n"
+"POT-Creation-Date: 2026-09-27T15:36:49+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
-"X-Domain: tsambasis-contact-bridge\n"
+"X-Domain: contactbridge\n"
 
 #. Plugin Name of the plugin
-#: tsambasis-contact-bridge.php
-msgid "ContactBridge by Tsambasis"
+#: contactbridge.php
+#: contactbridge.php:116
+#: includes/class-tscb-plugin-info.php:39
+#: includes/class-tscb-plugin-info.php:69
+#: includes/class-tscb-settings.php:72
+#: includes/class-tscb-settings.php:73
+#: includes/class-tscb-settings.php:631
+msgid "ContactBridge"
 msgstr ""
 
 #. Description of the plugin
-#: tsambasis-contact-bridge.php
+#: contactbridge.php
 msgid "Free, ad-free contact forms with email, Telegram, WhatsApp and optional protected local inquiries."
 msgstr ""
 
 #. Author of the plugin
-#: tsambasis-contact-bridge.php
+#: contactbridge.php
 msgid "Tsambasis & Tsambasis"
 msgstr ""
 
 #. Author URI of the plugin
-#: tsambasis-contact-bridge.php
+#: contactbridge.php
 msgid "https://tsambasis.net/"
+msgstr ""
+
+#: contactbridge.php:106
+msgid "Settings"
+msgstr ""
+
+#: contactbridge.php:117
+msgid "Our contact form processes the fields configured by the site operator, such as name, email, phone number, subject, message and selected options. For each enabled channel, the operator chooses full-content delivery or extended privacy. Full-content channels send the submitted details by email, Telegram or the WhatsApp Business Platform. Extended-privacy channels receive only a general notification, the website name and a link requiring an authorized WordPress administrator login; no submitted fields or visitor reply address are included."
+msgstr ""
+
+#: contactbridge.php:118
+msgid "When extended privacy is enabled for an active channel, the inquiry is stored encrypted in this website's WordPress database. Administrators can read and delete it. The default retention is 30 days; the operator can choose another period or permanent storage. Each inquiry retains the period selected when it was received. Expired inquiries are hidden and automatically deleted through scheduled cleanup; backups may retain separate copies. If all channels use full-content delivery, the plugin does not create a local inquiry archive."
+msgstr ""
+
+#: contactbridge.php:119
+msgid "To prevent abuse, the plugin temporarily stores keyed identifiers and delivery status without message content. The server processes the IP address but the plugin does not store it in plain text. The plugin adds no tracking cookies, remote fonts, advertising or analytics. Specify the actual recipients, purposes, legal bases, retention periods and any international transfers applicable to your website; enabling extended privacy does not by itself guarantee GDPR compliance."
+msgstr ""
+
+#: contactbridge.php:120
+msgid "If enabled, the email delivery log stores at most 50 events for seven days: time, transport, test or form submission, result and a safe error category. It contains no addresses, subjects, message bodies or credentials. Email is handled by the configured WordPress mail service or SMTP provider. Administrators can disable or clear this log."
 msgstr ""
 
 #: includes/class-tscb-design.php:21
@@ -672,15 +698,6 @@ msgstr ""
 
 #: includes/class-tscb-plugin-info.php:16
 msgid "More information"
-msgstr ""
-
-#: includes/class-tscb-plugin-info.php:39
-#: includes/class-tscb-plugin-info.php:69
-#: includes/class-tscb-settings.php:72
-#: includes/class-tscb-settings.php:73
-#: includes/class-tscb-settings.php:631
-#: tsambasis-contact-bridge.php:116
-msgid "ContactBridge"
 msgstr ""
 
 #. translators: %s: The plugin's translated name.
@@ -1712,24 +1729,4 @@ msgstr ""
 
 #: includes/class-tscb-transports.php:103
 msgid "The connection works. This is a test message from the WordPress settings."
-msgstr ""
-
-#: tsambasis-contact-bridge.php:106
-msgid "Settings"
-msgstr ""
-
-#: tsambasis-contact-bridge.php:117
-msgid "Our contact form processes the fields configured by the site operator, such as name, email, phone number, subject, message and selected options. For each enabled channel, the operator chooses full-content delivery or extended privacy. Full-content channels send the submitted details by email, Telegram or the WhatsApp Business Platform. Extended-privacy channels receive only a general notification, the website name and a link requiring an authorized WordPress administrator login; no submitted fields or visitor reply address are included."
-msgstr ""
-
-#: tsambasis-contact-bridge.php:118
-msgid "When extended privacy is enabled for an active channel, the inquiry is stored encrypted in this website's WordPress database. Administrators can read and delete it. The default retention is 30 days; the operator can choose another period or permanent storage. Each inquiry retains the period selected when it was received. Expired inquiries are hidden and automatically deleted through scheduled cleanup; backups may retain separate copies. If all channels use full-content delivery, the plugin does not create a local inquiry archive."
-msgstr ""
-
-#: tsambasis-contact-bridge.php:119
-msgid "To prevent abuse, the plugin temporarily stores keyed identifiers and delivery status without message content. The server processes the IP address but the plugin does not store it in plain text. The plugin adds no tracking cookies, remote fonts, advertising or analytics. Specify the actual recipients, purposes, legal bases, retention periods and any international transfers applicable to your website; enabling extended privacy does not by itself guarantee GDPR compliance."
-msgstr ""
-
-#: tsambasis-contact-bridge.php:120
-msgid "If enabled, the email delivery log stores at most 50 events for seven days: time, transport, test or form submission, result and a safe error category. It contains no addresses, subjects, message bodies or credentials. Email is handled by the configured WordPress mail service or SMTP provider. Administrators can disable or clear this log."
 msgstr ""

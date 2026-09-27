@@ -1,4 +1,4 @@
-=== ContactBridge by Tsambasis ===
+=== ContactBridge ===
 Contributors: solutionfirst
 Tags: contact form, telegram, whatsapp, email, shortcode
 Requires at least: 6.6
@@ -92,6 +92,8 @@ SMTP passwords use salt-based encryption or `TSCB_SMTP_PASSWORD`; changed salts 
 3. Configure channels, privacy and retention; save and test.
 4. Add `[contact_bridge]` to a Shortcode block.
 5. Adapt your privacy notice; test the public form and inbox.
+
+Folder migration: back up the database and WordPress keys, deactivate an earlier build and remove its folder via FTP/file manager without uninstall; then install the contactbridge/ ZIP. Do NOT use WordPress Delete on the old plugin: uninstall removes inquiries. Activate only the new build and verify saved settings/inquiries. Keep site keys unchanged. WordPress.org has assigned contactbridge; plugin review remains pending.
 
 Plugin details are local. Tsambasis & Tsambasis opens https://tsambasis.net/ when clicked.
 

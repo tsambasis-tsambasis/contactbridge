@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: ContactBridge by Tsambasis
+ * Plugin Name: ContactBridge
  * Description: Free, ad-free contact forms with email, Telegram, WhatsApp and optional protected local inquiries.
  * Version: 1.0.0
  * Requires at least: 6.6
@@ -9,7 +9,7 @@
  * Author URI: https://tsambasis.net/
  * License: GPL-2.0-or-later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain: tsambasis-contact-bridge
+ * Text Domain: contactbridge
  * Domain Path: /languages
  *
  * @package ContactBridge
@@ -103,7 +103,7 @@ register_deactivation_hook( __FILE__, 'tscb_deactivate' );
 
 /** Add direct settings and optional website information links. */
 function tscb_settings_link( $links ) {
-	array_unshift( $links, '<a href="' . esc_url( admin_url( 'options-general.php?page=tsambasis-contact-bridge' ) ) . '">' . esc_html__( 'Settings', 'tsambasis-contact-bridge' ) . '</a>' );
+	array_unshift( $links, '<a href="' . esc_url( admin_url( 'options-general.php?page=contactbridge' ) ) . '">' . esc_html__( 'Settings', 'contactbridge' ) . '</a>' );
 	$links['tscb_more_information'] = TSCB_Plugin_Info::more_link();
 	return $links;
 }
@@ -113,11 +113,11 @@ add_filter( 'network_admin_plugin_action_links_' . plugin_basename( __FILE__ ), 
 /** Explain actual data handling in the WordPress privacy policy helper. */
 function tscb_privacy_help() {
 	if ( function_exists( 'wp_add_privacy_policy_content' ) ) {
-		wp_add_privacy_policy_content( __( 'ContactBridge', 'tsambasis-contact-bridge' ), wp_kses_post(
-			'<p>' . __( 'Our contact form processes the fields configured by the site operator, such as name, email, phone number, subject, message and selected options. For each enabled channel, the operator chooses full-content delivery or extended privacy. Full-content channels send the submitted details by email, Telegram or the WhatsApp Business Platform. Extended-privacy channels receive only a general notification, the website name and a link requiring an authorized WordPress administrator login; no submitted fields or visitor reply address are included.', 'tsambasis-contact-bridge' ) . '</p>' .
-			'<p>' . __( 'When extended privacy is enabled for an active channel, the inquiry is stored encrypted in this website\'s WordPress database. Administrators can read and delete it. The default retention is 30 days; the operator can choose another period or permanent storage. Each inquiry retains the period selected when it was received. Expired inquiries are hidden and automatically deleted through scheduled cleanup; backups may retain separate copies. If all channels use full-content delivery, the plugin does not create a local inquiry archive.', 'tsambasis-contact-bridge' ) . '</p>' .
-			'<p>' . __( 'To prevent abuse, the plugin temporarily stores keyed identifiers and delivery status without message content. The server processes the IP address but the plugin does not store it in plain text. The plugin adds no tracking cookies, remote fonts, advertising or analytics. Specify the actual recipients, purposes, legal bases, retention periods and any international transfers applicable to your website; enabling extended privacy does not by itself guarantee GDPR compliance.', 'tsambasis-contact-bridge' ) . '</p>' .
-			'<p>' . __( 'If enabled, the email delivery log stores at most 50 events for seven days: time, transport, test or form submission, result and a safe error category. It contains no addresses, subjects, message bodies or credentials. Email is handled by the configured WordPress mail service or SMTP provider. Administrators can disable or clear this log.', 'tsambasis-contact-bridge' ) . '</p>'
+		wp_add_privacy_policy_content( __( 'ContactBridge', 'contactbridge' ), wp_kses_post(
+			'<p>' . __( 'Our contact form processes the fields configured by the site operator, such as name, email, phone number, subject, message and selected options. For each enabled channel, the operator chooses full-content delivery or extended privacy. Full-content channels send the submitted details by email, Telegram or the WhatsApp Business Platform. Extended-privacy channels receive only a general notification, the website name and a link requiring an authorized WordPress administrator login; no submitted fields or visitor reply address are included.', 'contactbridge' ) . '</p>' .
+			'<p>' . __( 'When extended privacy is enabled for an active channel, the inquiry is stored encrypted in this website\'s WordPress database. Administrators can read and delete it. The default retention is 30 days; the operator can choose another period or permanent storage. Each inquiry retains the period selected when it was received. Expired inquiries are hidden and automatically deleted through scheduled cleanup; backups may retain separate copies. If all channels use full-content delivery, the plugin does not create a local inquiry archive.', 'contactbridge' ) . '</p>' .
+			'<p>' . __( 'To prevent abuse, the plugin temporarily stores keyed identifiers and delivery status without message content. The server processes the IP address but the plugin does not store it in plain text. The plugin adds no tracking cookies, remote fonts, advertising or analytics. Specify the actual recipients, purposes, legal bases, retention periods and any international transfers applicable to your website; enabling extended privacy does not by itself guarantee GDPR compliance.', 'contactbridge' ) . '</p>' .
+			'<p>' . __( 'If enabled, the email delivery log stores at most 50 events for seven days: time, transport, test or form submission, result and a safe error category. It contains no addresses, subjects, message bodies or credentials. Email is handled by the configured WordPress mail service or SMTP provider. Administrators can disable or clear this log.', 'contactbridge' ) . '</p>'
 		) );
 	}
 }

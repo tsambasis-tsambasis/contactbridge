@@ -2,113 +2,139 @@
 # This file is distributed under the GPL-2.0-or-later.
 msgid ""
 msgstr ""
-"Project-Id-Version: ContactBridge by Tsambasis 1.0.0\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/tsambasis-contact-bridge\n"
-"POT-Creation-Date: 2026-09-26 18:15+0000\n"
-"PO-Revision-Date: 2026-09-26 18:15+0000\n"
+"Project-Id-Version: ContactBridge 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/contactbridge\n"
+"POT-Creation-Date: 2026-09-27 15:36+0000\n"
+"PO-Revision-Date: 2026-09-27 15:36+0000\n"
 "Last-Translator: Tsambasis & Tsambasis\n"
-"Language-Team: German\n"
-"Language: de_DE\n"
+"Language-Team: English\n"
+"Language: en_US\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: ContactBridge catalog builder / WP-CLI\n"
-"X-Domain: tsambasis-contact-bridge\n"
+"X-Domain: contactbridge\n"
 
 #. Plugin Name of the plugin
-#: tsambasis-contact-bridge.php
-msgid "ContactBridge by Tsambasis"
-msgstr "ContactBridge von Tsambasis"
+#: contactbridge.php
+#: contactbridge.php:116
+#: includes/class-tscb-plugin-info.php:39
+#: includes/class-tscb-plugin-info.php:69
+#: includes/class-tscb-settings.php:72
+#: includes/class-tscb-settings.php:73
+#: includes/class-tscb-settings.php:631
+msgid "ContactBridge"
+msgstr "ContactBridge"
 
 #. Description of the plugin
-#: tsambasis-contact-bridge.php
+#: contactbridge.php
 msgid "Free, ad-free contact forms with email, Telegram, WhatsApp and optional protected local inquiries."
-msgstr "Kostenloses, werbefreies Kontaktformular mit E-Mail, Telegram, WhatsApp und optionalem geschützten Anfrage-Eingang."
+msgstr "Free, ad-free contact forms with email, Telegram, WhatsApp and optional protected local inquiries."
 
 #. Author of the plugin
-#: tsambasis-contact-bridge.php
+#: contactbridge.php
 msgid "Tsambasis & Tsambasis"
 msgstr "Tsambasis & Tsambasis"
 
 #. Author URI of the plugin
-#: tsambasis-contact-bridge.php
+#: contactbridge.php
 msgid "https://tsambasis.net/"
 msgstr "https://tsambasis.net/"
+
+#: contactbridge.php:106
+msgid "Settings"
+msgstr "Settings"
+
+#: contactbridge.php:117
+msgid "Our contact form processes the fields configured by the site operator, such as name, email, phone number, subject, message and selected options. For each enabled channel, the operator chooses full-content delivery or extended privacy. Full-content channels send the submitted details by email, Telegram or the WhatsApp Business Platform. Extended-privacy channels receive only a general notification, the website name and a link requiring an authorized WordPress administrator login; no submitted fields or visitor reply address are included."
+msgstr "Our contact form processes the fields configured by the site operator, such as name, email, phone number, subject, message and selected options. For each enabled channel, the operator chooses full-content delivery or extended privacy. Full-content channels send the submitted details by email, Telegram or the WhatsApp Business Platform. Extended-privacy channels receive only a general notification, the website name and a link requiring an authorized WordPress administrator login; no submitted fields or visitor reply address are included."
+
+#: contactbridge.php:118
+msgid "When extended privacy is enabled for an active channel, the inquiry is stored encrypted in this website's WordPress database. Administrators can read and delete it. The default retention is 30 days; the operator can choose another period or permanent storage. Each inquiry retains the period selected when it was received. Expired inquiries are hidden and automatically deleted through scheduled cleanup; backups may retain separate copies. If all channels use full-content delivery, the plugin does not create a local inquiry archive."
+msgstr "When extended privacy is enabled for an active channel, the inquiry is stored encrypted in this website's WordPress database. Administrators can read and delete it. The default retention is 30 days; the operator can choose another period or permanent storage. Each inquiry retains the period selected when it was received. Expired inquiries are hidden and automatically deleted through scheduled cleanup; backups may retain separate copies. If all channels use full-content delivery, the plugin does not create a local inquiry archive."
+
+#: contactbridge.php:119
+msgid "To prevent abuse, the plugin temporarily stores keyed identifiers and delivery status without message content. The server processes the IP address but the plugin does not store it in plain text. The plugin adds no tracking cookies, remote fonts, advertising or analytics. Specify the actual recipients, purposes, legal bases, retention periods and any international transfers applicable to your website; enabling extended privacy does not by itself guarantee GDPR compliance."
+msgstr "To prevent abuse, the plugin temporarily stores keyed identifiers and delivery status without message content. The server processes the IP address but the plugin does not store it in plain text. The plugin adds no tracking cookies, remote fonts, advertising or analytics. Specify the actual recipients, purposes, legal bases, retention periods and any international transfers applicable to your website; enabling extended privacy does not by itself guarantee GDPR compliance."
+
+#: contactbridge.php:120
+msgid "If enabled, the email delivery log stores at most 50 events for seven days: time, transport, test or form submission, result and a safe error category. It contains no addresses, subjects, message bodies or credentials. Email is handled by the configured WordPress mail service or SMTP provider. Administrators can disable or clear this log."
+msgstr "If enabled, the email delivery log stores at most 50 events for seven days: time, transport, test or form submission, result and a safe error category. It contains no addresses, subjects, message bodies or credentials. Email is handled by the configured WordPress mail service or SMTP provider. Administrators can disable or clear this log."
 
 #: includes/class-tscb-design.php:21
 #: includes/class-tscb-settings.php:48
 msgid "Let's get in touch."
-msgstr "Lassen Sie uns sprechen."
+msgstr "Let's get in touch."
 
 #: includes/class-tscb-design.php:22
 #: includes/class-tscb-settings.php:49
 msgid "Send us a message. We look forward to hearing from you."
-msgstr "Schreiben Sie uns. Wir freuen uns auf Ihre Nachricht."
+msgstr "Send us a message. We look forward to hearing from you."
 
 #: includes/class-tscb-design.php:23
 msgid "Get in touch"
-msgstr "Direkter Kontakt"
+msgstr "Get in touch"
 
 #: includes/class-tscb-design.php:24
 #: includes/class-tscb-settings.php:50
 msgid "Send message"
-msgstr "Nachricht senden"
+msgstr "Send message"
 
 #: includes/class-tscb-design.php:25
 #: includes/class-tscb-settings.php:51
 msgid "Thank you! Your inquiry has been received."
-msgstr "Vielen Dank! Ihre Anfrage ist eingegangen."
+msgstr "Thank you! Your inquiry has been received."
 
 #: includes/class-tscb-design.php:26
 msgid "Your name"
-msgstr "Ihr Name"
+msgstr "Your name"
 
 #: includes/class-tscb-design.php:27
 msgid "Your email address"
-msgstr "Ihre E-Mail-Adresse"
+msgstr "Your email address"
 
 #: includes/class-tscb-design.php:28
 msgid "What is it about?"
-msgstr "Worum geht es?"
+msgstr "What is it about?"
 
 #: includes/class-tscb-design.php:29
 msgid "Your message"
-msgstr "Ihre Nachricht"
+msgstr "Your message"
 
 #: includes/class-tscb-design.php:34
 msgid "Fields marked with * are required."
-msgstr "Mit * gekennzeichnete Felder sind Pflichtfelder."
+msgstr "Fields marked with * are required."
 
 #. translators: Keep {max}; it is replaced with the maximum allowed character count.
 #: includes/class-tscb-design.php:36
 msgid "Maximum {max} characters. Please do not send sensitive information."
-msgstr "Maximal {max} Zeichen. Bitte senden Sie keine sensiblen Daten."
+msgstr "Maximum {max} characters. Please do not send sensitive information."
 
 #. translators: Keep {privacy_link}; it is replaced with the configured privacy notice link.
 #: includes/class-tscb-design.php:38
 msgid "I have read the {privacy_link} and agree to my information being processed to respond to my inquiry."
-msgstr "Ich habe die {privacy_link} gelesen und stimme der Verarbeitung meiner Angaben zur Bearbeitung meiner Anfrage zu."
+msgstr "I have read the {privacy_link} and agree to my information being processed to respond to my inquiry."
 
 #: includes/class-tscb-design.php:39
 msgid "privacy notice"
-msgstr "Datenschutzhinweise"
+msgstr "privacy notice"
 
 #: includes/class-tscb-design.php:71
 msgid "Forest"
-msgstr "Natur"
+msgstr "Forest"
 
 #: includes/class-tscb-design.php:71
 msgid "Light, soft, and welcoming."
-msgstr "Hell, weich und freundlich."
+msgstr "Light, soft, and welcoming."
 
 #: includes/class-tscb-design.php:72
 msgid "Midnight"
-msgstr "Nacht"
+msgstr "Midnight"
 
 #: includes/class-tscb-design.php:72
 msgid "Dark with a fresh accent."
-msgstr "Dunkel mit einem frischen Akzent."
+msgstr "Dark with a fresh accent."
 
 #: includes/class-tscb-design.php:73
 msgid "Studio"
@@ -116,23 +142,23 @@ msgstr "Studio"
 
 #: includes/class-tscb-design.php:73
 msgid "Clean edges and bold blue."
-msgstr "Klare Kanten, kräftiges Blau."
+msgstr "Clean edges and bold blue."
 
 #: includes/class-tscb-design.php:74
 msgid "Minimal"
-msgstr "Pur"
+msgstr "Minimal"
 
 #: includes/class-tscb-design.php:74
 msgid "Compact, single-column, and minimal."
-msgstr "Kompakt, einspaltig und reduziert."
+msgstr "Compact, single-column, and minimal."
 
 #: includes/class-tscb-design.php:173
 msgid "Form preview"
-msgstr "Formularvorschau"
+msgstr "Form preview"
 
 #: includes/class-tscb-design.php:182
 msgid "You do not have permission to view the preview."
-msgstr "Keine Berechtigung für die Vorschau."
+msgstr "You do not have permission to view the preview."
 
 #: includes/class-tscb-fields.php:9
 #: includes/class-tscb-settings.php:580
@@ -145,19 +171,19 @@ msgstr "Text"
 #: includes/class-tscb-settings.php:625
 #: includes/class-tscb-settings.php:666
 msgid "Email"
-msgstr "E-Mail"
+msgstr "Email"
 
 #: includes/class-tscb-fields.php:9
 msgid "Phone"
-msgstr "Telefon"
+msgstr "Phone"
 
 #: includes/class-tscb-fields.php:9
 msgid "Message"
-msgstr "Nachricht"
+msgstr "Message"
 
 #: includes/class-tscb-fields.php:9
 msgid "Selection"
-msgstr "Auswahl"
+msgstr "Selection"
 
 #: includes/class-tscb-fields.php:9
 msgid "Checkbox"
@@ -165,151 +191,151 @@ msgstr "Checkbox"
 
 #: includes/class-tscb-fields.php:52
 msgid "Please check the form fields. Use 1 to 20 fields with unique IDs and supported types; selections need 1 to 20 choices."
-msgstr "Bitte prüfen Sie die Formularfelder. Verwenden Sie 1 bis 20 Felder mit eindeutigen Kennungen und unterstützten Typen; Auswahlfelder benötigen 1 bis 20 Auswahlwerte."
+msgstr "Please check the form fields. Use 1 to 20 fields with unique IDs and supported types; selections need 1 to 20 choices."
 
 #: includes/class-tscb-fields.php:111
 msgid "WhatsApp: all field labels and answers together must fit within 500 characters. Longer entries are rejected without being shortened."
-msgstr "WhatsApp: Alle Feldbeschriftungen und Antworten zusammen dürfen höchstens 500 Zeichen enthalten. Längere Eingaben werden abgewiesen und nicht gekürzt."
+msgstr "WhatsApp: all field labels and answers together must fit within 500 characters. Longer entries are rejected without being shortened."
 
 #: includes/class-tscb-fields.php:112
 msgid "Telegram: the complete notification must fit within 4,000 text units; emoji may count twice. Longer entries are rejected without being shortened."
-msgstr "Telegram: Die vollständige Benachrichtigung darf höchstens 4.000 Texteinheiten enthalten; Emojis können doppelt zählen. Längere Eingaben werden abgewiesen und nicht gekürzt."
+msgstr "Telegram: the complete notification must fit within 4,000 text units; emoji may count twice. Longer entries are rejected without being shortened."
 
 #: includes/class-tscb-fields.php:126
 #: includes/class-tscb-transports.php:49
 msgid "Contact form: "
-msgstr "Kontaktformular: "
+msgstr "Contact form: "
 
 #: includes/class-tscb-fields.php:140
 #: includes/class-tscb-form.php:121
 msgid "The contact form is currently unavailable. Please use another way to get in touch."
-msgstr "Das Kontaktformular ist momentan nicht verfügbar. Bitte nutzen Sie eine andere Kontaktmöglichkeit."
+msgstr "The contact form is currently unavailable. Please use another way to get in touch."
 
 #: includes/class-tscb-fields.php:141
 msgid "This form has changed. Reload the page before sending your message."
-msgstr "Dieses Formular wurde geändert. Laden Sie die Seite vor dem Absenden neu."
+msgstr "This form has changed. Reload the page before sending your message."
 
 #: includes/class-tscb-fields.php:149
 msgid "The entry is too long or contains invalid characters."
-msgstr "Die Eingabe ist zu lang oder enthält ungültige Zeichen."
+msgstr "The entry is too long or contains invalid characters."
 
 #: includes/class-tscb-fields.php:153
 msgid "Please confirm this checkbox."
-msgstr "Bitte bestätigen Sie diese Checkbox."
+msgstr "Please confirm this checkbox."
 
 #: includes/class-tscb-fields.php:155
 msgid "Yes"
-msgstr "Ja"
+msgstr "Yes"
 
 #: includes/class-tscb-fields.php:155
 msgid "No"
-msgstr "Nein"
+msgstr "No"
 
 #. translators: %d: maximum permitted character count.
 #: includes/class-tscb-fields.php:159
 #, php-format
 msgid "Please complete this field using no more than %d characters."
-msgstr "Bitte dieses Feld mit höchstens %d Zeichen ausfüllen."
+msgstr "Please complete this field using no more than %d characters."
 
 #: includes/class-tscb-fields.php:163
 msgid "Please enter a valid email address."
-msgstr "Bitte eine gültige E-Mail-Adresse eingeben."
+msgstr "Please enter a valid email address."
 
 #: includes/class-tscb-fields.php:164
 msgid "Please enter a valid phone number."
-msgstr "Bitte geben Sie eine gültige Telefonnummer ein."
+msgstr "Please enter a valid phone number."
 
 #: includes/class-tscb-fields.php:166
 msgid "Please choose one of the available options."
-msgstr "Bitte wählen Sie einen der angebotenen Werte aus."
+msgstr "Please choose one of the available options."
 
 #: includes/class-tscb-fields.php:172
 #: includes/class-tscb-submission.php:64
 msgid "Please check the highlighted details."
-msgstr "Bitte die markierten Angaben überprüfen."
+msgstr "Please check the highlighted details."
 
 #: includes/class-tscb-fields.php:173
 msgid "Please complete at least one form field."
-msgstr "Bitte füllen Sie mindestens ein Formularfeld aus."
+msgstr "Please complete at least one form field."
 
 #: includes/class-tscb-fields.php:174
 #: includes/class-tscb-inbox.php:199
 msgid "Contact inquiry"
-msgstr "Kontaktanfrage"
+msgstr "Contact inquiry"
 
 #: includes/class-tscb-fields.php:176
 msgid "Your answers are too long in total. Please shorten them and try again."
-msgstr "Ihre Antworten sind insgesamt zu lang. Bitte kürzen Sie sie und versuchen Sie es erneut."
+msgstr "Your answers are too long in total. Please shorten them and try again."
 
 #: includes/class-tscb-fields.php:177
 msgid "Your answers are too long for WhatsApp. All labels and answers together may contain at most 500 characters; please shorten your entries."
-msgstr "Ihre Antworten sind für WhatsApp zu lang. Alle Beschriftungen und Antworten zusammen dürfen höchstens 500 Zeichen enthalten; bitte kürzen Sie Ihre Eingaben."
+msgstr "Your answers are too long for WhatsApp. All labels and answers together may contain at most 500 characters; please shorten your entries."
 
 #: includes/class-tscb-fields.php:180
 msgid "Your answers are too long for Telegram. Please shorten them; emoji may count as two text units."
-msgstr "Ihre Antworten sind für Telegram zu lang. Bitte kürzen Sie sie; Emojis können als zwei Texteinheiten zählen."
+msgstr "Your answers are too long for Telegram. Please shorten them; emoji may count as two text units."
 
 #: includes/class-tscb-form.php:116
 msgid "Please check your details and complete all required fields."
-msgstr "Bitte prüfen Sie Ihre Angaben und füllen Sie alle Pflichtfelder aus."
+msgstr "Please check your details and complete all required fields."
 
 #: includes/class-tscb-form.php:117
 msgid "Your session has expired. Reload the page and send your message again."
-msgstr "Die Sitzung ist abgelaufen. Laden Sie die Seite neu und senden Sie Ihre Nachricht erneut."
+msgstr "Your session has expired. Reload the page and send your message again."
 
 #: includes/class-tscb-form.php:118
 msgid "Your message could not be sent. Please wait a moment and try again."
-msgstr "Die Nachricht konnte nicht gesendet werden. Bitte warten Sie einen Moment und versuchen Sie es erneut."
+msgstr "Your message could not be sent. Please wait a moment and try again."
 
 #: includes/class-tscb-form.php:119
 msgid "You have sent several messages in a short time. Please try again later."
-msgstr "Sie haben in kurzer Zeit mehrere Nachrichten gesendet. Bitte versuchen Sie es später erneut."
+msgstr "You have sent several messages in a short time. Please try again later."
 
 #: includes/class-tscb-form.php:120
 msgid "Your message could not be sent. Please try again later."
-msgstr "Ihre Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es später erneut."
+msgstr "Your message could not be sent. Please try again later."
 
 #: includes/class-tscb-form.php:169
 msgid "Send us a message."
-msgstr "Schreiben Sie uns."
+msgstr "Send us a message."
 
 #: includes/class-tscb-form.php:177
 msgid "Sending …"
-msgstr "Wird gesendet …"
+msgstr "Sending …"
 
 #: includes/class-tscb-form.php:177
 msgid "We could not confirm that your message was sent. Please try again later."
-msgstr "Das Senden konnte nicht bestätigt werden. Bitte versuchen Sie es später erneut."
+msgstr "We could not confirm that your message was sent. Please try again later."
 
 #: includes/class-tscb-form.php:177
 msgid "Please check the highlighted fields."
-msgstr "Bitte prüfen Sie die markierten Felder."
+msgstr "Please check the highlighted fields."
 
 #: includes/class-tscb-form.php:185
 msgid "Please leave this field empty."
-msgstr "Dieses Feld bitte leer lassen."
+msgstr "Please leave this field empty."
 
 #: includes/class-tscb-form.php:219
 msgid "This page will reload after you submit the form. Your confirmation will then appear next to the form."
-msgstr "Nach dem Senden wird diese Seite neu geladen. Ihre Bestätigung erscheint anschließend am Formular."
+msgstr "This page will reload after you submit the form. Your confirmation will then appear next to the form."
 
 #: includes/class-tscb-form.php:263
 msgid "Please choose an option."
-msgstr "Bitte wählen Sie eine Option aus."
+msgstr "Please choose an option."
 
 #: includes/class-tscb-form.php:276
 msgid "Please check this field."
-msgstr "Bitte prüfen Sie dieses Feld."
+msgstr "Please check this field."
 
 #: includes/class-tscb-form.php:283
 msgid "(required)"
-msgstr "(Pflichtfeld)"
+msgstr "(required)"
 
 #. translators: %s: configured privacy link text.
 #: includes/class-tscb-form.php:324
 #, php-format
 msgid "%s (opens in a new tab)"
-msgstr "%s (öffnet in einem neuen Tab)"
+msgstr "%s (opens in a new tab)"
 
 #: includes/class-tscb-inbox.php:19
 #: includes/class-tscb-inbox.php:152
@@ -318,162 +344,162 @@ msgstr "%s (öffnet in einem neuen Tab)"
 #: includes/class-tscb-inbox.php:210
 #: includes/class-tscb-inbox.php:246
 msgid "Contact inquiries"
-msgstr "Kontaktanfragen"
+msgstr "Contact inquiries"
 
 #: includes/class-tscb-inbox.php:35
 msgid "The inquiry could not be stored securely. Please try again later."
-msgstr "Die Anfrage konnte nicht sicher gespeichert werden. Bitte versuchen Sie es später erneut."
+msgstr "The inquiry could not be stored securely. Please try again later."
 
 #: includes/class-tscb-inbox.php:36
 msgid "You do not have permission to view or delete inquiries."
-msgstr "Sie haben keine Berechtigung, Anfragen anzusehen oder zu löschen."
+msgstr "You do not have permission to view or delete inquiries."
 
 #: includes/class-tscb-inbox.php:37
 msgid "This inquiry is unavailable or its retention period has ended."
-msgstr "Diese Anfrage ist nicht verfügbar oder ihre Aufbewahrungsfrist ist abgelaufen."
+msgstr "This inquiry is unavailable or its retention period has ended."
 
 #: includes/class-tscb-inbox.php:38
 msgid "This inquiry could not be decrypted. The WordPress security keys may have changed."
-msgstr "Diese Anfrage konnte nicht entschlüsselt werden. Möglicherweise wurden die Sicherheitsschlüssel von WordPress geändert."
+msgstr "This inquiry could not be decrypted. The WordPress security keys may have changed."
 
 #: includes/class-tscb-inbox.php:39
 msgid "The inquiry privacy task expired or its page order changed. Please restart the export or erasure request."
-msgstr "Der Datenschutzvorgang für Anfragen ist abgelaufen oder seine Seitenreihenfolge hat sich geändert. Bitte starten Sie den Export- oder Löschauftrag neu."
+msgstr "The inquiry privacy task expired or its page order changed. Please restart the export or erasure request."
 
 #: includes/class-tscb-inbox.php:40
 msgid "This server cannot represent the selected retention period. Choose fewer days or unlimited retention."
-msgstr "Dieser Server kann die gewählte Aufbewahrungsfrist nicht abbilden. Wählen Sie weniger Tage oder eine unbegrenzte Aufbewahrung."
+msgstr "This server cannot represent the selected retention period. Choose fewer days or unlimited retention."
 
 #: includes/class-tscb-inbox.php:156
 #: includes/class-tscb-mail-admin.php:23
 #: includes/class-tscb-submission.php:198
 #: includes/class-tscb-transports.php:123
 msgid "Please submit the form."
-msgstr "Bitte senden Sie das Formular ab."
+msgstr "Please submit the form."
 
 #: includes/class-tscb-inbox.php:165
 msgid "Permanently delete inquiry"
-msgstr "Anfrage endgültig löschen"
+msgstr "Permanently delete inquiry"
 
 #: includes/class-tscb-inbox.php:178
 msgid "Messages are encrypted in your WordPress database and are visible only to administrators. Expired inquiries are automatically deleted. Unrestricted retention keeps inquiries until you delete them."
-msgstr "Nachrichten werden verschlüsselt in Ihrer WordPress-Datenbank gespeichert und sind nur für Administratoren sichtbar. Abgelaufene Anfragen werden automatisch gelöscht. Bei unbegrenzter Aufbewahrung bleiben Anfragen erhalten, bis Sie sie löschen."
+msgstr "Messages are encrypted in your WordPress database and are visible only to administrators. Expired inquiries are automatically deleted. Unrestricted retention keeps inquiries until you delete them."
 
 #: includes/class-tscb-inbox.php:181
 msgid "Back to all inquiries"
-msgstr "Zurück zu allen Anfragen"
+msgstr "Back to all inquiries"
 
 #: includes/class-tscb-inbox.php:184
 #: includes/class-tscb-inbox.php:195
 #: includes/class-tscb-inbox.php:244
 msgid "Received"
-msgstr "Eingegangen"
+msgstr "Received"
 
 #: includes/class-tscb-inbox.php:184
 #: includes/class-tscb-inbox.php:195
 #: includes/class-tscb-inbox.php:244
 msgid "Automatic deletion"
-msgstr "Automatische Löschung"
+msgstr "Automatic deletion"
 
 #: includes/class-tscb-inbox.php:184
 #: includes/class-tscb-inbox.php:199
 #: includes/class-tscb-inbox.php:244
 msgid "No time limit"
-msgstr "Unbegrenzt"
+msgstr "No time limit"
 
 #: includes/class-tscb-inbox.php:186
 msgid "Deleting an inquiry is permanent."
-msgstr "Das Löschen einer Anfrage ist endgültig."
+msgstr "Deleting an inquiry is permanent."
 
 #: includes/class-tscb-inbox.php:193
 msgid "No inquiries are currently stored."
-msgstr "Derzeit sind keine Anfragen gespeichert."
+msgstr "No inquiries are currently stored."
 
 #: includes/class-tscb-inbox.php:195
 msgid "Subject"
-msgstr "Betreff"
+msgstr "Subject"
 
 #: includes/class-tscb-inbox.php:195
 msgid "Actions"
-msgstr "Aktionen"
+msgstr "Actions"
 
 #: includes/class-tscb-inbox.php:199
 msgid "Encrypted inquiry"
-msgstr "Verschlüsselte Anfrage"
+msgstr "Encrypted inquiry"
 
 #: includes/class-tscb-inbox.php:262
 msgid "Some inquiries could not be decrypted or deleted, so their personal data could not be fully checked. Please ask the site administrator to review them."
-msgstr "Einige Anfragen konnten nicht entschlüsselt oder gelöscht werden. Die enthaltenen personenbezogenen Daten konnten deshalb nicht vollständig geprüft werden. Bitten Sie den Website-Administrator, diese Anfragen zu überprüfen."
+msgstr "Some inquiries could not be decrypted or deleted, so their personal data could not be fully checked. Please ask the site administrator to review them."
 
 #: includes/class-tscb-mail-admin.php:20
 #: includes/class-tscb-transports.php:95
 #: includes/class-tscb-transports.php:154
 msgid "You do not have permission to do this."
-msgstr "Keine Berechtigung."
+msgstr "You do not have permission to do this."
 
 #: includes/class-tscb-mail-admin.php:63
 msgid "Email delivery method"
-msgstr "E-Mail-Versandmethode"
+msgstr "Email delivery method"
 
 #: includes/class-tscb-mail-admin.php:65
 msgid "WordPress mail (default)"
-msgstr "WordPress-Mailversand (Standard)"
+msgstr "WordPress mail (default)"
 
 #: includes/class-tscb-mail-admin.php:66
 msgid "Custom SMTP for this plugin"
-msgstr "Eigener SMTP-Versand für dieses Plugin"
+msgstr "Custom SMTP for this plugin"
 
 #: includes/class-tscb-mail-admin.php:68
 msgid "WordPress mail uses your website's current email setup, including an existing SMTP plugin. Custom SMTP applies only to emails sent by this plugin."
-msgstr "Der WordPress-Mailversand verwendet die vorhandene E-Mail-Einrichtung Ihrer Website, einschließlich eines bestehenden SMTP-Plugins. Eigener SMTP-Versand gilt nur für E-Mails dieses Plugins."
+msgstr "WordPress mail uses your website's current email setup, including an existing SMTP plugin. Custom SMTP applies only to emails sent by this plugin."
 
 #: includes/class-tscb-mail-admin.php:71
 msgid "Sender email address"
-msgstr "Absender-E-Mail-Adresse"
+msgstr "Sender email address"
 
 #: includes/class-tscb-mail-admin.php:71
 msgid "Use a valid mailbox approved by your mail provider. Required for custom SMTP. Leave blank with WordPress mail to use its existing sender; the default may be wordpress@your-domain."
-msgstr "Verwenden Sie ein gültiges, von Ihrem Mailanbieter zugelassenes Postfach. Für eigenen SMTP-Versand erforderlich. Beim WordPress-Mailversand können Sie das Feld leer lassen, um den vorhandenen Absender zu verwenden; der Standard kann wordpress@ihre-domain sein."
+msgstr "Use a valid mailbox approved by your mail provider. Required for custom SMTP. Leave blank with WordPress mail to use its existing sender; the default may be wordpress@your-domain."
 
 #: includes/class-tscb-mail-admin.php:72
 msgid "Sender name"
-msgstr "Absendername"
+msgstr "Sender name"
 
 #: includes/class-tscb-mail-admin.php:72
 msgid "The name recipients see next to the sender address. Leave blank to use the existing default."
-msgstr "Dieser Name erscheint beim Empfänger neben der Absenderadresse. Leer lassen, um den vorhandenen Standard zu verwenden."
+msgstr "The name recipients see next to the sender address. Leave blank to use the existing default."
 
 #: includes/class-tscb-mail-admin.php:75
 msgid "SMTP connection settings"
-msgstr "SMTP-Verbindungseinstellungen"
+msgstr "SMTP connection settings"
 
 #: includes/class-tscb-mail-admin.php:76
 msgid "Enter the outgoing mail settings supplied by your mail provider. These settings are used only when Custom SMTP is selected. Saving settings does not send a test message."
-msgstr "Tragen Sie die Einstellungen für den Postausgang Ihres Mailanbieters ein. Sie werden nur verwendet, wenn eigener SMTP-Versand ausgewählt ist. Das Speichern versendet keine Testnachricht."
+msgstr "Enter the outgoing mail settings supplied by your mail provider. These settings are used only when Custom SMTP is selected. Saving settings does not send a test message."
 
 #: includes/class-tscb-mail-admin.php:77
 msgid "Custom SMTP supports a username and password or an app password. If your provider requires OAuth, choose WordPress mail and use a compatible mail plugin."
-msgstr "Eigener SMTP-Versand unterstützt Benutzername und Passwort oder ein App-Passwort. Verlangt Ihr Anbieter OAuth, wählen Sie den WordPress-Mailversand und verwenden Sie ein kompatibles Mail-Plugin."
+msgstr "Custom SMTP supports a username and password or an app password. If your provider requires OAuth, choose WordPress mail and use a compatible mail plugin."
 
 #: includes/class-tscb-mail-admin.php:79
 msgid "SMTP server"
-msgstr "SMTP-Server"
+msgstr "SMTP server"
 
 #: includes/class-tscb-mail-admin.php:79
 msgid "Server hostname only, for example smtp.example.com. Do not include a protocol, port, or path."
-msgstr "Nur den Server-Hostnamen eintragen, zum Beispiel smtp.example.com. Kein Protokoll, keinen Port und keinen Pfad angeben."
+msgstr "Server hostname only, for example smtp.example.com. Do not include a protocol, port, or path."
 
 #: includes/class-tscb-mail-admin.php:80
 msgid "SMTP port"
-msgstr "SMTP-Port"
+msgstr "SMTP port"
 
 #: includes/class-tscb-mail-admin.php:80
 msgid "Use the port specified by your provider. STARTTLS commonly uses 587; TLS/SSL commonly uses 465."
-msgstr "Verwenden Sie den von Ihrem Anbieter angegebenen Port. STARTTLS verwendet häufig 587, TLS/SSL häufig 465."
+msgstr "Use the port specified by your provider. STARTTLS commonly uses 587; TLS/SSL commonly uses 465."
 
 #: includes/class-tscb-mail-admin.php:83
 msgid "Connection encryption"
-msgstr "Verbindungsverschlüsselung"
+msgstr "Connection encryption"
 
 #: includes/class-tscb-mail-admin.php:85
 msgid "STARTTLS"
@@ -485,343 +511,334 @@ msgstr "TLS/SSL"
 
 #: includes/class-tscb-mail-admin.php:88
 msgid "Choose the encryption mode required by your provider. Unencrypted SMTP is not offered."
-msgstr "Wählen Sie die von Ihrem Anbieter erforderliche Verschlüsselung. Unverschlüsselter SMTP-Versand wird nicht angeboten."
+msgstr "Choose the encryption mode required by your provider. Unencrypted SMTP is not offered."
 
 #: includes/class-tscb-mail-admin.php:90
 msgid "SMTP server requires authentication"
-msgstr "SMTP-Server erfordert Anmeldung"
+msgstr "SMTP server requires authentication"
 
 #: includes/class-tscb-mail-admin.php:91
 msgid "SMTP username"
-msgstr "SMTP-Benutzername"
+msgstr "SMTP username"
 
 #: includes/class-tscb-mail-admin.php:91
 msgid "Often your full mailbox address. Use the login name supplied by your provider."
-msgstr "Häufig ist dies Ihre vollständige Postfachadresse. Verwenden Sie den von Ihrem Anbieter angegebenen Anmeldenamen."
+msgstr "Often your full mailbox address. Use the login name supplied by your provider."
 
 #: includes/class-tscb-mail-admin.php:94
 #: includes/class-tscb-mail-admin.php:97
 msgid "SMTP password"
-msgstr "SMTP-Passwort"
+msgstr "SMTP password"
 
 #: includes/class-tscb-mail-admin.php:95
 msgid "Configured in wp-config.php. Change the password there."
-msgstr "In wp-config.php hinterlegt. Ändern Sie das Passwort dort."
+msgstr "Configured in wp-config.php. Change the password there."
 
 #: includes/class-tscb-mail-admin.php:99
 msgid "No SMTP password saved yet."
-msgstr "Noch kein SMTP-Passwort gespeichert."
+msgstr "No SMTP password saved yet."
 
 #: includes/class-tscb-mail-admin.php:99
 msgid "SMTP password saved. Leave this field blank to keep it."
-msgstr "SMTP-Passwort gespeichert. Lassen Sie das Feld leer, um es beizubehalten."
+msgstr "SMTP password saved. Leave this field blank to keep it."
 
 #: includes/class-tscb-mail-admin.php:101
 msgid "Delete the stored SMTP password when saving"
-msgstr "Gespeichertes SMTP-Passwort beim Speichern löschen"
+msgstr "Delete the stored SMTP password when saving"
 
 #: includes/class-tscb-mail-admin.php:104
 msgid "SMTP passwords saved in the plugin settings are encrypted using WordPress site keys. If those keys change, enter the password again."
-msgstr "In den Plugin-Einstellungen gespeicherte SMTP-Passwörter werden mit den Website-Schlüsseln von WordPress verschlüsselt. Wenn sich diese Schlüssel ändern, geben Sie das Passwort erneut ein."
+msgstr "SMTP passwords saved in the plugin settings are encrypted using WordPress site keys. If those keys change, enter the password again."
 
 #: includes/class-tscb-mail-admin.php:107
 msgid "Keep an email diagnostic log"
-msgstr "E-Mail-Diagnoseprotokoll führen"
+msgstr "Keep an email diagnostic log"
 
 #: includes/class-tscb-mail-admin.php:108
 msgid "Optional: keep up to 50 delivery status records for seven days. No message content, email addresses, or credentials are recorded. Turning logging off removes the existing log."
-msgstr "Optional: Bis zu 50 Versandstatus-Einträge sieben Tage lang aufbewahren. Nachrichteninhalte, E-Mail-Adressen und Zugangsdaten werden nicht protokolliert. Beim Ausschalten wird das vorhandene Protokoll gelöscht."
+msgstr "Optional: keep up to 50 delivery status records for seven days. No message content, email addresses, or credentials are recorded. Turning logging off removes the existing log."
 
 #: includes/class-tscb-mail-admin.php:109
 msgid "Save your settings, then use the email test below. Acceptance by WordPress or an SMTP server does not confirm delivery to the inbox."
-msgstr "Speichern Sie Ihre Einstellungen und verwenden Sie anschließend den E-Mail-Test unten. Die Annahme durch WordPress oder einen SMTP-Server bestätigt noch keine Zustellung im Posteingang."
+msgstr "Save your settings, then use the email test below. Acceptance by WordPress or an SMTP server does not confirm delivery to the inbox."
 
 #: includes/class-tscb-mail-admin.php:132
 msgid "Last email attempt"
-msgstr "Letzter E-Mail-Versuch"
+msgstr "Last email attempt"
 
 #: includes/class-tscb-mail-admin.php:160
 msgid "Email diagnostics"
-msgstr "E-Mail-Diagnose"
+msgstr "Email diagnostics"
 
 #: includes/class-tscb-mail-admin.php:160
 msgid "Check the most recent email attempts without storing the messages themselves."
-msgstr "Prüfen Sie die letzten E-Mail-Versuche, ohne die Nachrichten selbst zu speichern."
+msgstr "Check the most recent email attempts without storing the messages themselves."
 
 #: includes/class-tscb-mail-admin.php:164
 msgid "Clear email log"
-msgstr "E-Mail-Protokoll löschen"
+msgstr "Clear email log"
 
 #: includes/class-tscb-mail-admin.php:168
 msgid "The email diagnostic log was cleared."
-msgstr "Das E-Mail-Diagnoseprotokoll wurde gelöscht."
+msgstr "The email diagnostic log was cleared."
 
 #: includes/class-tscb-mail-admin.php:171
 msgid "Logging is off. Enable it in the email settings to record future attempts."
-msgstr "Das Protokoll ist ausgeschaltet. Aktivieren Sie es in den E-Mail-Einstellungen, um zukünftige Versuche aufzuzeichnen."
+msgstr "Logging is off. Enable it in the email settings to record future attempts."
 
 #: includes/class-tscb-mail-admin.php:174
 msgid "No email attempts have been recorded in the last seven days."
-msgstr "In den letzten sieben Tagen wurden keine E-Mail-Versuche aufgezeichnet."
+msgstr "No email attempts have been recorded in the last seven days."
 
 #: includes/class-tscb-mail-admin.php:176
 msgid "Recent email delivery attempts"
-msgstr "Letzte E-Mail-Versandversuche"
+msgstr "Recent email delivery attempts"
 
 #: includes/class-tscb-mail-admin.php:178
 msgid "Time"
-msgstr "Zeitpunkt"
+msgstr "Time"
 
 #: includes/class-tscb-mail-admin.php:178
 msgid "Result"
-msgstr "Ergebnis"
+msgstr "Result"
 
 #: includes/class-tscb-mail-admin.php:178
 msgid "Method"
-msgstr "Methode"
+msgstr "Method"
 
 #: includes/class-tscb-mail-admin.php:178
 msgid "Context"
-msgstr "Anlass"
+msgstr "Context"
 
 #: includes/class-tscb-mail-admin.php:178
 msgid "Diagnostic"
-msgstr "Diagnose"
+msgstr "Diagnostic"
 
 #: includes/class-tscb-mail-admin.php:183
 msgid "Custom SMTP"
-msgstr "Eigener SMTP-Versand"
+msgstr "Custom SMTP"
 
 #: includes/class-tscb-mail-admin.php:183
 msgid "WordPress mail"
-msgstr "WordPress-Mailversand"
+msgstr "WordPress mail"
 
 #: includes/class-tscb-mail-admin.php:184
 msgid "Test message"
-msgstr "Testnachricht"
+msgstr "Test message"
 
 #: includes/class-tscb-mail-admin.php:184
 msgid "Contact form"
-msgstr "Kontaktformular"
+msgstr "Contact form"
 
 #: includes/class-tscb-mail-admin.php:189
 msgid "Accepted"
-msgstr "Angenommen"
+msgstr "Accepted"
 
 #: includes/class-tscb-mail-admin.php:189
 msgid "Failed"
-msgstr "Fehlgeschlagen"
+msgstr "Failed"
 
 #: includes/class-tscb-mail-admin.php:199
 msgid "Up to 50 records are kept for a maximum of seven days. Accepted means the mail system accepted the message; it does not confirm inbox delivery. Addresses, message content, and credentials are never included in this log."
-msgstr "Bis zu 50 Einträge werden höchstens sieben Tage aufbewahrt. Angenommen bedeutet, dass das Mailsystem die Nachricht akzeptiert hat; eine Zustellung im Posteingang wird damit nicht bestätigt. Adressen, Nachrichteninhalte und Zugangsdaten werden nie in diesem Protokoll gespeichert."
+msgstr "Up to 50 records are kept for a maximum of seven days. Accepted means the mail system accepted the message; it does not confirm inbox delivery. Addresses, message content, and credentials are never included in this log."
 
 #: includes/class-tscb-mail.php:63
 msgid "The SMTP password could not be encrypted. The previously stored password was kept. Enable OpenSSL with AES-256-GCM support or use TSCB_SMTP_PASSWORD."
-msgstr "Das SMTP-Passwort konnte nicht verschlüsselt werden. Das bisher gespeicherte Passwort wurde beibehalten. Aktivieren Sie OpenSSL mit AES-256-GCM-Unterstützung oder verwenden Sie TSCB_SMTP_PASSWORD."
+msgstr "The SMTP password could not be encrypted. The previously stored password was kept. Enable OpenSSL with AES-256-GCM support or use TSCB_SMTP_PASSWORD."
 
 #: includes/class-tscb-mail.php:68
 msgid "Some email settings were invalid and were kept at their previous values. Use a single SMTP hostname or IP address, a valid port, TLS or SSL, and values without control characters."
-msgstr "Einige E-Mail-Einstellungen waren ungültig; die bisherigen Werte wurden beibehalten. Verwenden Sie einen einzelnen SMTP-Hostnamen oder eine IP-Adresse, einen gültigen Port, TLS oder SSL sowie Werte ohne Steuerzeichen."
+msgstr "Some email settings were invalid and were kept at their previous values. Use a single SMTP hostname or IP address, a valid port, TLS or SSL, and values without control characters."
 
 #: includes/class-tscb-mail.php:109
 msgid "WordPress accepted this message for sending. This does not confirm inbox delivery."
-msgstr "WordPress hat diese Nachricht zum Versand angenommen. Dies bestätigt nicht den Eingang im Postfach."
+msgstr "WordPress accepted this message for sending. This does not confirm inbox delivery."
 
 #: includes/class-tscb-mail.php:110
 msgid "Another WordPress mail handler accepted the message before this plugin's mailer ran. Check that handler's delivery logs; any SMTP settings in this plugin were not used."
-msgstr "Ein anderer WordPress-Maildienst hat die Nachricht übernommen, bevor der Mailversand dieses Plugins gestartet wurde. Prüfen Sie dessen Versandprotokoll; die SMTP-Einstellungen dieses Plugins wurden dabei nicht verwendet."
+msgstr "Another WordPress mail handler accepted the message before this plugin's mailer ran. Check that handler's delivery logs; any SMTP settings in this plugin were not used."
 
 #: includes/class-tscb-mail.php:111
 msgid "SMTP login was rejected. Check the username, password or app password, and whether SMTP access is enabled."
-msgstr "Die SMTP-Anmeldung wurde abgelehnt. Prüfen Sie Benutzername, Passwort oder App-Passwort und ob der SMTP-Zugriff aktiviert ist."
+msgstr "SMTP login was rejected. Check the username, password or app password, and whether SMTP access is enabled."
 
 #: includes/class-tscb-mail.php:112
 msgid "The SMTP server could not be reached. Check the hostname, port and hosting firewall."
-msgstr "Der SMTP-Server konnte nicht erreicht werden. Prüfen Sie Hostname, Port und die Firewall Ihres Hostings."
+msgstr "The SMTP server could not be reached. Check the hostname, port and hosting firewall."
 
 #: includes/class-tscb-mail.php:113
 msgid "A secure SMTP connection could not be established. Check encryption, port and the server certificate; certificate checks remain enabled."
-msgstr "Es konnte keine sichere SMTP-Verbindung hergestellt werden. Prüfen Sie Verschlüsselung, Port und Serverzertifikat; die Zertifikatsprüfung bleibt aktiviert."
+msgstr "A secure SMTP connection could not be established. Check encryption, port and the server certificate; certificate checks remain enabled."
 
 #: includes/class-tscb-mail.php:114
 msgid "The sender address was rejected. Use an address permitted by your mail provider and check its domain authentication."
-msgstr "Die Absenderadresse wurde abgelehnt. Verwenden Sie eine bei Ihrem Mailanbieter zulässige Adresse und prüfen Sie die Authentifizierung ihrer Domain."
+msgstr "The sender address was rejected. Use an address permitted by your mail provider and check its domain authentication."
 
 #: includes/class-tscb-mail.php:115
 msgid "The recipient address was rejected. Check the destination mailbox and the provider's sending rules."
-msgstr "Die Empfängeradresse wurde abgelehnt. Prüfen Sie das Zielpostfach und die Versandregeln des Anbieters."
+msgstr "The recipient address was rejected. Check the destination mailbox and the provider's sending rules."
 
 #: includes/class-tscb-mail.php:116
 msgid "Another WordPress component stopped this email before sending. Check other mail or security plugins."
-msgstr "Eine andere WordPress-Komponente hat diese E-Mail vor dem Versand gestoppt. Prüfen Sie andere Mail- oder Sicherheitsplugins."
+msgstr "Another WordPress component stopped this email before sending. Check other mail or security plugins."
 
 #: includes/class-tscb-mail.php:117
 msgid "The WordPress mail function is unavailable. Configure authenticated SMTP or ask your hosting provider to enable outgoing email."
-msgstr "Die WordPress-Mailfunktion ist nicht verfügbar. Richten Sie authentifiziertes SMTP ein oder bitten Sie Ihren Hostinganbieter, ausgehende E-Mails zu ermöglichen."
+msgstr "The WordPress mail function is unavailable. Configure authenticated SMTP or ask your hosting provider to enable outgoing email."
 
 #: includes/class-tscb-mail.php:118
 msgid "The email settings are incomplete or invalid. SMTP requires a hostname, port, encryption, an explicit sender address and, when enabled, login credentials."
-msgstr "Die E-Mail-Einstellungen sind unvollständig oder ungültig. SMTP benötigt Hostname, Port, Verschlüsselung, eine ausdrückliche Absenderadresse und bei aktivierter Anmeldung die Zugangsdaten."
+msgstr "The email settings are incomplete or invalid. SMTP requires a hostname, port, encryption, an explicit sender address and, when enabled, login credentials."
 
 #: includes/class-tscb-mail.php:119
 msgid "The stored SMTP password could not be read securely. Save it again or define TSCB_SMTP_PASSWORD; check that OpenSSL and the WordPress authentication salts are available."
-msgstr "Das gespeicherte SMTP-Passwort konnte nicht sicher gelesen werden. Speichern Sie es erneut oder definieren Sie TSCB_SMTP_PASSWORD; prüfen Sie, ob OpenSSL und die WordPress-Authentifizierungsschlüssel verfügbar sind."
+msgstr "The stored SMTP password could not be read securely. Save it again or define TSCB_SMTP_PASSWORD; check that OpenSSL and the WordPress authentication salts are available."
 
 #: includes/class-tscb-mail.php:120
 msgid "The email could not be handed to the mail service. Check the sending configuration and run another test."
-msgstr "Die E-Mail konnte nicht an den Maildienst übergeben werden. Prüfen Sie die Versandkonfiguration und führen Sie einen weiteren Test aus."
+msgstr "The email could not be handed to the mail service. Check the sending configuration and run another test."
 
 #: includes/class-tscb-plugin-info.php:16
 msgid "More information"
-msgstr "Mehr Informationen"
-
-#: includes/class-tscb-plugin-info.php:39
-#: includes/class-tscb-plugin-info.php:69
-#: includes/class-tscb-settings.php:72
-#: includes/class-tscb-settings.php:73
-#: includes/class-tscb-settings.php:631
-#: tsambasis-contact-bridge.php:116
-msgid "ContactBridge"
-msgstr "ContactBridge"
+msgstr "More information"
 
 #. translators: %s: The plugin's translated name.
 #: includes/class-tscb-plugin-info.php:42
 #, php-format
 msgid "View details about %s"
-msgstr "Details zu %s anzeigen"
+msgstr "View details about %s"
 
 #: includes/class-tscb-plugin-info.php:43
 msgid "View details"
-msgstr "Details anzeigen"
+msgstr "View details"
 
 #: includes/class-tscb-plugin-info.php:71
 msgid "A free, ad-free contact form for your WordPress website. Build your fields, choose a design and add the form with a shortcode."
-msgstr "Ein kostenloses, werbefreies Kontaktformular für Ihre WordPress-Website. Stellen Sie Ihre Felder zusammen, wählen Sie ein Design und binden Sie das Formular per Shortcode ein."
+msgstr "A free, ad-free contact form for your WordPress website. Build your fields, choose a design and add the form with a shortcode."
 
 #: includes/class-tscb-plugin-info.php:71
 msgid "Receive inquiries by email, Telegram or WhatsApp. Email works with your existing WordPress mail setup or optional authenticated SMTP for this plugin."
-msgstr "Empfangen Sie Anfragen per E-Mail, Telegram oder WhatsApp. Der E-Mail-Versand verwendet Ihre vorhandene WordPress-Mail-Einrichtung oder optional einen eigenen SMTP-Versand mit Anmeldung für dieses Plugin."
+msgstr "Receive inquiries by email, Telegram or WhatsApp. Email works with your existing WordPress mail setup or optional authenticated SMTP for this plugin."
 
 #: includes/class-tscb-plugin-info.php:71
 msgid "This information comes from the installed plugin. It does not represent a WordPress.org listing, rating or download count."
-msgstr "Diese Informationen stammen aus dem installierten Plugin. Sie stellen keinen WordPress.org-Verzeichniseintrag, keine Bewertung und keine Downloadstatistik dar."
+msgstr "This information comes from the installed plugin. It does not represent a WordPress.org listing, rating or download count."
 
 #: includes/class-tscb-plugin-info.php:72
 msgid "Open the plugin settings and select your delivery channels. Save the recipient and connection details, then send a test message."
-msgstr "Öffnen Sie die Plugin-Einstellungen und wählen Sie Ihre Versandkanäle. Speichern Sie Empfänger und Verbindungsdaten und senden Sie anschließend eine Testnachricht."
+msgstr "Open the plugin settings and select your delivery channels. Save the recipient and connection details, then send a test message."
 
 #: includes/class-tscb-plugin-info.php:72
 msgid "Choose a preset or customize the fields and appearance. The live preview shows your draft without sending any messages."
-msgstr "Wählen Sie eine Vorlage oder passen Sie Felder und Gestaltung an. Die Live-Vorschau zeigt Ihren Entwurf, ohne Nachrichten zu versenden."
+msgstr "Choose a preset or customize the fields and appearance. The live preview shows your draft without sending any messages."
 
 #: includes/class-tscb-plugin-info.php:72
 msgid "Add this shortcode to a page or a Shortcode block:"
-msgstr "Fügen Sie diesen Shortcode auf einer Seite oder in einem Shortcode-Block ein:"
+msgstr "Add this shortcode to a page or a Shortcode block:"
 
 #: includes/class-tscb-plugin-info.php:73
 msgid "For each delivery channel, choose full-content delivery or extended privacy. Extended privacy stores the inquiry encrypted on your website and sends only a general notification with a link that requires an administrator login."
-msgstr "Wählen Sie für jeden Versandkanal vollständige Inhalte oder erweiterten Datenschutz. Beim erweiterten Datenschutz wird die Anfrage verschlüsselt auf Ihrer Website gespeichert. Versendet wird nur ein allgemeiner Hinweis mit einem Link, der eine Anmeldung als Administrator voraussetzt."
+msgstr "For each delivery channel, choose full-content delivery or extended privacy. Extended privacy stores the inquiry encrypted on your website and sends only a general notification with a link that requires an administrator login."
 
 #: includes/class-tscb-plugin-info.php:73
 msgid "Stored inquiries use the retention period selected when they arrive: 30 days by default, a custom period or unlimited retention. Administrators can read and permanently delete them; the WordPress privacy tools support export and erasure."
-msgstr "Gespeicherte Anfragen behalten die bei ihrem Eingang gewählte Aufbewahrungsfrist: standardmäßig 30 Tage, einen eigenen Zeitraum oder unbegrenzte Aufbewahrung. Administratoren können sie lesen und endgültig löschen; die Datenschutzwerkzeuge von WordPress unterstützen Export und Löschung."
+msgstr "Stored inquiries use the retention period selected when they arrive: 30 days by default, a custom period or unlimited retention. Administrators can read and permanently delete them; the WordPress privacy tools support export and erasure."
 
 #: includes/class-tscb-plugin-info.php:73
 msgid "The plugin includes no advertising, tracking, remote fonts or analytics. External delivery services are contacted only when their channels are configured and used. Your site operator remains responsible for the privacy notice and provider agreements."
-msgstr "Das Plugin enthält keine Werbung, kein Tracking, keine externen Schriftarten und keine Analysewerkzeuge. Externe Versanddienste werden nur bei eingerichteten und verwendeten Kanälen kontaktiert. Für Datenschutzhinweise und Vereinbarungen mit Anbietern bleibt der Website-Betreiber verantwortlich."
+msgstr "The plugin includes no advertising, tracking, remote fonts or analytics. External delivery services are contacted only when their channels are configured and used. Your site operator remains responsible for the privacy notice and provider agreements."
 
 #: includes/class-tscb-plugin-info.php:83
 msgid "Privacy and data handling"
-msgstr "Datenschutz und Datenverarbeitung"
+msgstr "Privacy and data handling"
 
 #: includes/class-tscb-settings.php:52
 msgid "I have read the privacy notice and agree to my information being processed to respond to my inquiry."
-msgstr "Ich habe die Datenschutzhinweise gelesen und stimme der Verarbeitung meiner Angaben zur Bearbeitung meiner Anfrage zu."
+msgstr "I have read the privacy notice and agree to my information being processed to respond to my inquiry."
 
 #: includes/class-tscb-settings.php:111
 msgid "Updating preview …"
-msgstr "Vorschau wird aktualisiert …"
+msgstr "Updating preview …"
 
 #: includes/class-tscb-settings.php:112
 msgid "Preview up to date · changes not saved yet"
-msgstr "Vorschau aktuell · noch nicht gespeichert"
+msgstr "Preview up to date · changes not saved yet"
 
 #: includes/class-tscb-settings.php:113
 msgid "Preview up to date · settings saved"
-msgstr "Vorschau aktuell · Einstellungen gespeichert"
+msgstr "Preview up to date · settings saved"
 
 #: includes/class-tscb-settings.php:114
 msgid "The preview could not be updated. Your changes are still here. Please try again."
-msgstr "Vorschau konnte nicht aktualisiert werden. Ihre Eingaben bleiben erhalten. Bitte erneut versuchen."
+msgstr "The preview could not be updated. Your changes are still here. Please try again."
 
 #: includes/class-tscb-settings.php:115
 msgid "Unsaved changes"
-msgstr "Ungespeicherte Änderungen"
+msgstr "Unsaved changes"
 
 #: includes/class-tscb-settings.php:116
 #: includes/class-tscb-settings.php:546
 msgid "Custom design"
-msgstr "Individuelles Design"
+msgstr "Custom design"
 
 #. translators: %1$d: current field count; %2$d: maximum field count.
 #: includes/class-tscb-settings.php:122
 #, php-format
 msgid "%1$d of %2$d fields"
-msgstr "%1$d von %2$d Feldern"
+msgstr "%1$d of %2$d fields"
 
 #. translators: %1$d: position; %2$s: field label.
 #: includes/class-tscb-settings.php:124
 #, php-format
 msgid "Field %1$d: %2$s"
-msgstr "Feld %1$d: %2$s"
+msgstr "Field %1$d: %2$s"
 
 #. translators: %s: field label.
 #: includes/class-tscb-settings.php:126
 #, php-format
 msgid "Move %s up"
-msgstr "%s nach oben verschieben"
+msgstr "Move %s up"
 
 #. translators: %s: field label.
 #: includes/class-tscb-settings.php:128
 #, php-format
 msgid "Move %s down"
-msgstr "%s nach unten verschieben"
+msgstr "Move %s down"
 
 #. translators: %s: field label.
 #: includes/class-tscb-settings.php:130
 #, php-format
 msgid "Remove %s"
-msgstr "%s entfernen"
+msgstr "Remove %s"
 
 #: includes/class-tscb-settings.php:131
 msgid "Add at least one field before saving."
-msgstr "Fügen Sie vor dem Speichern mindestens ein Feld hinzu."
+msgstr "Add at least one field before saving."
 
 #: includes/class-tscb-settings.php:132
 msgid "You can add up to 20 fields."
-msgstr "Sie können bis zu 20 Felder hinzufügen."
+msgstr "You can add up to 20 fields."
 
 #: includes/class-tscb-settings.php:133
 #: includes/class-tscb-settings.php:520
 msgid "Enter between 1 and 20 choices, one per line."
-msgstr "Geben Sie 1 bis 20 Auswahlmöglichkeiten ein, jeweils eine pro Zeile."
+msgstr "Enter between 1 and 20 choices, one per line."
 
 #: includes/class-tscb-settings.php:134
 msgid "Field removed. You can undo this change."
-msgstr "Feld entfernt. Sie können diese Änderung rückgängig machen."
+msgstr "Field removed. You can undo this change."
 
 #: includes/class-tscb-settings.php:135
 msgid "Field restored."
-msgstr "Feld wiederhergestellt."
+msgstr "Field restored."
 
 #: includes/class-tscb-settings.php:136
 msgid "Field added."
-msgstr "Feld hinzugefügt."
+msgstr "Field added."
 
 #: includes/class-tscb-settings.php:137
 msgid "Field order updated."
-msgstr "Feldreihenfolge aktualisiert."
+msgstr "Field order updated."
 
 #: includes/class-tscb-settings.php:138
 msgid "Option 1"
@@ -833,484 +850,484 @@ msgstr "Option 2"
 
 #: includes/class-tscb-settings.php:206
 msgid "Some privacy settings were invalid and were kept at their previous values. Use whole retention days from 0 to 36500 and a valid WhatsApp template name."
-msgstr "Einige Datenschutzeinstellungen waren ungültig und behalten ihre bisherigen Werte. Verwende ganze Aufbewahrungstage von 0 bis 36500 und einen gültigen WhatsApp-Vorlagennamen."
+msgstr "Some privacy settings were invalid and were kept at their previous values. Use whole retention days from 0 to 36500 and a valid WhatsApp template name."
 
 #: includes/class-tscb-settings.php:223
 msgid "The settings could not be read."
-msgstr "Die Einstellungen konnten nicht gelesen werden."
+msgstr "The settings could not be read."
 
 #: includes/class-tscb-settings.php:239
 msgid "No delivery channel is enabled. The form cannot send messages until a channel is enabled."
-msgstr "Es ist kein Versandkanal aktiviert. Das Formular kann so keine Nachrichten versenden."
+msgstr "No delivery channel is enabled. The form cannot send messages until a channel is enabled."
 
 #: includes/class-tscb-settings.php:246
 msgid "Please enter one valid recipient email address. The previous value has been kept."
-msgstr "Bitte geben Sie eine gültige einzelne Empfänger-E-Mail-Adresse ein. Der bisherige Wert bleibt erhalten."
+msgstr "Please enter one valid recipient email address. The previous value has been kept."
 
 #: includes/class-tscb-settings.php:268
 msgid "An API token has an invalid format. The previous token has been kept."
-msgstr "Ein API-Token hat ein ungültiges Format. Der bisherige Token bleibt erhalten."
+msgstr "An API token has an invalid format. The previous token has been kept."
 
 #: includes/class-tscb-settings.php:275
 msgid "The Telegram chat ID must be a number (which may start with a minus sign) or a public @channelname."
-msgstr "Die Telegram Chat-ID muss eine Zahl (gegebenenfalls mit Minuszeichen) oder ein öffentlicher @Kanalname sein."
+msgstr "The Telegram chat ID must be a number (which may start with a minus sign) or a public @channelname."
 
 #: includes/class-tscb-settings.php:282
 msgid "Please check the WhatsApp Phone Number ID and the recipient's number in international format, e.g. 491701234567."
-msgstr "Bitte prüfen Sie die WhatsApp Phone Number ID und die Empfängernummer im internationalen Format, z. B. 491701234567."
+msgstr "Please check the WhatsApp Phone Number ID and the recipient's number in international format, e.g. 491701234567."
 
 #: includes/class-tscb-settings.php:358
 msgid "API token"
-msgstr "API-Token"
+msgstr "API token"
 
 #: includes/class-tscb-settings.php:360
 msgid "Set in wp-config.php. Make any changes there."
-msgstr "In wp-config.php hinterlegt. Änderungen dort vornehmen."
+msgstr "Set in wp-config.php. Make any changes there."
 
 #: includes/class-tscb-settings.php:363
 msgid "No token saved yet."
-msgstr "Noch kein Token gespeichert."
+msgstr "No token saved yet."
 
 #: includes/class-tscb-settings.php:363
 msgid "Token saved. Leave this blank to keep it."
-msgstr "Token gespeichert. Leer lassen, um ihn beizubehalten."
+msgstr "Token saved. Leave this blank to keep it."
 
 #: includes/class-tscb-settings.php:365
 msgid "Delete the stored token when saving"
-msgstr "Gespeicherten Token beim Speichern löschen"
+msgstr "Delete the stored token when saving"
 
 #: includes/class-tscb-settings.php:381
 msgid "The delivery service accepted the test message. Check that the recipient received it."
-msgstr "Die Testnachricht wurde vom Versanddienst angenommen. Prüfen Sie den Eingang beim Empfänger."
+msgstr "The delivery service accepted the test message. Check that the recipient received it."
 
 #: includes/class-tscb-settings.php:381
 msgid "The test message could not be handed over to the service. Check your credentials, recipient, and provider setup."
-msgstr "Die Testnachricht konnte nicht übergeben werden. Prüfen Sie Zugangsdaten, Empfänger und die Einrichtung beim Anbieter."
+msgstr "The test message could not be handed over to the service. Check your credentials, recipient, and provider setup."
 
 #: includes/class-tscb-settings.php:390
 msgid "The verified Telegram chat ID was saved. Send a test message to check delivery."
-msgstr "Die überprüfte Telegram Chat-ID wurde gespeichert. Prüfen Sie die Zustellung mit einer Testnachricht."
+msgstr "The verified Telegram chat ID was saved. Send a test message to check delivery."
 
 #: includes/class-tscb-settings.php:391
 msgid "No private message with your current pairing code was found. Send the exact code below to your bot, then try again. If a webhook is active, enter the chat ID manually."
-msgstr "Es wurde keine private Nachricht mit Ihrem aktuellen Bestätigungscode gefunden. Senden Sie den unten angezeigten Code genau so an Ihren Bot und versuchen Sie es erneut. Bei einem aktiven Webhook müssen Sie die Chat-ID manuell eintragen."
+msgstr "No private message with your current pairing code was found. Send the exact code below to your bot, then try again. If a webhook is active, enter the chat ID manually."
 
 #: includes/class-tscb-settings.php:392
 msgid "The Telegram recipient could not be confirmed. Check the token and use the pairing code in only one private chat, or enter the intended chat ID manually."
-msgstr "Der Telegram-Empfänger konnte nicht bestätigt werden. Prüfen Sie den Token und verwenden Sie den Bestätigungscode nur in einem privaten Chat oder tragen Sie die gewünschte Chat-ID manuell ein."
+msgstr "The Telegram recipient could not be confirmed. Check the token and use the pairing code in only one private chat, or enter the intended chat ID manually."
 
 #: includes/class-tscb-settings.php:393
 msgid "The pairing code expired or the bot token changed. Send the new code below to your bot, then confirm again."
-msgstr "Der Bestätigungscode ist abgelaufen oder der Bot-Token wurde geändert. Senden Sie den neuen Code unten an Ihren Bot und bestätigen Sie erneut."
+msgstr "The pairing code expired or the bot token changed. Send the new code below to your bot, then confirm again."
 
 #: includes/class-tscb-settings.php:403
 msgid "Setup is incomplete. Check the fields for this channel."
-msgstr "Konfiguration unvollständig. Prüfen Sie die Felder dieses Kanals."
+msgstr "Setup is incomplete. Check the fields for this channel."
 
 #: includes/class-tscb-settings.php:404
 msgid "This channel is disabled. Enable it and save your settings before testing."
-msgstr "Der Kanal ist deaktiviert. Aktivieren und speichern Sie ihn vor einem Test."
+msgstr "This channel is disabled. Enable it and save your settings before testing."
 
 #: includes/class-tscb-settings.php:405
 msgid "WordPress could not hand the email over to the mail server."
-msgstr "WordPress konnte die E-Mail nicht an den Mailserver übergeben."
+msgstr "WordPress could not hand the email over to the mail server."
 
 #: includes/class-tscb-settings.php:406
 msgid "The web server could not reach the delivery service."
-msgstr "Der Versanddienst war vom Webserver aus nicht erreichbar."
+msgstr "The web server could not reach the delivery service."
 
 #: includes/class-tscb-settings.php:421
 msgid "Last attempt accepted"
-msgstr "Zuletzt angenommen"
+msgstr "Last attempt accepted"
 
 #: includes/class-tscb-settings.php:421
 msgid "Last attempt failed"
-msgstr "Letzter Versuch fehlgeschlagen"
+msgstr "Last attempt failed"
 
 #: includes/class-tscb-settings.php:424
 msgid "The service did not confirm the request. Check your credentials, recipient, and WhatsApp template where applicable."
-msgstr "Der Dienst hat die Anfrage nicht bestätigt. Prüfen Sie Zugangsdaten, Empfänger und gegebenenfalls die WhatsApp-Vorlage."
+msgstr "The service did not confirm the request. Check your credentials, recipient, and WhatsApp template where applicable."
 
 #: includes/class-tscb-settings.php:430
 msgid "No status recorded in the last 24 hours."
-msgstr "Kein Status aus den letzten 24 Stunden."
+msgstr "No status recorded in the last 24 hours."
 
 #: includes/class-tscb-settings.php:435
 msgid "Each channel shows only its most recent delivery attempt, including tests. Acceptance by a service does not confirm final delivery. Status records contain no message content and expire after 24 hours."
-msgstr "Jeder Kanal zeigt nur seinen letzten Versandversuch einschließlich Tests. Die Annahme durch einen Dienst bestätigt keine endgültige Zustellung. Es werden keine Nachrichteninhalte im Status gespeichert; Statusdaten verfallen nach 24 Stunden."
+msgstr "Each channel shows only its most recent delivery attempt, including tests. Acceptance by a service does not confirm final delivery. Status records contain no message content and expire after 24 hours."
 
 #: includes/class-tscb-settings.php:445
 msgid "Extended privacy"
-msgstr "Erweiterter Datenschutz"
+msgstr "Extended privacy"
 
 #: includes/class-tscb-settings.php:446
 msgid "This channel receives only the website name and a protected administrator link. Form answers, the visitor's name, email address and subject are not sent. The original inquiry is stored encrypted on this website. Other channels with this option off still receive the full inquiry."
-msgstr "Dieser Kanal erhält nur den Website-Namen und einen geschützten Administratorlink. Formularantworten sowie Name, E-Mail-Adresse und Betreff der anfragenden Person werden nicht übermittelt. Die Originalanfrage wird verschlüsselt auf dieser Website gespeichert. Andere Kanäle mit ausgeschalteter Option erhalten weiterhin die vollständige Anfrage."
+msgstr "This channel receives only the website name and a protected administrator link. Form answers, the visitor's name, email address and subject are not sent. The original inquiry is stored encrypted on this website. Other channels with this option off still receive the full inquiry."
 
 #: includes/class-tscb-settings.php:484
 msgid "Form fields"
-msgstr "Formularfelder"
+msgstr "Form fields"
 
 #: includes/class-tscb-settings.php:486
 msgid "Add, remove, or reorder fields. Each field can have its own label, type, and width. Changes appear in the preview and take effect on your website after saving."
-msgstr "Fügen Sie Felder hinzu, entfernen Sie sie oder ändern Sie ihre Reihenfolge. Jedes Feld kann einen eigenen Namen, Typ und eine eigene Breite haben. Änderungen erscheinen in der Vorschau und werden nach dem Speichern auf Ihrer Website übernommen."
+msgstr "Add, remove, or reorder fields. Each field can have its own label, type, and width. Changes appear in the preview and take effect on your website after saving."
 
 #: includes/class-tscb-settings.php:487
 msgid "Unchanged default labels follow the plugin language. Your custom labels stay as entered. Leave a label blank to use its default."
-msgstr "Unveränderte Standard-Feldnamen folgen der Plugin-Sprache. Ihre eigenen Feldnamen bleiben wie eingegeben. Lassen Sie einen Feldnamen leer, um den Standard zu verwenden."
+msgstr "Unchanged default labels follow the plugin language. Your custom labels stay as entered. Leave a label blank to use its default."
 
 #: includes/class-tscb-settings.php:489
 msgid "New field type"
-msgstr "Typ des neuen Feldes"
+msgstr "New field type"
 
 #: includes/class-tscb-settings.php:495
 msgid "Add field"
-msgstr "Feld hinzufügen"
+msgstr "Add field"
 
 #: includes/class-tscb-settings.php:496
 msgid "Undo removal"
-msgstr "Entfernen rückgängig machen"
+msgstr "Undo removal"
 
 #: includes/class-tscb-settings.php:501
 msgid "Enable JavaScript to add or edit form fields. Your existing fields are preserved when you save other settings."
-msgstr "Aktivieren Sie JavaScript, um Formularfelder hinzuzufügen oder zu bearbeiten. Ihre vorhandenen Felder bleiben erhalten, wenn Sie andere Einstellungen speichern."
+msgstr "Enable JavaScript to add or edit form fields. Your existing fields are preserved when you save other settings."
 
 #: includes/class-tscb-settings.php:511
 msgid "Remove"
-msgstr "Entfernen"
+msgstr "Remove"
 
 #: includes/class-tscb-settings.php:515
 msgid "Field type"
-msgstr "Feldtyp"
+msgstr "Field type"
 
 #: includes/class-tscb-settings.php:516
 msgid "Field label"
-msgstr "Feldname"
+msgstr "Field label"
 
 #: includes/class-tscb-settings.php:517
 msgid "Placeholder"
-msgstr "Platzhalter"
+msgstr "Placeholder"
 
 #: includes/class-tscb-settings.php:518
 msgid "Field width"
-msgstr "Feldbreite"
+msgstr "Field width"
 
 #: includes/class-tscb-settings.php:518
 msgid "Half width"
-msgstr "Halbe Breite"
+msgstr "Half width"
 
 #: includes/class-tscb-settings.php:518
 #: includes/class-tscb-settings.php:588
 msgid "Full width"
-msgstr "Volle Breite"
+msgstr "Full width"
 
 #: includes/class-tscb-settings.php:519
 msgid "Required field"
-msgstr "Pflichtfeld"
+msgstr "Required field"
 
 #: includes/class-tscb-settings.php:520
 msgid "Choices (one per line)"
-msgstr "Auswahlmöglichkeiten (eine pro Zeile)"
+msgstr "Choices (one per line)"
 
 #: includes/class-tscb-settings.php:532
 msgid "FORM DESIGNER"
-msgstr "FORMULAR-DESIGNER"
+msgstr "FORM DESIGNER"
 
 #: includes/class-tscb-settings.php:532
 msgid "Make your form your own."
-msgstr "So soll Ihr Formular aussehen."
+msgstr "Make your form your own."
 
 #: includes/class-tscb-settings.php:535
 msgid "Editing mode"
-msgstr "Bearbeitungsmodus"
+msgstr "Editing mode"
 
 #: includes/class-tscb-settings.php:536
 msgid "Simple"
-msgstr "Einfach"
+msgstr "Simple"
 
 #: includes/class-tscb-settings.php:537
 msgid "Advanced"
-msgstr "Erweitert"
+msgstr "Advanced"
 
 #: includes/class-tscb-settings.php:539
 msgid "Choose a preset and edit your text. Switch to Advanced to customize every detail. Your settings are kept when switching modes."
-msgstr "Wählen Sie eine Vorlage und passen Sie Ihre Texte an. Unter „Erweitert“ gestalten Sie jedes Detail. Beim Wechsel bleiben Ihre Einstellungen erhalten."
+msgstr "Choose a preset and edit your text. Switch to Advanced to customize every detail. Your settings are kept when switching modes."
 
 #: includes/class-tscb-settings.php:540
 msgid "Design preset"
-msgstr "Designvorlage"
+msgstr "Design preset"
 
 #: includes/class-tscb-settings.php:547
 msgid "Presets only change the appearance. Your text, privacy notice, and delivery channels are kept."
-msgstr "Vorlagen ändern nur das Aussehen. Texte, Datenschutzhinweise und Empfangskanäle bleiben erhalten."
+msgstr "Presets only change the appearance. Your text, privacy notice, and delivery channels are kept."
 
 #: includes/class-tscb-settings.php:548
 msgid "Embed seamlessly"
-msgstr "Nahtlos einbetten"
+msgstr "Embed seamlessly"
 
 #: includes/class-tscb-settings.php:549
 msgid "Transparent background, no outer border, shadow or container spacing. Field styling and maximum width are kept. Choose text colors that suit your page background; the preview uses a sample background."
-msgstr "Transparenter Hintergrund, ohne Außenrahmen, Schatten oder zusätzliche Innen- und Außenabstände des Formulars. Feldgestaltung und maximale Breite bleiben erhalten. Wählen Sie Textfarben passend zu Ihrem Seitenhintergrund; die Vorschau verwendet einen Beispielhintergrund."
+msgstr "Transparent background, no outer border, shadow or container spacing. Field styling and maximum width are kept. Choose text colors that suit your page background; the preview uses a sample background."
 
 #: includes/class-tscb-settings.php:551
 msgid "Your text"
-msgstr "Ihre Texte"
+msgstr "Your text"
 
 #: includes/class-tscb-settings.php:552
 msgid "Heading"
-msgstr "Überschrift"
+msgstr "Heading"
 
 #: includes/class-tscb-settings.php:553
 msgid "Introduction"
-msgstr "Einleitung"
+msgstr "Introduction"
 
 #: includes/class-tscb-settings.php:554
 msgid "Submit button text"
-msgstr "Text auf dem Senden-Button"
+msgstr "Submit button text"
 
 #: includes/class-tscb-settings.php:555
 msgid "Privacy notice"
-msgstr "Datenschutzhinweis"
+msgstr "Privacy notice"
 
 #: includes/class-tscb-settings.php:556
 msgid "Require confirmation of the privacy notice"
-msgstr "Bestätigung als Pflichtfeld anzeigen"
+msgstr "Require confirmation of the privacy notice"
 
 #: includes/class-tscb-settings.php:557
 msgid "Confirmation text"
-msgstr "Text der Bestätigung"
+msgstr "Confirmation text"
 
 #: includes/class-tscb-settings.php:557
 msgid "Place {privacy_link} where you want the link to appear. If you omit the placeholder, the link is added at the end."
-msgstr "Setzen Sie {privacy_link} an die Stelle, an der der Link erscheinen soll. Ohne Platzhalter wird der Link am Ende ergänzt."
+msgstr "Place {privacy_link} where you want the link to appear. If you omit the placeholder, the link is added at the end."
 
 #: includes/class-tscb-settings.php:558
 msgid "Insert privacy link into text"
-msgstr "Datenschutzlink im Text einsetzen"
+msgstr "Insert privacy link into text"
 
 #: includes/class-tscb-settings.php:559
 msgid "The button inserts the link at the cursor position. The preview shows your chosen link text there."
-msgstr "Der Button setzt den Link an die Cursorposition. In der Vorschau erscheint dort Ihr gewählter Linktext."
+msgstr "The button inserts the link at the cursor position. The preview shows your chosen link text there."
 
 #: includes/class-tscb-settings.php:560
 msgid "Link text"
-msgstr "Linktext"
+msgstr "Link text"
 
 #: includes/class-tscb-settings.php:561
 msgid "Privacy policy link"
-msgstr "Link zur Datenschutzerklärung"
+msgstr "Privacy policy link"
 
 #: includes/class-tscb-settings.php:561
 msgid "A full http:// or https:// address."
-msgstr "Vollständige http://- oder https://-Adresse."
+msgstr "A full http:// or https:// address."
 
 #: includes/class-tscb-settings.php:562
 msgid "Open the privacy policy in a new tab"
-msgstr "Datenschutzerklärung in einem neuen Tab öffnen"
+msgstr "Open the privacy policy in a new tab"
 
 #: includes/class-tscb-settings.php:565
 msgid "Customize details"
-msgstr "Details anpassen"
+msgstr "Customize details"
 
 #: includes/class-tscb-settings.php:566
 msgid "Layout & spacing"
-msgstr "Layout & Abstände"
+msgstr "Layout & spacing"
 
 #: includes/class-tscb-settings.php:567
 msgid "Color scheme"
-msgstr "Farbschema"
+msgstr "Color scheme"
 
 #: includes/class-tscb-settings.php:567
 msgid "Light"
-msgstr "Hell"
+msgstr "Light"
 
 #: includes/class-tscb-settings.php:567
 msgid "Dark"
-msgstr "Dunkel"
+msgstr "Dark"
 
 #: includes/class-tscb-settings.php:567
 msgid "Match device settings"
-msgstr "Wie das Gerät"
+msgstr "Match device settings"
 
 #: includes/class-tscb-settings.php:568
 msgid "Shape"
-msgstr "Form"
+msgstr "Shape"
 
 #: includes/class-tscb-settings.php:568
 msgid "Rounded"
-msgstr "Rund"
+msgstr "Rounded"
 
 #: includes/class-tscb-settings.php:568
 msgid "Square"
-msgstr "Eckig"
+msgstr "Square"
 
 #: includes/class-tscb-settings.php:569
 msgid "Field layout"
-msgstr "Feldanordnung"
+msgstr "Field layout"
 
 #: includes/class-tscb-settings.php:569
 msgid "Fields always stack vertically on small screens."
-msgstr "Auf kleinen Bildschirmen stehen Felder immer untereinander."
+msgstr "Fields always stack vertically on small screens."
 
 #: includes/class-tscb-settings.php:569
 msgid "Two columns"
-msgstr "Zwei Spalten"
+msgstr "Two columns"
 
 #: includes/class-tscb-settings.php:569
 msgid "One column"
-msgstr "Eine Spalte"
+msgstr "One column"
 
 #: includes/class-tscb-settings.php:570
 msgid "Maximum width (px)"
-msgstr "Maximale Breite (px)"
+msgstr "Maximum width (px)"
 
 #: includes/class-tscb-settings.php:570
 msgid "360 to 1000 pixels; automatically adapts to smaller screens."
-msgstr "360 bis 1000 Pixel; passt sich automatisch an kleinere Bildschirme an."
+msgstr "360 to 1000 pixels; automatically adapts to smaller screens."
 
 #: includes/class-tscb-settings.php:571
 msgid "Spacing"
-msgstr "Abstände"
+msgstr "Spacing"
 
 #: includes/class-tscb-settings.php:571
 msgid "Compact"
-msgstr "Kompakt"
+msgstr "Compact"
 
 #: includes/class-tscb-settings.php:571
 msgid "Comfortable"
-msgstr "Ausgewogen"
+msgstr "Comfortable"
 
 #: includes/class-tscb-settings.php:571
 msgid "Spacious"
-msgstr "Großzügig"
+msgstr "Spacious"
 
 #: includes/class-tscb-settings.php:572
 msgid "Font size (px)"
-msgstr "Schriftgröße (px)"
+msgstr "Font size (px)"
 
 #: includes/class-tscb-settings.php:572
 msgid "14 to 20 pixels."
-msgstr "14 bis 20 Pixel."
+msgstr "14 to 20 pixels."
 
 #: includes/class-tscb-settings.php:573
 msgid "Show a subtle shadow"
-msgstr "Dezenten Schatten anzeigen"
+msgstr "Show a subtle shadow"
 
 #: includes/class-tscb-settings.php:575
 msgid "Colors"
-msgstr "Farben"
+msgstr "Colors"
 
 #: includes/class-tscb-settings.php:576
 msgid "Accent color"
-msgstr "Akzentfarbe"
+msgstr "Accent color"
 
 #: includes/class-tscb-settings.php:576
 msgid "Used for the submit button and highlighted elements."
-msgstr "Für den Senden-Button und hervorgehobene Elemente."
+msgstr "Used for the submit button and highlighted elements."
 
 #: includes/class-tscb-settings.php:577
 msgid "Use custom background and text colors"
-msgstr "Eigene Oberflächen- und Textfarben verwenden"
+msgstr "Use custom background and text colors"
 
 #: includes/class-tscb-settings.php:578
 msgid "These colors override the color scheme. Choose colors with readable contrast. Your color choices are kept when this option is turned off."
-msgstr "Diese Farben überschreiben das Farbschema. Achten Sie auf gut lesbare Kontraste. Ihre Farbauswahl bleibt auch bei ausgeschalteter Option gespeichert."
+msgstr "These colors override the color scheme. Choose colors with readable contrast. Your color choices are kept when this option is turned off."
 
 #: includes/class-tscb-settings.php:580
 msgid "Form background"
-msgstr "Formularhintergrund"
+msgstr "Form background"
 
 #: includes/class-tscb-settings.php:580
 msgid "Input fields"
-msgstr "Eingabefelder"
+msgstr "Input fields"
 
 #: includes/class-tscb-settings.php:580
 msgid "Helper text"
-msgstr "Hinweistexte"
+msgstr "Helper text"
 
 #: includes/class-tscb-settings.php:580
 msgid "Borders"
-msgstr "Rahmen"
+msgstr "Borders"
 
 #: includes/class-tscb-settings.php:586
 msgid "Button & guidance"
-msgstr "Button & Hinweise"
+msgstr "Button & guidance"
 
 #: includes/class-tscb-settings.php:587
 msgid "Small text above the heading"
-msgstr "Kleine Zeile über der Überschrift"
+msgstr "Small text above the heading"
 
 #: includes/class-tscb-settings.php:587
 msgid "Leave blank to hide it."
-msgstr "Leer lassen, um sie auszublenden."
+msgstr "Leave blank to hide it."
 
 #: includes/class-tscb-settings.php:588
 msgid "Button alignment"
-msgstr "Ausrichtung des Buttons"
+msgstr "Button alignment"
 
 #: includes/class-tscb-settings.php:588
 msgid "Left"
-msgstr "Links"
+msgstr "Left"
 
 #: includes/class-tscb-settings.php:588
 msgid "Center"
-msgstr "Mittig"
+msgstr "Center"
 
 #: includes/class-tscb-settings.php:588
 msgid "Right"
-msgstr "Rechts"
+msgstr "Right"
 
 #: includes/class-tscb-settings.php:589
 msgid "Show an arrow on the submit button"
-msgstr "Pfeil auf dem Senden-Button anzeigen"
+msgstr "Show an arrow on the submit button"
 
 #: includes/class-tscb-settings.php:590
 msgid "Show a character counter below the message field"
-msgstr "Zeichenzähler unter dem Nachrichtenfeld anzeigen"
+msgstr "Show a character counter below the message field"
 
 #: includes/class-tscb-settings.php:591
 msgid "Show the required fields notice"
-msgstr "Hinweis auf Pflichtfelder anzeigen"
+msgstr "Show the required fields notice"
 
 #: includes/class-tscb-settings.php:592
 msgid "Required fields notice"
-msgstr "Hinweis auf Pflichtfelder"
+msgstr "Required fields notice"
 
 #: includes/class-tscb-settings.php:593
 msgid "Helper text below the message field"
-msgstr "Hinweis unter dem Nachrichtenfeld"
+msgstr "Helper text below the message field"
 
 #: includes/class-tscb-settings.php:593
 msgid "{max} is replaced with the maximum number of characters allowed."
-msgstr "{max} wird durch die erlaubte Zeichenanzahl ersetzt."
+msgstr "{max} is replaced with the maximum number of characters allowed."
 
 #: includes/class-tscb-settings.php:594
 msgid "Confirmation after acceptance"
-msgstr "Bestätigung nach Annahme"
+msgstr "Confirmation after acceptance"
 
 #: includes/class-tscb-settings.php:594
 msgid "Shown after the inquiry has been stored securely or accepted by at least one delivery service. Select Confirmation above the preview to see it."
-msgstr "Wird angezeigt, sobald die Anfrage sicher gespeichert oder von mindestens einem Versanddienst angenommen wurde. Wähle Bestätigung über der Vorschau, um den Text zu sehen."
+msgstr "Shown after the inquiry has been stored securely or accepted by at least one delivery service. Select Confirmation above the preview to see it."
 
 #: includes/class-tscb-settings.php:597
 msgid "Enable JavaScript to switch presets and use the live preview. You can still edit and save all settings directly."
-msgstr "Für Vorlagenwechsel und Live-Vorschau bitte JavaScript aktivieren. Sie können alle Einstellungen weiterhin direkt bearbeiten und speichern."
+msgstr "Enable JavaScript to switch presets and use the live preview. You can still edit and save all settings directly."
 
 #: includes/class-tscb-settings.php:606
 msgid "LIVE PREVIEW"
-msgstr "LIVE-VORSCHAU"
+msgstr "LIVE PREVIEW"
 
 #: includes/class-tscb-settings.php:606
 msgid "Your form"
-msgstr "Ihr Formular"
+msgstr "Your form"
 
 #: includes/class-tscb-settings.php:606
 msgid "Preview"
-msgstr "Vorschau"
+msgstr "Preview"
 
 #: includes/class-tscb-settings.php:608
 msgid "Preview size"
-msgstr "Vorschaugröße"
+msgstr "Preview size"
 
 #: includes/class-tscb-settings.php:608
 msgid "Desktop"
@@ -1318,140 +1335,140 @@ msgstr "Desktop"
 
 #: includes/class-tscb-settings.php:608
 msgid "Mobile · 375 px"
-msgstr "Mobil · 375 px"
+msgstr "Mobile · 375 px"
 
 #: includes/class-tscb-settings.php:609
 msgid "Preview state"
-msgstr "Vorschauzustand"
+msgstr "Preview state"
 
 #: includes/class-tscb-settings.php:609
 msgid "Form"
-msgstr "Formular"
+msgstr "Form"
 
 #: includes/class-tscb-settings.php:609
 msgid "Confirmation"
-msgstr "Bestätigung"
+msgstr "Confirmation"
 
 #: includes/class-tscb-settings.php:611
 msgid "Live contact form preview"
-msgstr "Live-Vorschau des Kontaktformulars"
+msgstr "Live contact form preview"
 
 #: includes/class-tscb-settings.php:612
 msgid "Saved design. Your changes appear here immediately."
-msgstr "Gespeichertes Design. Änderungen erscheinen hier direkt."
+msgstr "Saved design. Your changes appear here immediately."
 
 #: includes/class-tscb-settings.php:612
 msgid "Try again"
-msgstr "Erneut versuchen"
+msgstr "Try again"
 
 #: includes/class-tscb-settings.php:613
 msgid "The preview does not send messages. Changes only appear on your website after you select Save settings."
-msgstr "Die Vorschau versendet keine Nachrichten. Änderungen werden erst mit „Einstellungen speichern“ auf Ihrer Website übernommen."
+msgstr "The preview does not send messages. Changes only appear on your website after you select Save settings."
 
 #: includes/class-tscb-settings.php:633
 msgid "One form. Your channels."
-msgstr "Ein Formular. Ihre Kanäle."
+msgstr "One form. Your channels."
 
 #: includes/class-tscb-settings.php:634
 msgid "Receive contact inquiries by email, Telegram, or WhatsApp. Easily add the form to your website."
-msgstr "Kontaktanfragen per E-Mail, Telegram oder WhatsApp empfangen. Einfach auf Ihrer Website einbinden."
+msgstr "Receive contact inquiries by email, Telegram, or WhatsApp. Easily add the form to your website."
 
 #: includes/class-tscb-settings.php:639
 msgid "Add to a page"
-msgstr "Auf einer Seite einfügen"
+msgstr "Add to a page"
 
 #: includes/class-tscb-settings.php:639
 msgid "Add this shortcode to a Shortcode block or the classic editor."
-msgstr "Fügen Sie diesen Shortcode in einen Shortcode-Block oder den klassischen Editor ein."
+msgstr "Add this shortcode to a Shortcode block or the classic editor."
 
 #: includes/class-tscb-settings.php:642
 msgid "Sections"
-msgstr "Bereiche"
+msgstr "Sections"
 
 #: includes/class-tscb-settings.php:642
 msgid "Design your form"
-msgstr "Formular gestalten"
+msgstr "Design your form"
 
 #: includes/class-tscb-settings.php:642
 msgid "Delivery channels"
-msgstr "Empfangskanäle"
+msgstr "Delivery channels"
 
 #: includes/class-tscb-settings.php:642
 #: includes/class-tscb-settings.php:721
 msgid "Test connection"
-msgstr "Verbindung testen"
+msgstr "Test connection"
 
 #: includes/class-tscb-settings.php:642
 msgid "Inquiries"
-msgstr "Anfragen"
+msgstr "Inquiries"
 
 #: includes/class-tscb-settings.php:648
 msgid "Plugin language"
-msgstr "Plugin-Sprache"
+msgstr "Plugin language"
 
 #: includes/class-tscb-settings.php:650
 msgid "German (default)"
-msgstr "Deutsch (Standard)"
+msgstr "German (default)"
 
 #: includes/class-tscb-settings.php:651
 msgid "English"
-msgstr "Englisch"
+msgstr "English"
 
 #: includes/class-tscb-settings.php:652
 msgid "WordPress language"
-msgstr "WordPress-Sprache"
+msgstr "WordPress language"
 
 #: includes/class-tscb-settings.php:654
 msgid "Applies after saving to the plugin settings and form. Factory texts follow the language; your custom texts stay unchanged. The WordPress interface is not affected."
-msgstr "Gilt nach dem Speichern für die Plugin-Einstellungen und das Formular. Standardtexte folgen der Sprache; Ihre eigenen Texte bleiben unverändert. Die WordPress-Oberfläche ist davon nicht betroffen."
+msgstr "Applies after saving to the plugin settings and form. Factory texts follow the language; your custom texts stay unchanged. The WordPress interface is not affected."
 
 #: includes/class-tscb-settings.php:658
 msgid "Set up delivery channels"
-msgstr "Empfangskanäle einrichten"
+msgstr "Set up delivery channels"
 
 #: includes/class-tscb-settings.php:659
 msgid "Enable one or more channels. Each inquiry is passed to all enabled channels. Telegram and WhatsApp only receive data after you explicitly enable them; a connection test also contacts the selected service."
-msgstr "Aktivieren Sie einen oder mehrere Kanäle. Jede Anfrage wird an alle aktivierten Kanäle übergeben. Telegram und WhatsApp erhalten Daten erst nach Ihrer ausdrücklichen Aktivierung; ein Verbindungstest kontaktiert den gewählten Dienst ebenfalls."
+msgstr "Enable one or more channels. Each inquiry is passed to all enabled channels. Telegram and WhatsApp only receive data after you explicitly enable them; a connection test also contacts the selected service."
 
 #: includes/class-tscb-settings.php:662
 msgid "Through your website's email service"
-msgstr "Über den E-Mail-Versand Ihrer Website"
+msgstr "Through your website's email service"
 
 #: includes/class-tscb-settings.php:662
 msgid "To a bot chat or a group"
-msgstr "An einen Bot-Chat oder eine Gruppe"
+msgstr "To a bot chat or a group"
 
 #: includes/class-tscb-settings.php:662
 msgid "Through the official Meta Cloud API"
-msgstr "Über die offizielle Meta Cloud API"
+msgstr "Through the official Meta Cloud API"
 
 #: includes/class-tscb-settings.php:668
 msgid "Recipient email address"
-msgstr "Empfänger-E-Mail-Adresse"
+msgstr "Recipient email address"
 
 #: includes/class-tscb-settings.php:668
 msgid "One email address. Delivery depends on your WordPress installation's email service; test it after saving."
-msgstr "Eine einzelne Adresse. Die Zustellung hängt vom E-Mail-Versand Ihrer WordPress-Installation ab; testen Sie sie nach dem Speichern."
+msgstr "One email address. Delivery depends on your WordPress installation's email service; test it after saving."
 
 #: includes/class-tscb-settings.php:674
 msgid "Create a bot with @BotFather and save its token. Then use the one-time code in the recipient confirmation section below, or enter your chat ID manually."
-msgstr "Erstellen Sie bei @BotFather einen Bot und speichern Sie seinen Token. Nutzen Sie anschließend den Einmalcode im Bereich zur Empfängerbestätigung unten oder tragen Sie Ihre Chat-ID manuell ein."
+msgstr "Create a bot with @BotFather and save its token. Then use the one-time code in the recipient confirmation section below, or enter your chat ID manually."
 
 #: includes/class-tscb-settings.php:676
 msgid "Chat ID"
-msgstr "Chat-ID"
+msgstr "Chat ID"
 
 #: includes/class-tscb-settings.php:676
 msgid "Private chats: numeric ID. Groups: often a negative ID. Public channels: @channelname; the bot needs permission to post."
-msgstr "Private Chats: numerische ID. Gruppen: häufig eine negative ID. Öffentliche Kanäle: @kanalname; der Bot benötigt passende Schreibrechte."
+msgstr "Private chats: numeric ID. Groups: often a negative ID. Public channels: @channelname; the bot needs permission to post."
 
 #: includes/class-tscb-settings.php:677
 msgid "Automatic discovery is intended for a new bot that has received a private message. It does not change an existing webhook and cannot work while a webhook is active."
-msgstr "Automatisches Ermitteln ist für einen neuen, privat angeschriebenen Bot gedacht. Es verändert keinen vorhandenen Webhook und funktioniert nicht, während ein Webhook aktiv ist."
+msgstr "Automatic discovery is intended for a new bot that has received a private message. It does not change an existing webhook and cannot work while a webhook is active."
 
 #: includes/class-tscb-settings.php:682
 msgid "WhatsApp requires a configured WhatsApp Business account, a Cloud API phone number, a suitable access token, and a message template approved by Meta. An API key alone is not enough. Charges may apply according to Meta's pricing."
-msgstr "WhatsApp erfordert ein eingerichtetes WhatsApp-Business-Konto, eine Cloud-API-Telefonnummer, einen geeigneten Access Token und eine von Meta genehmigte Nachrichtenvorlage. Ein API-Key allein reicht hier nicht. Je nach Meta-Tarif können Gebühren entstehen."
+msgstr "WhatsApp requires a configured WhatsApp Business account, a Cloud API phone number, a suitable access token, and a message template approved by Meta. An API key alone is not enough. Charges may apply according to Meta's pricing."
 
 #: includes/class-tscb-settings.php:685
 msgid "Phone Number ID"
@@ -1459,55 +1476,55 @@ msgstr "Phone Number ID"
 
 #: includes/class-tscb-settings.php:685
 msgid "The numeric ID of the sending WhatsApp Business phone number in Meta, not the phone number itself."
-msgstr "Die numerische ID der sendenden WhatsApp-Business-Telefonnummer bei Meta, nicht die Telefonnummer selbst."
+msgstr "The numeric ID of the sending WhatsApp Business phone number in Meta, not the phone number itself."
 
 #: includes/class-tscb-settings.php:686
 msgid "Recipient phone number"
-msgstr "Empfängernummer"
+msgstr "Recipient phone number"
 
 #: includes/class-tscb-settings.php:686
 msgid "Phone number in international format, e.g. 491701234567. The recipient must have agreed to receive your WhatsApp messages."
-msgstr "Internationale Telefonnummer, z. B. 491701234567. Die Person muss dem Empfang Ihrer WhatsApp-Nachrichten zugestimmt haben."
+msgstr "Phone number in international format, e.g. 491701234567. The recipient must have agreed to receive your WhatsApp messages."
 
 #: includes/class-tscb-settings.php:687
 msgid "Approved full-content template name"
-msgstr "Freigegebene Vorlage für vollständige Inhalte"
+msgstr "Approved full-content template name"
 
 #: includes/class-tscb-settings.php:687
 msgid "Used when extended privacy is off. The approved template requires five body text parameters. Lowercase letters, digits, and underscores only."
-msgstr "Wird bei ausgeschaltetem erweitertem Datenschutz verwendet. Die freigegebene Vorlage benötigt fünf Textparameter im Nachrichtentext. Nur Kleinbuchstaben, Ziffern und Unterstriche."
+msgstr "Used when extended privacy is off. The approved template requires five body text parameters. Lowercase letters, digits, and underscores only."
 
 #: includes/class-tscb-settings.php:688
 msgid "Approved extended-privacy template name"
-msgstr "Freigegebene Vorlage für erweiterten Datenschutz"
+msgstr "Approved extended-privacy template name"
 
 #: includes/class-tscb-settings.php:688
 msgid "Required when extended privacy is on. Use a separately approved body-only template with exactly two positional text parameters: {{1}} website name and {{2}} protected administrator URL. No variable headers or buttons."
-msgstr "Bei eingeschaltetem erweitertem Datenschutz erforderlich. Verwende eine separat freigegebene Vorlage ausschließlich mit Nachrichtentext und genau zwei positionsgebundenen Textparametern: {{1}} Website-Name und {{2}} geschützte Administrator-URL. Keine variablen Kopfzeilen oder Buttons."
+msgstr "Required when extended privacy is on. Use a separately approved body-only template with exactly two positional text parameters: {{1}} website name and {{2}} protected administrator URL. No variable headers or buttons."
 
 #: includes/class-tscb-settings.php:689
 msgid "Template language"
-msgstr "Sprache der Vorlage"
+msgstr "Template language"
 
 #: includes/class-tscb-settings.php:689
 msgid "The exact language code of the approved template, e.g. de or en_US."
-msgstr "Exakter Sprachcode der genehmigten Vorlage, z. B. de oder en_US."
+msgstr "The exact language code of the approved template, e.g. de or en_US."
 
 #: includes/class-tscb-settings.php:690
 msgid "Graph API version"
-msgstr "Graph API-Version"
+msgstr "Graph API version"
 
 #: includes/class-tscb-settings.php:690
 msgid "Version in the format v24.0. Use a version supported by Meta."
-msgstr "Version im Format v24.0. Verwenden Sie eine von Meta unterstützte Version."
+msgstr "Version in the format v24.0. Use a version supported by Meta."
 
 #: includes/class-tscb-settings.php:692
 msgid "Set up your full-content WhatsApp template"
-msgstr "WhatsApp-Vorlage für vollständige Inhalte einrichten"
+msgstr "Set up your full-content WhatsApp template"
 
 #: includes/class-tscb-settings.php:693
 msgid "Keep exactly five positional body text parameters: name, email address, subject, all labelled form answers, website. Do not use variable headers or buttons. All labels and answers together are limited to 500 characters; the five parameter values to 900. Use at most 124 characters of fixed template text. Missing name or email is shown as a dash."
-msgstr "Verwenden Sie genau fünf nummerierte Textparameter im Vorlagentext: Name, E-Mail-Adresse, Betreff, alle beschrifteten Formularantworten, Website. Nutzen Sie keine variablen Kopfzeilen oder Buttons. Alle Beschriftungen und Antworten zusammen sind auf 500 Zeichen begrenzt, die fünf Parameterwerte auf 900. Verwenden Sie höchstens 124 Zeichen festen Vorlagentext. Fehlende Namen oder E-Mail-Adressen erscheinen als Gedankenstrich."
+msgstr "Keep exactly five positional body text parameters: name, email address, subject, all labelled form answers, website. Do not use variable headers or buttons. All labels and answers together are limited to 500 characters; the five parameter values to 900. Use at most 124 characters of fixed template text. Missing name or email is shown as a dash."
 
 #: includes/class-tscb-settings.php:694
 msgid ""
@@ -1517,164 +1534,164 @@ msgid ""
 "Subject: {{3}}\n"
 "Details: {{4}}\n"
 "Website: {{5}}"
-msgstr "Neue Kontaktanfrage\nName: {{1}}\nE-Mail: {{2}}\nBetreff: {{3}}\nDetails: {{4}}\nWebsite: {{5}}"
+msgstr "New contact inquiry\nName: {{1}}\nEmail: {{2}}\nSubject: {{3}}\nDetails: {{4}}\nWebsite: {{5}}"
 
 #: includes/class-tscb-settings.php:695
 msgid "This example shows the required structure. Meta reviews the content, category, and intended use; approval is not guaranteed. Provide suitable sample values for all five variables when applying."
-msgstr "Dies ist ein Strukturbeispiel. Meta prüft Inhalt, Kategorie und Verwendungszweck; eine Genehmigung wird nicht garantiert. Tragen Sie bei der Beantragung passende Beispieldaten für alle fünf Variablen ein."
+msgstr "This example shows the required structure. Meta reviews the content, category, and intended use; approval is not guaranteed. Provide suitable sample values for all five variables when applying."
 
 #: includes/class-tscb-settings.php:697
 msgid "Set up your extended-privacy WhatsApp template"
-msgstr "WhatsApp-Vorlage für erweiterten Datenschutz einrichten"
+msgstr "Set up your extended-privacy WhatsApp template"
 
 #: includes/class-tscb-settings.php:698
 msgid "Create and submit a separate template in WhatsApp Manager. Keep exactly two positional body text parameters in this order: website name, protected administrator URL. The existing five-parameter template cannot be used for extended privacy. Meta decides whether to approve the template."
-msgstr "Erstelle im WhatsApp Manager eine separate Vorlage und reiche sie ein. Verwende genau zwei positionsgebundene Textparameter im Nachrichtentext in dieser Reihenfolge: Website-Name, geschützte Administrator-URL. Die bisherige Vorlage mit fünf Parametern kann nicht für erweiterten Datenschutz verwendet werden. Meta entscheidet über die Freigabe der Vorlage."
+msgstr "Create and submit a separate template in WhatsApp Manager. Keep exactly two positional body text parameters in this order: website name, protected administrator URL. The existing five-parameter template cannot be used for extended privacy. Meta decides whether to approve the template."
 
 #: includes/class-tscb-settings.php:699
 msgid "New inquiry on {{1}}. Open securely: {{2}}"
-msgstr "Neue Anfrage auf {{1}}. Geschützt öffnen: {{2}}"
+msgstr "New inquiry on {{1}}. Open securely: {{2}}"
 
 #: includes/class-tscb-settings.php:704
 msgid "Privacy & retention"
-msgstr "Datenschutz & Aufbewahrung"
+msgstr "Privacy & retention"
 
 #: includes/class-tscb-settings.php:705
 msgid "Explain the enabled delivery channels and local storage in your privacy policy. Channels with extended privacy receive only the website name and a protected administrator link; channels without it receive the form answers. Original inquiries for extended privacy are stored encrypted on this website. Hosting, email and messaging services may keep their own data."
-msgstr "Erkläre die aktivierten Versandkanäle und die lokale Speicherung in deiner Datenschutzerklärung. Kanäle mit erweitertem Datenschutz erhalten nur den Website-Namen und einen geschützten Administratorlink; Kanäle ohne diese Option erhalten die Formularantworten. Originalanfragen für erweiterten Datenschutz werden verschlüsselt auf dieser Website gespeichert. Hosting-, E-Mail- und Nachrichtendienste können eigene Daten speichern."
+msgstr "Explain the enabled delivery channels and local storage in your privacy policy. Channels with extended privacy receive only the website name and a protected administrator link; channels without it receive the form answers. Original inquiries for extended privacy are stored encrypted on this website. Hosting, email and messaging services may keep their own data."
 
 #: includes/class-tscb-settings.php:707
 msgid "Keep locally stored inquiries for this many days"
-msgstr "Lokale Anfragen für diese Anzahl an Tagen aufbewahren"
+msgstr "Keep locally stored inquiries for this many days"
 
 #: includes/class-tscb-settings.php:709
 msgid "Default: 30 days. Set 0 to keep inquiries indefinitely until you delete them. Values from 1 to 36500 set the retention period in whole days."
-msgstr "Standard: 30 Tage. Mit 0 bleiben Anfragen dauerhaft gespeichert, bis du sie löschst. Werte von 1 bis 36500 legen die Aufbewahrungsdauer in ganzen Tagen fest."
+msgstr "Default: 30 days. Set 0 to keep inquiries indefinitely until you delete them. Values from 1 to 36500 set the retention period in whole days."
 
 #: includes/class-tscb-settings.php:710
 msgid "Changes apply only to new inquiries. Existing inquiries keep their saved expiry date; delete them separately in Inquiries."
-msgstr "Änderungen gelten nur für neue Anfragen. Bereits vorhandene Anfragen behalten ihr gespeichertes Ablaufdatum; lösche sie bei Bedarf separat unter Anfragen."
+msgstr "Changes apply only to new inquiries. Existing inquiries keep their saved expiry date; delete them separately in Inquiries."
 
 #: includes/class-tscb-settings.php:711
 msgid "Open inquiries"
-msgstr "Anfragen öffnen"
+msgstr "Open inquiries"
 
 #: includes/class-tscb-settings.php:713
 msgid "Delete settings and stored credentials when the plugin is deleted"
-msgstr "Einstellungen und gespeicherte Zugangsdaten bei der Deinstallation löschen"
+msgstr "Delete settings and stored credentials when the plugin is deleted"
 
 #: includes/class-tscb-settings.php:714
 msgid "Stored inquiries and runtime data are always removed when the plugin is deleted, regardless of this setting. Deactivation does not delete settings or inquiries. Remove wp-config.php values and messages held by external services separately."
-msgstr "Gespeicherte Anfragen und Laufzeitdaten werden beim Löschen des Plugins unabhängig von dieser Einstellung immer entfernt. Eine Deaktivierung löscht weder Einstellungen noch Anfragen. Werte in wp-config.php und Nachrichten bei externen Diensten separat entfernen."
+msgstr "Stored inquiries and runtime data are always removed when the plugin is deleted, regardless of this setting. Deactivation does not delete settings or inquiries. Remove wp-config.php values and messages held by external services separately."
 
 #: includes/class-tscb-settings.php:716
 msgid "Save settings"
-msgstr "Einstellungen speichern"
+msgstr "Save settings"
 
 #: includes/class-tscb-settings.php:716
 msgid "All changes saved"
-msgstr "Alle Änderungen gespeichert"
+msgstr "All changes saved"
 
 #: includes/class-tscb-settings.php:723
 msgid "Enable the channel you want to use and save your settings first. Tests send sample data to the selected service and configured recipient. Chat ID discovery uses the stored Telegram token."
-msgstr "Aktivieren und speichern Sie zuerst den gewünschten Kanal. Die Tests senden Beispieldaten an den gewählten Dienst und den hinterlegten Empfänger. Die Chat-ID-Ermittlung verwendet den gespeicherten Telegram-Token."
+msgstr "Enable the channel you want to use and save your settings first. Tests send sample data to the selected service and configured recipient. Chat ID discovery uses the stored Telegram token."
 
 #. translators: %s: Name of a delivery channel.
 #: includes/class-tscb-settings.php:730
 #, php-format
 msgid "Test %s"
-msgstr "%s testen"
+msgstr "Test %s"
 
 #: includes/class-tscb-settings.php:735
 msgid "Confirm your Telegram recipient"
-msgstr "Ihren Telegram-Empfänger bestätigen"
+msgstr "Confirm your Telegram recipient"
 
 #: includes/class-tscb-settings.php:738
 msgid "Send this one-time code to your bot in a private Telegram chat, then confirm below. The code expires after 10 minutes. Only share it with your intended recipient."
-msgstr "Senden Sie diesen Einmalcode in einem privaten Telegram-Chat an Ihren Bot und bestätigen Sie anschließend unten. Der Code läuft nach 10 Minuten ab. Teilen Sie ihn nur mit Ihrem vorgesehenen Empfänger."
+msgstr "Send this one-time code to your bot in a private Telegram chat, then confirm below. The code expires after 10 minutes. Only share it with your intended recipient."
 
 #: includes/class-tscb-settings.php:742
 msgid "Confirm Telegram recipient"
-msgstr "Telegram-Empfänger bestätigen"
+msgstr "Confirm Telegram recipient"
 
 #: includes/class-tscb-settings.php:745
 msgid "Save a valid Telegram bot token first to generate a pairing code. You can also enter the chat ID manually."
-msgstr "Speichern Sie zuerst einen gültigen Telegram-Bot-Token, um einen Bestätigungscode zu erzeugen. Sie können die Chat-ID auch manuell eintragen."
+msgstr "Save a valid Telegram bot token first to generate a pairing code. You can also enter the chat ID manually."
 
 #: includes/class-tscb-settings.php:750
 msgid "Signal is not integrated because it has no comparable official bot API. This plugin uses the official Cloud API for WhatsApp and the Bot API for Telegram."
-msgstr "Signal ist nicht integriert: Es gibt keine vergleichbare offizielle Bot-API. Dieses Plugin verwendet für WhatsApp die offizielle Cloud API und für Telegram die Bot API."
+msgstr "Signal is not integrated because it has no comparable official bot API. This plugin uses the official Cloud API for WhatsApp and the Bot API for Telegram."
 
 #: includes/class-tscb-settings.php:750
 msgid "Telegram setup"
-msgstr "Telegram-Einrichtung"
+msgstr "Telegram setup"
 
 #: includes/class-tscb-settings.php:750
 msgid "WhatsApp setup with Meta"
-msgstr "WhatsApp-Einrichtung bei Meta"
+msgstr "WhatsApp setup with Meta"
 
 #: includes/class-tscb-submission.php:43
 msgid "The form has expired. Please reload the page and try again."
-msgstr "Das Formular ist abgelaufen. Bitte die Seite neu laden und erneut versuchen."
+msgstr "The form has expired. Please reload the page and try again."
 
 #: includes/class-tscb-submission.php:46
 msgid "The message could not be accepted."
-msgstr "Die Nachricht konnte nicht angenommen werden."
+msgstr "The message could not be accepted."
 
 #: includes/class-tscb-submission.php:50
 msgid "Please wait a moment and submit again."
-msgstr "Bitte einen Moment warten und erneut absenden."
+msgstr "Please wait a moment and submit again."
 
 #: includes/class-tscb-submission.php:54
 msgid "Please reload the page."
-msgstr "Bitte die Seite neu laden."
+msgstr "Please reload the page."
 
 #: includes/class-tscb-submission.php:61
 msgid "Please confirm the privacy notice."
-msgstr "Bitte den Datenschutzhinweis bestätigen."
+msgstr "Please confirm the privacy notice."
 
 #: includes/class-tscb-submission.php:68
 msgid "The contact form has not been set up yet. Please use another way to get in touch."
-msgstr "Das Kontaktformular ist noch nicht eingerichtet. Bitte einen anderen Kontaktweg nutzen."
+msgstr "The contact form has not been set up yet. Please use another way to get in touch."
 
 #: includes/class-tscb-submission.php:79
 msgid "A request is already being processed. Please wait a moment."
-msgstr "Eine Anfrage wird bereits verarbeitet. Bitte kurz warten."
+msgstr "A request is already being processed. Please wait a moment."
 
 #: includes/class-tscb-submission.php:91
 msgid "Too many requests. Please try again in ten minutes."
-msgstr "Zu viele Anfragen. Bitte in zehn Minuten erneut versuchen."
+msgstr "Too many requests. Please try again in ten minutes."
 
 #: includes/class-tscb-submission.php:97
 msgid "This message is already being processed. Please wait a moment."
-msgstr "Diese Nachricht wird bereits verarbeitet. Bitte kurz warten."
+msgstr "This message is already being processed. Please wait a moment."
 
 #: includes/class-tscb-submission.php:110
 msgid "The inquiry could not be stored securely. Please try again later or use another way to get in touch."
-msgstr "Die Anfrage konnte nicht sicher gespeichert werden. Bitte versuchen Sie es später erneut oder nutzen Sie einen anderen Kontaktweg."
+msgstr "The inquiry could not be stored securely. Please try again later or use another way to get in touch."
 
 #: includes/class-tscb-submission.php:112
 #: includes/class-tscb-transports.php:43
 msgid "The inquiry could not be stored securely. No notification was sent."
-msgstr "Die Anfrage konnte nicht sicher gespeichert werden. Es wurde keine Benachrichtigung gesendet."
+msgstr "The inquiry could not be stored securely. No notification was sent."
 
 #: includes/class-tscb-submission.php:127
 msgid "The notification could not be sent. Please check the delivery settings."
-msgstr "Die Benachrichtigung konnte nicht gesendet werden. Bitte prüfen Sie die Versandeinstellungen."
+msgstr "The notification could not be sent. Please check the delivery settings."
 
 #: includes/class-tscb-submission.php:136
 msgid "The message could not be passed to a delivery service right now. Please try again later or use another way to get in touch."
-msgstr "Die Nachricht konnte gerade nicht weitergegeben werden. Bitte später erneut versuchen oder einen anderen Kontaktweg nutzen."
+msgstr "The message could not be passed to a delivery service right now. Please try again later or use another way to get in touch."
 
 #: includes/class-tscb-transports.php:35
 msgid "Please complete the setup for this channel."
-msgstr "Bitte die Konfiguration dieses Kanals vervollständigen."
+msgstr "Please complete the setup for this channel."
 
 #. translators: %s: website name, not visitor-supplied information.
 #: includes/class-tscb-transports.php:47
 #, php-format
 msgid "New inquiry via the contact form on %s."
-msgstr "Neue Anfrage über das Kontaktformular auf %s."
+msgstr "New inquiry via the contact form on %s."
 
 #: includes/class-tscb-transports.php:49
 msgid "Name: "
@@ -1682,31 +1699,31 @@ msgstr "Name: "
 
 #: includes/class-tscb-transports.php:49
 msgid "Email: "
-msgstr "E-Mail: "
+msgstr "Email: "
 
 #: includes/class-tscb-transports.php:49
 msgid "Subject: "
-msgstr "Betreff: "
+msgstr "Subject: "
 
 #: includes/class-tscb-transports.php:52
 msgid "New contact inquiry"
-msgstr "Neue Kontaktanfrage"
+msgstr "New contact inquiry"
 
 #: includes/class-tscb-transports.php:82
 msgid "The service could not be reached. Please check the server connection and service status."
-msgstr "Der Dienst war nicht erreichbar. Bitte Serververbindung und Dienststatus prüfen."
+msgstr "The service could not be reached. Please check the server connection and service status."
 
 #: includes/class-tscb-transports.php:90
 msgid "The service did not confirm the request. Please check the token and recipient, and for WhatsApp, the template, language, and account status."
-msgstr "Der Dienst hat die Anfrage nicht bestätigt. Bitte Token, Empfänger und bei WhatsApp Vorlage, Sprache und Kontostatus prüfen."
+msgstr "The service did not confirm the request. Please check the token and recipient, and for WhatsApp, the template, language, and account status."
 
 #: includes/class-tscb-transports.php:101
 msgid "Please enable the delivery channel and save your settings first."
-msgstr "Bitte den Versandkanal zuerst aktivieren und speichern."
+msgstr "Please enable the delivery channel and save your settings first."
 
 #: includes/class-tscb-transports.php:103
 msgid "Plugin test"
-msgstr "Plugin-Test"
+msgstr "Plugin test"
 
 #: includes/class-tscb-transports.php:103
 msgid "ContactBridge – Test"
@@ -1714,24 +1731,4 @@ msgstr "ContactBridge – Test"
 
 #: includes/class-tscb-transports.php:103
 msgid "The connection works. This is a test message from the WordPress settings."
-msgstr "Die Verbindung funktioniert. Dies ist eine Testnachricht aus den WordPress-Einstellungen."
-
-#: tsambasis-contact-bridge.php:106
-msgid "Settings"
-msgstr "Einstellungen"
-
-#: tsambasis-contact-bridge.php:117
-msgid "Our contact form processes the fields configured by the site operator, such as name, email, phone number, subject, message and selected options. For each enabled channel, the operator chooses full-content delivery or extended privacy. Full-content channels send the submitted details by email, Telegram or the WhatsApp Business Platform. Extended-privacy channels receive only a general notification, the website name and a link requiring an authorized WordPress administrator login; no submitted fields or visitor reply address are included."
-msgstr "Unser Kontaktformular verarbeitet die vom Website-Betreiber eingerichteten Felder, etwa Name, E-Mail, Telefonnummer, Betreff, Nachricht und Auswahlantworten. Der Betreiber wählt je aktiviertem Kanal zwischen vollständigem Versand und erweitertem Datenschutz. Beim vollständigen Versand gehen die eingegebenen Angaben per E-Mail, Telegram oder über die WhatsApp Business Platform an den Empfänger. Kanäle mit erweitertem Datenschutz erhalten nur einen allgemeinen Hinweis, den Website-Namen und einen Link, der eine Anmeldung als berechtigter WordPress-Administrator verlangt; eingegebene Felder und die Antwortadresse des Besuchers sind darin nicht enthalten."
-
-#: tsambasis-contact-bridge.php:118
-msgid "When extended privacy is enabled for an active channel, the inquiry is stored encrypted in this website's WordPress database. Administrators can read and delete it. The default retention is 30 days; the operator can choose another period or permanent storage. Each inquiry retains the period selected when it was received. Expired inquiries are hidden and automatically deleted through scheduled cleanup; backups may retain separate copies. If all channels use full-content delivery, the plugin does not create a local inquiry archive."
-msgstr "Wenn für einen aktivierten Kanal der erweiterte Datenschutz eingeschaltet ist, wird die Anfrage verschlüsselt in der WordPress-Datenbank dieser Website gespeichert. Administratoren können sie lesen und löschen. Die Aufbewahrungsfrist beträgt standardmäßig 30 Tage; der Betreiber kann eine andere Frist oder dauerhafte Speicherung wählen. Für jede Anfrage gilt die beim Eingang gewählte Frist. Abgelaufene Anfragen werden ausgeblendet und durch die geplante Bereinigung automatisch gelöscht; Sicherungen können eigene Kopien enthalten. Wenn alle Kanäle vollständig versenden, erstellt das Plugin kein lokales Anfrage-Archiv."
-
-#: tsambasis-contact-bridge.php:119
-msgid "To prevent abuse, the plugin temporarily stores keyed identifiers and delivery status without message content. The server processes the IP address but the plugin does not store it in plain text. The plugin adds no tracking cookies, remote fonts, advertising or analytics. Specify the actual recipients, purposes, legal bases, retention periods and any international transfers applicable to your website; enabling extended privacy does not by itself guarantee GDPR compliance."
-msgstr "Zum Schutz vor Missbrauch speichert das Plugin vorübergehend mit einem Website-Schlüssel erzeugte Kennungen und Versandstatus ohne Nachrichteninhalt. Der Server verarbeitet die IP-Adresse, das Plugin speichert sie jedoch nicht im Klartext. Das Plugin bindet keine Tracking-Cookies, externen Schriftarten, Werbung oder Analysedienste ein. Ergänzen Sie die tatsächlichen Empfänger, Zwecke, Rechtsgrundlagen, Aufbewahrungsfristen und gegebenenfalls internationalen Datenübermittlungen Ihrer Website; der erweiterte Datenschutz allein garantiert keine DSGVO-Konformität."
-
-#: tsambasis-contact-bridge.php:120
-msgid "If enabled, the email delivery log stores at most 50 events for seven days: time, transport, test or form submission, result and a safe error category. It contains no addresses, subjects, message bodies or credentials. Email is handled by the configured WordPress mail service or SMTP provider. Administrators can disable or clear this log."
-msgstr "Wenn aktiviert, speichert das E-Mail-Versandprotokoll höchstens 50 Ereignisse für sieben Tage: Zeitpunkt, Versandweg, Test oder Formularanfrage, Ergebnis und eine sichere Fehlerkategorie. Es enthält keine Adressen, Betreffzeilen, Nachrichtentexte oder Zugangsdaten. E-Mails werden durch den eingerichteten WordPress-Maildienst oder SMTP-Anbieter verarbeitet. Administratoren können dieses Protokoll deaktivieren oder löschen."
+msgstr "The connection works. This is a test message from the WordPress settings."

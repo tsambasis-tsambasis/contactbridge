@@ -1,6 +1,6 @@
 # ContactBridge – Einrichtung und Einreichung
 
-Erstveröffentlichung 1.0.0 · Stand: 26. September 2026
+Erstveröffentlichung 1.0.0 · Stand: 27. September 2026
 
 Das Plugin erstellt ein anpassbares Kontaktformular für WordPress. Nachrichten gehen an eine hinterlegte E-Mail-Adresse, an einen Telegram-Chat und/oder per offizieller WhatsApp Cloud API an eine festgelegte Empfängernummer. Besucher benötigen keinen Messenger-Account. Mit erweitertem Datenschutz speichert das Plugin die Originalanfrage verschlüsselt in WordPress und sendet auf dem jeweiligen Kanal nur Website-Namen und einen geschützten Administratorlink.
 
@@ -17,9 +17,23 @@ Das Plugin erstellt ein anpassbares Kontaktformular für WordPress. Nachrichten 
 
 5. Die veröffentlichte Seite auch ausgeloggt am Mobilgerät prüfen und eine echte Testanfrage absenden.
 
-Der Shortcode lautet ausschließlich `[contact_bridge]`. Das Installationspaket heißt `contact-bridge-1.0.0.zip`; sein Pluginordner und seine Textdomain heißen `tsambasis-contact-bridge`. Dies ist die erste Veröffentlichung des Plugins.
+Der Shortcode lautet ausschließlich `[contact_bridge]`. Das Installationspaket heißt `contactbridge-1.0.0.zip`; sein Pluginordner und seine Textdomain heißen `contactbridge`. Dies ist die erste Veröffentlichung des Plugins.
 
 Voraussetzungen: WordPress ab 6.6, PHP ab 7.4 und für Messenger ausgehende HTTPS-Verbindungen vom Webserver. Mit JavaScript wird ohne Seitenwechsel gesendet; ohne JavaScript funktioniert ein klassischer Formularversand mit anschließendem Neuladen. Für einen sicheren Produktivbetrieb sollten WordPress und PHP auf einer aktuell unterstützten Version laufen.
+
+## Vorhandene Entwicklungsversion auf den neuen Ordner umstellen
+
+Der aktuelle Produktname lautet überall **ContactBridge**. Der neue Pluginpfad ist `contactbridge/contactbridge.php`; Textdomain und gewünschter WordPress.org-Slug lauten `contactbridge`. WordPress.org hat den Slug **contactbridge** inzwischen zugewiesen. Das Plugin-Review ist weiterhin offen; eine Veröffentlichung ist damit noch nicht freigegeben. Das GitHub-Repository ist unter https://github.com/tsambasis-tsambasis/contactbridge vorgesehen; eine Umbenennung dort ist keine WordPress.org-Freigabe.
+
+Bei einer bereits installierten Entwicklungsversion vor dem Ordnerwechsel:
+
+1. Datenbank und unveränderte WordPress-Sicherheitsschlüssel geschützt sichern. Vorhandene Anfragen, Einstellungen und SMTP-Zugang prüfen.
+2. Die bisherige Entwicklungsversion in der Pluginliste **deaktivieren**. **Nicht über WordPress löschen:** Die Deinstallationsroutine entfernt gespeicherte Anfragen unabhängig von der Einstellung zum Löschen der Konfiguration.
+3. Nach dem Backup den deaktivierten alten Pluginordner über FTP oder die Dateiverwaltung des Hostings entfernen, **ohne die WordPress-Deinstallation aufzurufen**. Dann die neue `contactbridge-1.0.0.zip` installieren und ausschließlich das Plugin aus `contactbridge/` aktivieren. Die beiden Versionen nicht gleichzeitig aktivieren.
+4. Einstellungen, Versandziele, Formular, vorhandene verschlüsselte Anfragen und gegebenenfalls SMTP-Passwort prüfen. Der Shortcode `[contact_bridge]` bleibt bestehen. WordPress-Sicherheitsschlüssel nicht ändern.
+5. Das Backup bis zur abgeschlossenen Prüfung aufbewahren. Bei Unklarheiten den Wechsel auf einer geschützten Testkopie nachvollziehen; keine Löschfunktion in der WordPress-Pluginliste verwenden.
+
+Alte gespeicherte Administratorlinks oder Lesezeichen können auf den früheren Einstellungsseiten-Slug zeigen; die aktuelle Oberfläche über **Einstellungen → ContactBridge** öffnen. Der geschützte Anfragenzugriff bleibt an die Anmeldung und Administratorberechtigung gebunden. Die neue Ordnerstruktur allein ist kein automatisches WordPress-Update des alten Pluginpfads.
 
 ## Deutsch oder Englisch auswählen
 
@@ -263,7 +277,7 @@ Bei der Deinstallation werden **gespeicherte Anfragen immer gelöscht**, unabhä
 
 Die installierbare ZIP ist das technische Paket für die manuelle Prüfung. Eine Freigabe kann ausschließlich das WordPress.org-Plugin-Team erteilen. Folgendes bleibt vom Herausgeber zu erledigen:
 
-1. Als öffentlicher Autor und Hersteller ist **[Tsambasis & Tsambasis](https://tsambasis.net/)** eingetragen. Das technische WordPress.org-Konto und der `Contributors`-Eintrag lauten **solutionfirst**. Die Oberfläche verwendet **ContactBridge**. Der formelle Verzeichnisname lautet **ContactBridge by Tsambasis**, in deutschen Plugin-Metadaten **ContactBridge von Tsambasis**; der vorgesehene Verzeichnis-Slug ist `tsambasis-contact-bridge`. Die endgültige Vergabe entscheidet WordPress.org.
+1. Als öffentlicher Autor und Hersteller ist **[Tsambasis & Tsambasis](https://tsambasis.net/)** eingetragen. Das technische WordPress.org-Konto und der `Contributors`-Eintrag lauten **solutionfirst**. Produktname, Plugin-Metadaten und Oberfläche lauten in beiden Sprachen **ContactBridge**. WordPress.org hat den Verzeichnis-Slug `contactbridge` zugewiesen. Das Review ist weiterhin offen.
 2. Das mitgelieferte Prüfprotokoll lesen; dort sind tatsächlich ausgeführte Tests und verbleibende Grenzen dokumentiert. Echten E-Mail-, Telegram- und WhatsApp-Versand mit den eigenen Produktionszugängen prüfen.
 3. Den bestätigten Prüfstand einschließlich des offiziellen **Plugin Check** im Prüfprotokoll kontrollieren. Bei späteren Codeänderungen oder WordPress-Versionen erneut prüfen und den `Tested up to`-Wert nur entsprechend tatsächlich ausgeführter Tests anpassen.
 4. Aktuelle [Plugin-Richtlinien](https://developer.wordpress.org/plugins/wordpress-org/detailed-plugin-guidelines/) beachten. Das Readme dokumentiert externe Dienste, übermittelte Daten, Lizenz und Servicebedingungen. Alle Quelldateien sind enthalten.
