@@ -24,7 +24,7 @@ Built by [Tsambasis & Tsambasis](https://tsambasis.net/). The interface uses the
 
 ## Installation
 
-1. Download the packaged **[contact-bridge-1.0.0.zip](https://github.com/tsambasis-tsambasis/tsambasis-contact-bridge/raw/refs/heads/main/dist/contact-bridge-1.0.0.zip)**. GitHub's automatically generated **Source code** archives are not the installation package.
+1. Download the packaged **[contactbridge-1.0.0.zip](https://github.com/tsambasis-tsambasis/contactbridge/raw/refs/heads/main/dist/contactbridge-1.0.0.zip)**. GitHub's automatically generated **Source code** archives are not the installation package.
 2. In WordPress, open **Plugins → Add New → Upload Plugin**, upload that ZIP and activate it.
 3. Open **Settings → ContactBridge** (German: **Einstellungen → ContactBridge**).
 4. Configure at least one delivery channel, save the settings and send a connection test.
@@ -41,6 +41,12 @@ For example, override the appearance of one form:
 ```
 
 Use `embedded="true"` to remove the outer form card. Verify the published page on desktop and mobile, and adapt your site's privacy notice to the channels you enable.
+
+## Replacing an earlier development folder
+
+The current plugin folder, main file and text domain are `contactbridge/`, `contactbridge.php` and `contactbridge`. If an earlier development build is already installed, first back up the database and WordPress security keys, then deactivate that build. **Do not use WordPress's Delete action for the old plugin:** its uninstall handler removes locally stored inquiries. After the backup and deactivation, remove the old plugin folder through the hosting file manager or FTP without running WordPress uninstall. Then install the new ZIP, activate only ContactBridge, and verify settings and existing encrypted inquiries. The shortcode stays `[contact_bridge]`; retain the existing WordPress keys so stored data remains decryptable. See [the German migration guide](docs/ANLEITUNG.md) for details.
+
+WordPress.org has assigned the slug `contactbridge`; the plugin review is still pending. The GitHub repository name does not determine WordPress.org acceptance.
 
 ## Delivery setup
 
