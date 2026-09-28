@@ -1,4 +1,4 @@
-/* ContactBridge. Native POST remains available without JavaScript. */
+/* Kontelio. Native POST remains available without JavaScript. */
 (function () {
 	'use strict';
 
