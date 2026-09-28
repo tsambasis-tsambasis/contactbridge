@@ -2,7 +2,7 @@
 /**
  * Accessible shortcode form and its progressively enhanced assets.
  *
- * @package ContactBridge
+ * @package Kontelio
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -15,6 +15,8 @@ final class TSCB_Form {
 
 	/** Register shortcode and front-end assets. */
 	public static function init() {
+		add_shortcode( 'kontelio', array( __CLASS__, 'shortcode' ) );
+		// Preserve published pages created with development versions.
 		add_shortcode( 'contact_bridge', array( __CLASS__, 'shortcode' ) );
 		add_action( 'wp_enqueue_scripts', array( __CLASS__, 'register_assets' ) );
 	}
@@ -25,7 +27,7 @@ final class TSCB_Form {
 		wp_register_script( 'tscb-form', TSCB_URL . 'assets/form.js', array(), TSCB_VERSION, true );
 
 		$post = get_post();
-		if ( $post instanceof WP_Post && has_shortcode( $post->post_content, 'contact_bridge' ) ) {
+		if ( $post instanceof WP_Post && ( has_shortcode( $post->post_content, 'kontelio' ) || has_shortcode( $post->post_content, 'contact_bridge' ) ) ) {
 			wp_enqueue_style( 'tscb-form' );
 			wp_enqueue_script( 'tscb-form' );
 		}
@@ -113,12 +115,12 @@ final class TSCB_Form {
 
 		$messages = array(
 			'ok'           => $settings['success_message'],
-			'invalid'      => __( 'Please check your details and complete all required fields.', 'contactbridge' ),
-			'expired'      => __( 'Your session has expired. Reload the page and send your message again.', 'contactbridge' ),
-			'spam'         => __( 'Your message could not be sent. Please wait a moment and try again.', 'contactbridge' ),
-			'rate'         => __( 'You have sent several messages in a short time. Please try again later.', 'contactbridge' ),
-			'failed'       => __( 'Your message could not be sent. Please try again later.', 'contactbridge' ),
-			'unconfigured' => __( 'The contact form is currently unavailable. Please use another way to get in touch.', 'contactbridge' ),
+			'invalid'      => __( 'Please check your details and complete all required fields.', 'kontelio' ),
+			'expired'      => __( 'Your session has expired. Reload the page and send your message again.', 'kontelio' ),
+			'spam'         => __( 'Your message could not be sent. Please wait a moment and try again.', 'kontelio' ),
+			'rate'         => __( 'You have sent several messages in a short time. Please try again later.', 'kontelio' ),
+			'failed'       => __( 'Your message could not be sent. Please try again later.', 'kontelio' ),
+			'unconfigured' => __( 'The contact form is currently unavailable. Please use another way to get in touch.', 'kontelio' ),
 		);
 		$message  = isset( $messages[ $status ] ) ? $messages[ $status ] : '';
 		$state    = '' !== $message ? ( 'ok' === $status ? 'success' : 'error' ) : '';
@@ -166,7 +168,7 @@ final class TSCB_Form {
 				<?php if ( '' !== $settings['eyebrow'] ) : ?>
 					<p class="tscb__eyebrow"><span class="tscb__dot" aria-hidden="true"></span><?php echo esc_html( $settings['eyebrow'] ); ?></p>
 				<?php endif; ?>
-				<h2 id="<?php echo esc_attr( $instance ); ?>-heading" class="tscb__heading"><?php echo esc_html( '' !== $heading ? $heading : __( 'Send us a message.', 'contactbridge' ) ); ?></h2>
+				<h2 id="<?php echo esc_attr( $instance ); ?>-heading" class="tscb__heading"><?php echo esc_html( '' !== $heading ? $heading : __( 'Send us a message.', 'kontelio' ) ); ?></h2>
 				<?php if ( ! empty( $settings['intro'] ) ) : ?>
 					<p class="tscb__intro"><?php echo esc_html( $settings['intro'] ); ?></p>
 				<?php endif; ?>
@@ -174,7 +176,7 @@ final class TSCB_Form {
 			<?php if ( ! $interactive ) : ?>
 			<div class="tscb__form" role="form" aria-labelledby="<?php echo esc_attr( $instance ); ?>-heading">
 			<?php else : ?>
-			<form class="tscb__form" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>" method="post" data-tscb-form data-endpoint="<?php echo esc_url( admin_url( 'admin-ajax.php' ) ); ?>" data-pending="<?php esc_attr_e( 'Sending …', 'contactbridge' ); ?>" data-network-error="<?php esc_attr_e( 'We could not confirm that your message was sent. Please try again later.', 'contactbridge' ); ?>" data-validation-error="<?php esc_attr_e( 'Please check the highlighted fields.', 'contactbridge' ); ?>" data-success="<?php echo esc_attr( $settings['success_message'] ); ?>">
+			<form class="tscb__form" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>" method="post" data-tscb-form data-endpoint="<?php echo esc_url( admin_url( 'admin-ajax.php' ) ); ?>" data-pending="<?php esc_attr_e( 'Sending …', 'kontelio' ); ?>" data-network-error="<?php esc_attr_e( 'We could not confirm that your message was sent. Please try again later.', 'kontelio' ); ?>" data-validation-error="<?php esc_attr_e( 'Please check the highlighted fields.', 'kontelio' ); ?>" data-success="<?php echo esc_attr( $settings['success_message'] ); ?>">
 				<input type="hidden" name="action" value="tscb_submit">
 				<input type="hidden" name="tscb_nonce" value="<?php echo esc_attr( wp_create_nonce( 'tscb_submit' ) ); ?>">
 				<input type="hidden" name="tscb_id" value="<?php echo esc_attr( wp_generate_uuid4() ); ?>">
@@ -182,7 +184,7 @@ final class TSCB_Form {
 				<input type="hidden" name="tscb_started" value="<?php echo esc_attr( (string) time() ); ?>">
 				<input type="hidden" name="tscb_return" value="<?php echo esc_url( $return ); ?>">
 				<div class="tscb__honeypot" aria-hidden="true" inert>
-					<label for="<?php echo esc_attr( $instance ); ?>-company"><?php esc_html_e( 'Please leave this field empty.', 'contactbridge' ); ?></label>
+					<label for="<?php echo esc_attr( $instance ); ?>-company"><?php esc_html_e( 'Please leave this field empty.', 'kontelio' ); ?></label>
 					<input id="<?php echo esc_attr( $instance ); ?>-company" name="tscb_company" type="text" value="" tabindex="-1" autocomplete="off">
 				</div>
 			<?php endif; ?>
@@ -216,7 +218,7 @@ final class TSCB_Form {
 			<?php if ( ! $interactive ) : ?>
 			</div>
 			<?php else : ?>
-				<noscript><p class="tscb__hint"><?php esc_html_e( 'This page will reload after you submit the form. Your confirmation will then appear next to the form.', 'contactbridge' ); ?></p></noscript>
+				<noscript><p class="tscb__hint"><?php esc_html_e( 'This page will reload after you submit the form. Your confirmation will then appear next to the form.', 'kontelio' ); ?></p></noscript>
 			</form>
 			<?php endif; ?>
 		</section>
@@ -260,7 +262,7 @@ final class TSCB_Form {
 				<?php elseif ( 'select' === $type ) : ?>
 					<div class="tscb__select-wrap">
 						<select class="tscb__input tscb__select" id="<?php echo esc_attr( $id ); ?>" name="<?php echo esc_attr( $name ); ?>"<?php echo $field['required'] ? ' required' : ''; ?> aria-describedby="<?php echo esc_attr( $description ); ?>"<?php echo $invalid ? ' aria-invalid="true"' : ''; ?>>
-							<option value=""><?php echo esc_html( '' !== $field['placeholder'] ? $field['placeholder'] : __( 'Please choose an option.', 'contactbridge' ) ); ?></option>
+							<option value=""><?php echo esc_html( '' !== $field['placeholder'] ? $field['placeholder'] : __( 'Please choose an option.', 'kontelio' ) ); ?></option>
 							<?php foreach ( $field['options'] as $option ) : ?>
 								<option value="<?php echo esc_attr( $option ); ?>"><?php echo esc_html( $option ); ?></option>
 							<?php endforeach; ?>
@@ -273,14 +275,14 @@ final class TSCB_Form {
 			<?php if ( 'textarea' === $type ) : ?>
 				<p class="tscb__hint" id="<?php echo esc_attr( $id ); ?>-hint"<?php echo '' === $hint ? ' hidden' : ''; ?>><?php echo esc_html( $hint ); ?></p>
 			<?php endif; ?>
-			<p class="tscb__field-error" id="<?php echo esc_attr( $id ); ?>-error" data-error-for="<?php echo esc_attr( $name ); ?>"<?php echo $invalid ? '' : ' hidden'; ?>><?php echo $invalid ? esc_html__( 'Please check this field.', 'contactbridge' ) : ''; ?></p>
+			<p class="tscb__field-error" id="<?php echo esc_attr( $id ); ?>-error" data-error-for="<?php echo esc_attr( $name ); ?>"<?php echo $invalid ? '' : ' hidden'; ?>><?php echo $invalid ? esc_html__( 'Please check this field.', 'kontelio' ) : ''; ?></p>
 		</div>
 		<?php
 	}
 
 	/** Show a visible marker with an accessible explanation. */
 	private static function required_marker() {
-		?><span class="tscb__required" aria-hidden="true"> *</span><span class="tscb__sr-only"> <?php esc_html_e( '(required)', 'contactbridge' ); ?></span><?php
+		?><span class="tscb__required" aria-hidden="true"> *</span><span class="tscb__sr-only"> <?php esc_html_e( '(required)', 'kontelio' ); ?></span><?php
 	}
 
 	/**
@@ -321,7 +323,7 @@ final class TSCB_Form {
 		$label   = $settings['privacy_link_text'];
 		if ( $new_tab ) {
 			/* translators: %s: configured privacy link text. */
-			$label = sprintf( __( '%s (opens in a new tab)', 'contactbridge' ), $label );
+			$label = sprintf( __( '%s (opens in a new tab)', 'kontelio' ), $label );
 		}
 		?><a class="tscb__privacy" href="<?php echo $preview ? '#' : esc_url( $settings['privacy_url'] ); ?>"<?php echo $new_tab ? ' target="_blank" rel="noopener noreferrer"' : ''; ?><?php echo $preview ? ' aria-disabled="true" tabindex="-1"' : ''; ?> aria-label="<?php echo esc_attr( $label ); ?>"><?php echo esc_html( $settings['privacy_link_text'] ); ?></a><?php
 	}
