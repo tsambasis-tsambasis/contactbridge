@@ -1,5 +1,5 @@
 <?php
-/** Always erase stored inquiries; optionally remove settings. @package ContactBridge */
+/** Always erase stored inquiries; optionally remove settings. @package Kontelio */
 if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) {
 	exit;
 }

@@ -1,4 +1,4 @@
-=== ContactBridge ===
+=== Kontelio - Contact Forms with Telegram, WhatsApp and Email ===
 Contributors: solutionfirst
 Tags: contact form, telegram, whatsapp, email, shortcode
 Requires at least: 6.6
@@ -12,14 +12,14 @@ Free contact forms with email, Telegram, WhatsApp, a field builder and optional 
 
 == Description ==
 
-ContactBridge connects a flexible WordPress contact form to email, Telegram and the WhatsApp Cloud API. Enable any combination of channels, or send private notifications that link to an encrypted local inbox.
+Kontelio connects a flexible WordPress contact form to email, Telegram and the WhatsApp Cloud API. Enable any combination of channels, or send private notifications that link to an encrypted local inbox.
 
 * Free: no ads, paid features, analytics or remote assets.
 * WordPress mail/TLS SMTP, Telegram and WhatsApp Cloud API.
 * Private notifications, encrypted inbox and adjustable/permanent retention.
 * Six field types, 1–20 fields, ordering and required/optional controls.
 * Four presets, light/dark/auto, round/square, seamless embedding and live preview.
-* German by default, English or WordPress language; custom text and styling.
+* English source text, WordPress-language default for new installations, and optional German language packs; custom text and styling.
 * Server validation, honeypot, timing, rate limits and duplicate protection.
 
 Hosting, email providers and Meta may charge. WhatsApp needs business onboarding, a Cloud API number, token and approved template, not a personal account. No affiliation with Telegram, WhatsApp or Meta; no legal-compliance guarantee.
@@ -44,13 +44,13 @@ Full-content email/Telegram include ordered labelled answers; the first complete
 
 = Shortcode, design and language =
 
-Use `[contact_bridge]`. Override an instance with `theme="light|dark|auto"`, `shape="rounded|square"`, `heading="Your heading"` or `embedded="true|false"`.
+Use `[kontelio]`. Existing `[contact_bridge]` shortcodes from earlier development builds remain supported; use `[kontelio]` for new content. Override an instance with `theme="light|dark|auto"`, `shape="rounded|square"`, `heading="Your heading"` or `embedded="true|false"`.
 
 Seamless embedding removes the outer card, keeping fields/maximum width. Match colors to your theme. Preview never saves/sends; tests send notifications. Presets preserve content and privacy settings.
 
 Set the consent link's label, URL and tab behavior. `{privacy_link}` positions it; otherwise it is appended. Without a URL it is text. Executable HTML/URL schemes are rejected.
 
-Language changes apply after saving; custom text is preserved. Gettext catalogs/template included.
+New installations follow the WordPress language; English is the source and fallback language. Existing saved language choices and custom text are preserved. A complete German translation is maintained separately in the repository translations/ directory and a separate language-pack ZIP. Translation catalogs are not included in the installable plugin ZIP. Until a WordPress.org German language pack is available, copy kontelio-de_DE.mo to wp-content/languages/plugins/ and choose German or a German WordPress locale. Without an installed matching language pack, the plugin displays English. WordPress.org import and translation approval are still pending.
 
 = External services =
 
@@ -88,12 +88,12 @@ SMTP passwords use salt-based encryption or `TSCB_SMTP_PASSWORD`; changed salts 
 == Installation ==
 
 1. Upload/activate the ZIP in Plugins > Add New.
-2. Open Settings > ContactBridge (German: Einstellungen > ContactBridge).
+2. Open Settings > Kontelio (German: Einstellungen > Kontelio).
 3. Configure channels, privacy and retention; save and test.
-4. Add `[contact_bridge]` to a Shortcode block.
+4. Add `[kontelio]` to a Shortcode block.
 5. Adapt your privacy notice; test the public form and inbox.
 
-Folder migration: back up the database and WordPress keys, deactivate an earlier build and remove its folder via FTP/file manager without uninstall; then install the contactbridge/ ZIP. Do NOT use WordPress Delete on the old plugin: uninstall removes inquiries. Activate only the new build and verify saved settings/inquiries. Keep site keys unchanged. WordPress.org has assigned contactbridge; plugin review remains pending.
+Folder migration: back up the database and WordPress keys, deactivate an earlier build and remove its folder via FTP/file manager without uninstall; then install the kontelio/ ZIP. Do NOT use WordPress Delete on the old plugin: uninstall removes inquiries. Activate only the new build and verify saved settings/inquiries. Keep site keys unchanged. This is the unpublished 1.0.0 review build. The existing WordPress.org submission currently uses contactbridge; the requested replacement slug is kontelio and requires confirmation from the Plugin Review team in the existing review thread. The repository and package name do not establish WordPress.org acceptance.
 
 Plugin details are local. Tsambasis & Tsambasis opens https://tsambasis.net/ when clicked.
 
@@ -132,4 +132,4 @@ Do not cache/block admin-ajax.php or admin pages. Without JavaScript, exclude fo
 
 = 1.0.0 =
 
-* Initial release.
+* Initial review build; not yet published in the WordPress.org Plugin Directory.

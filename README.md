@@ -1,78 +1,77 @@
-# ContactBridge
+# Kontelio - Contact Forms with Telegram, WhatsApp and Email
 
-![ContactBridge icon](assets/plugin-icon.png)
+![Kontelio](.wordpress-org/banner-1544x500.png)
 
-A free WordPress contact-form plugin with email, Telegram and WhatsApp delivery. No ads, paid features or plugin tracking.
+A free WordPress contact-form plugin with email, Telegram and WhatsApp delivery, a visual field builder, and an optional encrypted inquiry inbox. The menu and everyday product name are **Kontelio**.
 
-Built by [Tsambasis & Tsambasis](https://tsambasis.net/). The interface uses the name **ContactBridge** in English and German.
+Developed by [Tsambasis & Tsambasis](https://tsambasis.net/). WordPress.org contributor account: `solutionfirst`. No advertising, paid feature tiers or developer tracking.
+
+## Review status
+
+Version **1.0.0** is an unpublished review build. The existing WordPress.org submission is currently assigned `contactbridge`. We are requesting **`kontelio`** in the same review email thread; this change and publication still require reviewer confirmation. The [GitHub repository](https://github.com/tsambasis-tsambasis/kontelio) name does not confirm WordPress.org approval.
 
 ## Features
 
-- Add a responsive form with `[contact_bridge]`.
+- Insert a responsive form with `[kontelio]`.
 - Combine email, Telegram and the official WhatsApp Cloud API.
-- Use WordPress mail or configure your own SMTP server with TLS.
-- Build forms with text, email, telephone, textarea, select and checkbox fields.
-- Choose design presets or customize layout and colors with a live preview; light, dark and automatic themes support rounded or square fields.
-- Enable private notifications per channel, with an encrypted local inquiry inbox.
-- Use German, English or the WordPress language. German is the default; custom form text stays under your control.
+- Use the site's WordPress mail setup or optional authenticated SMTP for this plugin.
+- Configure 1–20 fields: text, email, telephone, message, selection and checkbox.
+- Choose presets, light/dark/automatic themes, rounded/square fields, or an embedded layout with a live preview.
+- Enable content-free notifications and an encrypted local inquiry inbox separately for each channel.
+- Keep saved custom text and existing language choices. New installations follow WordPress's language; English is the source and fallback.
 
-## Requirements
+## Install and configure
 
-- WordPress 6.6 or later; tested with WordPress 7.1.2.
-- PHP 7.4 or later.
-- PHP OpenSSL for encrypted inquiry storage and SMTP password storage; outbound connections for the selected delivery providers.
+Requires WordPress **6.6+**, PHP **7.4+**, and OpenSSL for encrypted inbox storage and encrypted SMTP passwords.
 
-## Installation
-
-1. Download the packaged **[contactbridge-1.0.0.zip](https://github.com/tsambasis-tsambasis/contactbridge/raw/refs/heads/main/dist/contactbridge-1.0.0.zip)**. GitHub's automatically generated **Source code** archives are not the installation package.
-2. In WordPress, open **Plugins → Add New → Upload Plugin**, upload that ZIP and activate it.
-3. Open **Settings → ContactBridge** (German: **Einstellungen → ContactBridge**).
-4. Configure at least one delivery channel, save the settings and send a connection test.
-5. Add a Shortcode block to a page:
+1. Download the prepared **[kontelio-1.0.0.zip](https://github.com/tsambasis-tsambasis/kontelio/raw/refs/heads/main/dist/kontelio-1.0.0.zip)** installation package. GitHub's automatically generated source archives also contain development/repository material and are not the prepared plugin package.
+2. In WordPress, open **Plugins → Add New → Upload Plugin**, upload the package and activate it. If an earlier development build exists, follow [UPGRADING.md](docs/UPGRADING.md) first.
+3. Open **Settings → Kontelio**.
+4. Configure at least one delivery channel, save, then send a connection test to the intended recipient.
+5. Add a Shortcode block:
 
    ```text
-   [contact_bridge]
+   [kontelio]
    ```
 
-For example, override the appearance of one form:
+   Optional appearance overrides:
 
-```text
-[contact_bridge theme="dark" shape="square" heading="Contact us"]
-```
+   ```text
+   [kontelio theme="dark" shape="square" heading="Contact us"]
+   [kontelio embedded="true"]
+   ```
 
-Use `embedded="true"` to remove the outer form card. Verify the published page on desktop and mobile, and adapt your site's privacy notice to the channels you enable.
+6. Check the published form on desktop and mobile and adapt your privacy notice to your actual configuration.
 
-## Replacing an earlier development folder
+Existing `[contact_bridge]` shortcodes remain supported for earlier installations. Use `[kontelio]` for new pages.
 
-The current plugin folder, main file and text domain are `contactbridge/`, `contactbridge.php` and `contactbridge`. If an earlier development build is already installed, first back up the database and WordPress security keys, then deactivate that build. **Do not use WordPress's Delete action for the old plugin:** its uninstall handler removes locally stored inquiries. After the backup and deactivation, remove the old plugin folder through the hosting file manager or FTP without running WordPress uninstall. Then install the new ZIP, activate only ContactBridge, and verify settings and existing encrypted inquiries. The shortcode stays `[contact_bridge]`; retain the existing WordPress keys so stored data remains decryptable. See [the German migration guide](docs/ANLEITUNG.md) for details.
+## Delivery channels
 
-WordPress.org has assigned the slug `contactbridge`; the plugin review is still pending. The GitHub repository name does not determine WordPress.org acceptance.
-
-## Delivery setup
-
-| Channel | Setup |
+| Channel | What you need |
 | --- | --- |
-| Email | Recipient address and the existing WordPress mail configuration, or your SMTP server, sender address and credentials. |
-| Telegram | A bot token and destination chat ID. A temporary confirmation code can help connect a private chat. |
-| WhatsApp | Official Business Platform Cloud API access, a phone-number ID, an authorized token, a recipient and a Meta-approved template. |
+| Email | Recipient address and working WordPress mail, or your SMTP host, sender address and credentials. SMTP supports a password or app password; OAuth-only providers need a suitable existing WordPress mail integration. |
+| Telegram | A bot token and destination chat ID. The settings can confirm a private chat using a temporary pairing code. |
+| WhatsApp | Business Platform Cloud API access, a phone-number ID, authorized token, recipient and approved message template. A personal WhatsApp account alone is insufficient. |
 
-WhatsApp uses a five-parameter body template for full-content notifications, or a separate two-parameter template for private notifications. A personal WhatsApp account alone is insufficient. Hosting, mail providers and Meta may charge for their services. Signal is not included.
+WhatsApp full-content notifications use five body parameters; extended-privacy notifications use a separate approved template with two. The settings explain the required order. Hosting, email services and Meta may charge. Signal is not included.
 
-Connection tests send notifications to your configured recipients. The design preview does not send messages. Transport acceptance does not guarantee delivery to an inbox or a read receipt.
+Connection tests send messages to configured recipients; the design preview does not send messages. API or mail-server acceptance does not guarantee delivery or reading.
 
-## Privacy and storage
+## Privacy and retention
 
-**Extended privacy is optional and configured separately for each channel.** An enabled channel receives only a generic notice, the site name and a protected administrator link. The original inquiry is encrypted in your WordPress database; access requires login and the `manage_options` capability. Channels with this option disabled still receive the submitted content.
+Extended privacy is optional per channel. Such a channel receives only a generic notice, site name and protected administrator link. Submitted details are encrypted in the local WordPress database and require an authorized administrator login to read. Channels with extended privacy disabled still receive full content.
 
-The local inbox defaults to **30 days** of retention. Choose another supported whole-day value, or **0** for indefinite storage until deletion. Changes apply only to new inquiries. Cleanup relies on WordPress scheduled tasks; backups need their own retention policy. WordPress personal-data export and erasure are supported.
+The default retention is **30 days**. Choose another supported whole-day period or **0** for permanent storage until deletion. A changed setting affects new inquiries only. Expired records are hidden and cleaned through scheduled tasks; backups have their own retention. Successful local storage counts as receipt even if notifications fail; there is no automatic notification retry queue.
 
-Encryption depends on WordPress security keys: losing or changing them can make saved inquiries unreadable. Protect your keys and database backups. A safely stored inquiry counts as received even if every external notification fails, so check the inbox and channel diagnostics. Failed notifications are not automatically retried.
+WordPress security keys are required to decrypt saved data. Keep them and database backups secure. WordPress personal-data export and erasure are supported. Uninstall permanently removes local inquiries regardless of the option to retain settings. See [readme.txt](readme.txt) for exact data flows, provider endpoints, limits and cleanup behavior.
 
-The plugin loads no remote fonts or frontend scripts and collects no developer telemetry. Enabled messaging services receive the information needed to deliver notifications. See [readme.txt](readme.txt) for service endpoints, transmitted data, provider terms, retention details and uninstall behavior.
+Kontelio is independent software, not affiliated with Telegram, WhatsApp or Meta. The plugin does not by itself guarantee GDPR/DSGVO compliance.
 
-## Support and license
+## Translations and help
 
-- Website and contact: [Tsambasis & Tsambasis](https://tsambasis.net/).
-- License: [GPLv2 or later](LICENSE).
+English is built into the source. The complete German translation is distributed separately under `translations/` and as a language-pack ZIP; the plugin installation ZIP does not contain translation catalogs. WordPress.org translation import/approval and automatic pack publication still need to happen. Until then, install the German pack manually as explained in [TRANSLATIONS.md](docs/TRANSLATIONS.md).
 
-ContactBridge is independent software and is not affiliated with Telegram, WhatsApp or Meta. This repository does not imply approval or listing in the WordPress.org plugin directory.
+- [German quick-start guide](docs/ANLEITUNG.md)
+- [Upgrade and earlier-build instructions](docs/UPGRADING.md)
+- [Website and contact](https://tsambasis.net/)
+- License: [GPLv2 or later](LICENSE)
