@@ -1,5 +1,5 @@
 <?php
-/** Scoped email delivery and privacy-preserving diagnostics. @package ContactBridge */
+/** Scoped email delivery and privacy-preserving diagnostics. @package Kontelio */
 defined( 'ABSPATH' ) || exit;
 
 final class TSCB_Mail {
@@ -60,12 +60,12 @@ final class TSCB_Mail {
 			} else {
 				$encrypted = self::encrypt( $input['smtp_password'] );
 				if ( is_wp_error( $encrypted ) ) {
-					if ( function_exists( 'add_settings_error' ) ) { add_settings_error( 'tscb_settings', 'mail_password', __( 'The SMTP password could not be encrypted. The previously stored password was kept. Enable OpenSSL with AES-256-GCM support or use TSCB_SMTP_PASSWORD.', 'contactbridge' ) ); }
+					if ( function_exists( 'add_settings_error' ) ) { add_settings_error( 'tscb_settings', 'mail_password', __( 'The SMTP password could not be encrypted. The previously stored password was kept. Enable OpenSSL with AES-256-GCM support or use TSCB_SMTP_PASSWORD.', 'kontelio' ) ); }
 				} else { $result['smtp_password'] = $encrypted; }
 			}
 		}
 		if ( $invalid && function_exists( 'add_settings_error' ) ) {
-			add_settings_error( 'tscb_settings', 'mail_configuration', __( 'Some email settings were invalid and were kept at their previous values. Use a single SMTP hostname or IP address, a valid port, TLS or SSL, and values without control characters.', 'contactbridge' ) );
+			add_settings_error( 'tscb_settings', 'mail_configuration', __( 'Some email settings were invalid and were kept at their previous values. Use a single SMTP hostname or IP address, a valid port, TLS or SSL, and values without control characters.', 'kontelio' ) );
 		}
 		if ( ! $result['email_log_enabled'] ) { self::clear_log(); }
 		return $result;
@@ -106,18 +106,18 @@ final class TSCB_Mail {
 	/** All persisted and user-facing error codes are drawn from this fixed vocabulary. */
 	private static function diagnostics() {
 		return array(
-			'mail_accepted' => __( 'WordPress accepted this message for sending. This does not confirm inbox delivery.', 'contactbridge' ),
-			'mail_delegated' => __( 'Another WordPress mail handler accepted the message before this plugin\'s mailer ran. Check that handler\'s delivery logs; any SMTP settings in this plugin were not used.', 'contactbridge' ),
-			'mail_auth' => __( 'SMTP login was rejected. Check the username, password or app password, and whether SMTP access is enabled.', 'contactbridge' ),
-			'mail_connect' => __( 'The SMTP server could not be reached. Check the hostname, port and hosting firewall.', 'contactbridge' ),
-			'mail_tls' => __( 'A secure SMTP connection could not be established. Check encryption, port and the server certificate; certificate checks remain enabled.', 'contactbridge' ),
-			'mail_sender' => __( 'The sender address was rejected. Use an address permitted by your mail provider and check its domain authentication.', 'contactbridge' ),
-			'mail_recipient' => __( 'The recipient address was rejected. Check the destination mailbox and the provider\'s sending rules.', 'contactbridge' ),
-			'mail_blocked' => __( 'Another WordPress component stopped this email before sending. Check other mail or security plugins.', 'contactbridge' ),
-			'mail_unavailable' => __( 'The WordPress mail function is unavailable. Configure authenticated SMTP or ask your hosting provider to enable outgoing email.', 'contactbridge' ),
-			'mail_configuration' => __( 'The email settings are incomplete or invalid. SMTP requires a hostname, port, encryption, an explicit sender address and, when enabled, login credentials.', 'contactbridge' ),
-			'mail_password' => __( 'The stored SMTP password could not be read securely. Save it again or define TSCB_SMTP_PASSWORD; check that OpenSSL and the WordPress authentication salts are available.', 'contactbridge' ),
-			'mail_generic' => __( 'The email could not be handed to the mail service. Check the sending configuration and run another test.', 'contactbridge' ),
+			'mail_accepted' => __( 'WordPress accepted this message for sending. This does not confirm inbox delivery.', 'kontelio' ),
+			'mail_delegated' => __( 'Another WordPress mail handler accepted the message before this plugin\'s mailer ran. Check that handler\'s delivery logs; any SMTP settings in this plugin were not used.', 'kontelio' ),
+			'mail_auth' => __( 'SMTP login was rejected. Check the username, password or app password, and whether SMTP access is enabled.', 'kontelio' ),
+			'mail_connect' => __( 'The SMTP server could not be reached. Check the hostname, port and hosting firewall.', 'kontelio' ),
+			'mail_tls' => __( 'A secure SMTP connection could not be established. Check encryption, port and the server certificate; certificate checks remain enabled.', 'kontelio' ),
+			'mail_sender' => __( 'The sender address was rejected. Use an address permitted by your mail provider and check its domain authentication.', 'kontelio' ),
+			'mail_recipient' => __( 'The recipient address was rejected. Check the destination mailbox and the provider\'s sending rules.', 'kontelio' ),
+			'mail_blocked' => __( 'Another WordPress component stopped this email before sending. Check other mail or security plugins.', 'kontelio' ),
+			'mail_unavailable' => __( 'The WordPress mail function is unavailable. Configure authenticated SMTP or ask your hosting provider to enable outgoing email.', 'kontelio' ),
+			'mail_configuration' => __( 'The email settings are incomplete or invalid. SMTP requires a hostname, port, encryption, an explicit sender address and, when enabled, login credentials.', 'kontelio' ),
+			'mail_password' => __( 'The stored SMTP password could not be read securely. Save it again or define TSCB_SMTP_PASSWORD; check that OpenSSL and the WordPress authentication salts are available.', 'kontelio' ),
+			'mail_generic' => __( 'The email could not be handed to the mail service. Check the sending configuration and run another test.', 'kontelio' ),
 		);
 	}
 

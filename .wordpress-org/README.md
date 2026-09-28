@@ -1,6 +1,6 @@
 # WordPress.org directory graphics
 
-Icons, banners and screenshots for ContactBridge 1.0.0.
+Icons, banners and screenshots for Kontelio 1.0.0.
 Published by [Tsambasis & Tsambasis](https://tsambasis.net/).
 
 The numbered screenshots correspond to the captions in the plugin's `readme.txt`.

@@ -1,9 +1,9 @@
 <?php
-/** Local information for active installations before directory publication. @package ContactBridge */
+/** Local information for active installations before directory publication. @package Kontelio */
 defined( 'ABSPATH' ) || exit;
 
 final class TSCB_Plugin_Info {
-	const SLUG = 'contactbridge';
+	const SLUG = 'kontelio';
 
 	public static function init() {
 		add_filter( 'plugin_row_meta', array( __CLASS__, 'row_meta' ), 10, 4 );
@@ -13,7 +13,7 @@ final class TSCB_Plugin_Info {
 
 	/** A normal external link; rendering it never requests the destination. */
 	public static function more_link() {
-		return '<a href="' . esc_url( 'https://tsambasis.net/' ) . '" title="' . esc_attr( 'Tsambasis & Tsambasis' ) . '" target="_blank" rel="noopener noreferrer">' . esc_html__( 'More information', 'contactbridge' ) . '</a>';
+		return '<a href="' . esc_url( 'https://tsambasis.net/' ) . '" title="' . esc_attr( 'Tsambasis & Tsambasis' ) . '" target="_blank" rel="noopener noreferrer">' . esc_html__( 'More information', 'kontelio' ) . '</a>';
 	}
 
 	private static function active() {
@@ -36,11 +36,11 @@ final class TSCB_Plugin_Info {
 	/** WordPress already loads the native ThickBox assets on its installed-plugins screen. */
 	public static function row_meta( $links, $file, $data, $status ) {
 		if ( plugin_basename( TSCB_FILE ) !== $file || ! self::active() || ! current_user_can( 'install_plugins' ) || ! empty( $data['slug'] ) || self::directory_known() ) { return $links; }
-		$name = __( 'ContactBridge', 'contactbridge' );
+		$name = __( 'Kontelio', 'kontelio' );
 		$url = add_query_arg( array( 'tab' => 'plugin-information', 'plugin' => self::SLUG, 'tscb_local_details' => '1', 'TB_iframe' => 'true', 'width' => 772, 'height' => 600 ), network_admin_url( 'plugin-install.php' ) );
 		/* translators: %s: The plugin's translated name. */
-		$label = sprintf( __( 'View details about %s', 'contactbridge' ), $name );
-		$links[] = '<a class="thickbox open-plugin-details-modal tscb-local-details" href="' . esc_url( $url ) . '" aria-label="' . esc_attr( $label ) . '" data-title="' . esc_attr( $name ) . '">' . esc_html__( 'View details', 'contactbridge' ) . '</a>';
+		$label = sprintf( __( 'View details about %s', 'kontelio' ), $name );
+		$links[] = '<a class="thickbox open-plugin-details-modal tscb-local-details" href="' . esc_url( $url ) . '" aria-label="' . esc_attr( $label ) . '" data-title="' . esc_attr( $name ) . '">' . esc_html__( 'View details', 'kontelio' ) . '</a>';
 		return $links;
 	}
 
@@ -66,11 +66,11 @@ final class TSCB_Plugin_Info {
 	/** Supply only explicit local information; every other API action/result stays untouched. */
 	public static function information( $result, $action, $args ) {
 		if ( false !== $result || 'plugin_information' !== $action || ! is_object( $args ) || ! isset( $args->slug ) || self::SLUG !== $args->slug || ! self::local_request() ) { return $result; }
-		$name = __( 'ContactBridge', 'contactbridge' );
+		$name = __( 'Kontelio', 'kontelio' );
 		$icon = '<p><img class="tscb-local-info-icon" src="' . esc_url( TSCB_URL . 'assets/plugin-icon.png' ) . '" alt="' . esc_attr( $name ) . '" /></p>';
-		$description = $icon . '<p>' . esc_html__( 'A free, ad-free contact form for your WordPress website. Build your fields, choose a design and add the form with a shortcode.', 'contactbridge' ) . '</p><p>' . esc_html__( 'Receive inquiries by email, Telegram or WhatsApp. Email works with your existing WordPress mail setup or optional authenticated SMTP for this plugin.', 'contactbridge' ) . '</p><p>' . esc_html__( 'This information comes from the installed plugin. It does not represent a WordPress.org listing, rating or download count.', 'contactbridge' ) . '</p><p>' . self::more_link() . '</p>';
-		$installation = '<ol><li>' . esc_html__( 'Open the plugin settings and select your delivery channels. Save the recipient and connection details, then send a test message.', 'contactbridge' ) . '</li><li>' . esc_html__( 'Choose a preset or customize the fields and appearance. The live preview shows your draft without sending any messages.', 'contactbridge' ) . '</li><li>' . esc_html__( 'Add this shortcode to a page or a Shortcode block:', 'contactbridge' ) . ' <code>[contact_bridge]</code></li></ol>';
-		$privacy = '<p>' . esc_html__( 'For each delivery channel, choose full-content delivery or extended privacy. Extended privacy stores the inquiry encrypted on your website and sends only a general notification with a link that requires an administrator login.', 'contactbridge' ) . '</p><p>' . esc_html__( 'Stored inquiries use the retention period selected when they arrive: 30 days by default, a custom period or unlimited retention. Administrators can read and permanently delete them; the WordPress privacy tools support export and erasure.', 'contactbridge' ) . '</p><p>' . esc_html__( 'The plugin includes no advertising, tracking, remote fonts or analytics. External delivery services are contacted only when their channels are configured and used. Your site operator remains responsible for the privacy notice and provider agreements.', 'contactbridge' ) . '</p>';
+		$description = $icon . '<p>' . esc_html__( 'A free, ad-free contact form for your WordPress website. Build your fields, choose a design and add the form with a shortcode.', 'kontelio' ) . '</p><p>' . esc_html__( 'Receive inquiries by email, Telegram or WhatsApp. Email works with your existing WordPress mail setup or optional authenticated SMTP for this plugin.', 'kontelio' ) . '</p><p>' . esc_html__( 'This information comes from the installed plugin. It does not represent a WordPress.org listing, rating or download count.', 'kontelio' ) . '</p><p>' . self::more_link() . '</p>';
+		$installation = '<ol><li>' . esc_html__( 'Open the plugin settings and select your delivery channels. Save the recipient and connection details, then send a test message.', 'kontelio' ) . '</li><li>' . esc_html__( 'Choose a preset or customize the fields and appearance. The live preview shows your draft without sending any messages.', 'kontelio' ) . '</li><li>' . esc_html__( 'Add this shortcode to a page or a Shortcode block:', 'kontelio' ) . ' <code>[kontelio]</code></li></ol>';
+		$privacy = '<p>' . esc_html__( 'For each delivery channel, choose full-content delivery or extended privacy. Extended privacy stores the inquiry encrypted on your website and sends only a general notification with a link that requires an administrator login.', 'kontelio' ) . '</p><p>' . esc_html__( 'Stored inquiries use the retention period selected when they arrive: 30 days by default, a custom period or unlimited retention. Administrators can read and permanently delete them; the WordPress privacy tools support export and erasure.', 'kontelio' ) . '</p><p>' . esc_html__( 'The plugin includes no advertising, tracking, remote fonts or analytics. External delivery services are contacted only when their channels are configured and used. Your site operator remains responsible for the privacy notice and provider agreements.', 'kontelio' ) . '</p>';
 		$metadata = get_file_data( TSCB_FILE, array( 'requires' => 'Requires at least', 'requires_php' => 'Requires PHP', 'author' => 'Author', 'author_uri' => 'Author URI' ), 'plugin' );
 		return (object) array(
 			'name' => esc_html( $name ),
@@ -80,7 +80,7 @@ final class TSCB_Plugin_Info {
 			'requires' => esc_html( $metadata['requires'] ),
 			'requires_php' => esc_html( $metadata['requires_php'] ),
 			'external' => true,
-			'sections' => array( 'description' => $description, 'installation' => $installation, 'other_notes' => '<h3>' . esc_html__( 'Privacy and data handling', 'contactbridge' ) . '</h3>' . $privacy ),
+			'sections' => array( 'description' => $description, 'installation' => $installation, 'other_notes' => '<h3>' . esc_html__( 'Privacy and data handling', 'kontelio' ) . '</h3>' . $privacy ),
 		);
 	}
 }

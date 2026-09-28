@@ -1,5 +1,5 @@
 <?php
-/** Delivery through configured, fixed service endpoints. @package ContactBridge */
+/** Delivery through configured, fixed service endpoints. @package Kontelio */
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
@@ -32,7 +32,7 @@ class TSCB_Transports {
 	/** No visitor can choose an endpoint or recipient. */
 	public static function send( $channel, $data, $settings, $context = 'form' ) {
 		if ( ! self::configured( $channel, $settings ) ) {
-			return new WP_Error( 'configuration', __( 'Please complete the setup for this channel.', 'contactbridge' ) );
+			return new WP_Error( 'configuration', __( 'Please complete the setup for this channel.', 'kontelio' ) );
 		}
 		$site = TSCB_Fields::site_name();
 		$privacy = ! empty( $settings[ 'privacy_' . $channel ] );
@@ -40,16 +40,16 @@ class TSCB_Transports {
 		if ( $privacy ) {
 			// The record ID is supplied only by the validated submission pipeline, never by a request field.
 			if ( ! class_exists( 'TSCB_Inbox' ) || ( 'test' !== $context && ( ! isset( $data['_inquiry_id'] ) || ! is_int( $data['_inquiry_id'] ) || $data['_inquiry_id'] < 1 ) ) ) {
-				return new WP_Error( 'privacy_storage', __( 'The inquiry could not be stored securely. No notification was sent.', 'contactbridge' ) );
+				return new WP_Error( 'privacy_storage', __( 'The inquiry could not be stored securely. No notification was sent.', 'kontelio' ) );
 			}
 			$inquiry_url = TSCB_Inbox::admin_url( 'test' === $context ? 0 : $data['_inquiry_id'] );
 			/* translators: %s: website name, not visitor-supplied information. */
-			$body = sprintf( __( 'New inquiry via the contact form on %s.', 'contactbridge' ), $site ) . "\n\n" . $inquiry_url;
+			$body = sprintf( __( 'New inquiry via the contact form on %s.', 'kontelio' ), $site ) . "\n\n" . $inquiry_url;
 		} else {
-			$body = isset( $data['fields'] ) ? TSCB_Fields::notification( $data ) : implode( "\n", array( __( 'Contact form: ', 'contactbridge' ) . $site, __( 'Name: ', 'contactbridge' ) . $data['name'], __( 'Email: ', 'contactbridge' ) . $data['email'], __( 'Subject: ', 'contactbridge' ) . $data['subject'], '', $data['message'] ) );
+			$body = isset( $data['fields'] ) ? TSCB_Fields::notification( $data ) : implode( "\n", array( __( 'Contact form: ', 'kontelio' ) . $site, __( 'Name: ', 'kontelio' ) . $data['name'], __( 'Email: ', 'kontelio' ) . $data['email'], __( 'Subject: ', 'kontelio' ) . $data['subject'], '', $data['message'] ) );
 		}
 		if ( 'email' === $channel ) {
-			$subject = '[' . preg_replace( '/[\r\n]+/', ' ', $site ) . '] ' . ( $privacy ? __( 'New contact inquiry', 'contactbridge' ) : $data['subject'] );
+			$subject = '[' . preg_replace( '/[\r\n]+/', ' ', $site ) . '] ' . ( $privacy ? __( 'New contact inquiry', 'kontelio' ) : $data['subject'] );
 			$headers = array( 'Content-Type: text/plain; charset=UTF-8' );
 			if ( ! $privacy && '' !== $data['email'] && is_email( $data['email'] ) && ! preg_match( '/[\r\n]/', $data['email'] ) ) { $headers[] = 'Reply-To: ' . $data['email']; }
 			return TSCB_Mail::send( $settings['email_to'], $subject, $body, $headers, $settings, $context );
@@ -79,7 +79,7 @@ class TSCB_Transports {
 	private static function request( $url, $payload, $headers, $service ) {
 		$response = wp_remote_post( $url, array( 'timeout' => 12, 'redirection' => 0, 'limit_response_size' => 65536, 'headers' => array_merge( array( 'Content-Type' => 'application/json' ), $headers ), 'body' => wp_json_encode( $payload ), 'data_format' => 'body' ) );
 		if ( is_wp_error( $response ) ) {
-			return new WP_Error( 'network', __( 'The service could not be reached. Please check the server connection and service status.', 'contactbridge' ) );
+			return new WP_Error( 'network', __( 'The service could not be reached. Please check the server connection and service status.', 'kontelio' ) );
 		}
 		$code = wp_remote_retrieve_response_code( $response );
 		$json = json_decode( wp_remote_retrieve_body( $response ), true );
@@ -87,26 +87,26 @@ class TSCB_Transports {
 		if ( $code >= 200 && $code < 300 && $accepted ) {
 			return true;
 		}
-		return new WP_Error( 'provider_' . absint( $code ), __( 'The service did not confirm the request. Please check the token and recipient, and for WhatsApp, the template, language, and account status.', 'contactbridge' ) );
+		return new WP_Error( 'provider_' . absint( $code ), __( 'The service did not confirm the request. Please check the token and recipient, and for WhatsApp, the template, language, and account status.', 'kontelio' ) );
 	}
 
 	public static function test() {
 		if ( ! current_user_can( 'manage_options' ) ) {
-			wp_die( esc_html__( 'You do not have permission to do this.', 'contactbridge' ), '', array( 'response' => 403 ) );
+			wp_die( esc_html__( 'You do not have permission to do this.', 'kontelio' ), '', array( 'response' => 403 ) );
 		}
 		self::require_post();
 		check_admin_referer( 'tscb_test' );
 		$channel = isset( $_POST['channel'] ) && is_string( $_POST['channel'] ) ? sanitize_key( wp_unslash( $_POST['channel'] ) ) : '';
 		$settings = TSCB_Settings::get();
-		$result = new WP_Error( 'disabled', __( 'Please enable the delivery channel and save your settings first.', 'contactbridge' ) );
+		$result = new WP_Error( 'disabled', __( 'Please enable the delivery channel and save your settings first.', 'kontelio' ) );
 		if ( in_array( $channel, $settings['channels'], true ) ) {
-			$result = self::send( $channel, array( 'name' => __( 'Plugin test', 'contactbridge' ), 'email' => '', 'subject' => __( 'ContactBridge – Test', 'contactbridge' ), 'message' => __( 'The connection works. This is a test message from the WordPress settings.', 'contactbridge' ) ), $settings, 'test' );
+			$result = self::send( $channel, array( 'name' => __( 'Plugin test', 'kontelio' ), 'email' => '', 'subject' => __( 'Kontelio – Test', 'kontelio' ), 'message' => __( 'The connection works. This is a test message from the WordPress settings.', 'kontelio' ) ), $settings, 'test' );
 		}
 		self::status( $channel, $result );
 		if ( 'email' === $channel ) {
 			set_transient( 'tscb_mail_test_' . get_current_user_id(), is_wp_error( $result ) ? $result->get_error_code() : 'mail_accepted', 5 * MINUTE_IN_SECONDS );
 		}
-		wp_safe_redirect( add_query_arg( array( 'page' => 'contactbridge', 'tscb_test_result' => is_wp_error( $result ) ? 'failed' : 'ok', 'channel' => $channel ), admin_url( 'options-general.php' ) ) );
+		wp_safe_redirect( add_query_arg( array( 'page' => 'kontelio', 'tscb_test_result' => is_wp_error( $result ) ? 'failed' : 'ok', 'channel' => $channel ), admin_url( 'options-general.php' ) ) );
 		exit;
 	}
 
@@ -120,7 +120,7 @@ class TSCB_Transports {
 	/** Reject side-effecting admin actions sent without an explicit POST. */
 	private static function require_post() {
 		if ( ! isset( $_SERVER['REQUEST_METHOD'] ) || 'POST' !== $_SERVER['REQUEST_METHOD'] ) {
-			wp_die( esc_html__( 'Please submit the form.', 'contactbridge' ), '', array( 'response' => 405 ) );
+			wp_die( esc_html__( 'Please submit the form.', 'kontelio' ), '', array( 'response' => 405 ) );
 		}
 	}
 
@@ -151,7 +151,7 @@ class TSCB_Transports {
 	/** Save only a private chat that proves possession of this administrator's current code. */
 	public static function discover() {
 		if ( ! current_user_can( 'manage_options' ) ) {
-			wp_die( esc_html__( 'You do not have permission to do this.', 'contactbridge' ), '', array( 'response' => 403 ) );
+			wp_die( esc_html__( 'You do not have permission to do this.', 'kontelio' ), '', array( 'response' => 403 ) );
 		}
 		self::require_post();
 		check_admin_referer( 'tscb_discover' );
@@ -194,7 +194,7 @@ class TSCB_Transports {
 				}
 			}
 		}
-		wp_safe_redirect( add_query_arg( array( 'page' => 'contactbridge', 'tscb_discover_result' => $status ), admin_url( 'options-general.php' ) ) );
+		wp_safe_redirect( add_query_arg( array( 'page' => 'kontelio', 'tscb_discover_result' => $status ), admin_url( 'options-general.php' ) ) );
 		exit;
 	}
 }

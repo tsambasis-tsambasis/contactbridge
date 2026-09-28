@@ -1,12 +1,12 @@
 <?php
-/** Bounded field schemas and server-side validation. @package ContactBridge */
+/** Bounded field schemas and server-side validation. @package Kontelio */
 defined( 'ABSPATH' ) || exit;
 
 final class TSCB_Fields {
 	const MAX_FIELDS = 20;
 
 	public static function type_labels() {
-		return array( 'text' => __( 'Text', 'contactbridge' ), 'email' => __( 'Email', 'contactbridge' ), 'tel' => __( 'Phone', 'contactbridge' ), 'textarea' => __( 'Message', 'contactbridge' ), 'select' => __( 'Selection', 'contactbridge' ), 'checkbox' => __( 'Checkbox', 'contactbridge' ) );
+		return array( 'text' => __( 'Text', 'kontelio' ), 'email' => __( 'Email', 'kontelio' ), 'tel' => __( 'Phone', 'kontelio' ), 'textarea' => __( 'Message', 'kontelio' ), 'select' => __( 'Selection', 'kontelio' ), 'checkbox' => __( 'Checkbox', 'kontelio' ) );
 	}
 
 	private static function text( $value, $limit, $multiline = false ) {
@@ -49,7 +49,7 @@ final class TSCB_Fields {
 	}
 
 	private static function schema_error() {
-		return new WP_Error( 'tscb_fields', __( 'Please check the form fields. Use 1 to 20 fields with unique IDs and supported types; selections need 1 to 20 choices.', 'contactbridge' ) );
+		return new WP_Error( 'tscb_fields', __( 'Please check the form fields. Use 1 to 20 fields with unique IDs and supported types; selections need 1 to 20 choices.', 'kontelio' ) );
 	}
 
 	/** Browser-supplied schema is accepted only at the administrator settings boundary. */
@@ -108,8 +108,8 @@ final class TSCB_Fields {
 	}
 
 	public static function delivery_hint( $settings ) {
-		if ( self::full_content( 'whatsapp', $settings ) ) { return __( 'WhatsApp: all field labels and answers together must fit within 500 characters. Longer entries are rejected without being shortened.', 'contactbridge' ); }
-		if ( self::full_content( 'telegram', $settings ) ) { return __( 'Telegram: the complete notification must fit within 4,000 text units; emoji may count twice. Longer entries are rejected without being shortened.', 'contactbridge' ); }
+		if ( self::full_content( 'whatsapp', $settings ) ) { return __( 'WhatsApp: all field labels and answers together must fit within 500 characters. Longer entries are rejected without being shortened.', 'kontelio' ); }
+		if ( self::full_content( 'telegram', $settings ) ) { return __( 'Telegram: the complete notification must fit within 4,000 text units; emoji may count twice. Longer entries are rejected without being shortened.', 'kontelio' ); }
 		return '';
 	}
 
@@ -123,7 +123,7 @@ final class TSCB_Fields {
 	public static function site_name() { return self::text( wp_strip_all_tags( get_bloginfo( 'name' ) ), 100 ); }
 
 	public static function notification( $data ) {
-		return __( 'Contact form: ', 'contactbridge' ) . self::site_name() . "\n" . self::details( $data['fields'] );
+		return __( 'Contact form: ', 'kontelio' ) . self::site_name() . "\n" . self::details( $data['fields'] );
 	}
 
 	/** One representation for both size validation and the five template parameters. */
@@ -137,8 +137,8 @@ final class TSCB_Fields {
 	/** Consume only fields in the saved schema. No visitor can define fields or recipients. */
 	public static function validate( $input, $settings ) {
 		$schema = self::get( $settings );
-		if ( ! $schema ) { return self::error( __( 'The contact form is currently unavailable. Please use another way to get in touch.', 'contactbridge' ), array(), 'unconfigured' ); }
-		if ( isset( $input['tscb_schema'] ) && ( ! is_string( $input['tscb_schema'] ) || ! hash_equals( self::signature( $settings ), $input['tscb_schema'] ) ) ) { return self::error( __( 'This form has changed. Reload the page before sending your message.', 'contactbridge' ), array(), 'expired' ); }
+		if ( ! $schema ) { return self::error( __( 'The contact form is currently unavailable. Please use another way to get in touch.', 'kontelio' ), array(), 'unconfigured' ); }
+		if ( isset( $input['tscb_schema'] ) && ( ! is_string( $input['tscb_schema'] ) || ! hash_equals( self::signature( $settings ), $input['tscb_schema'] ) ) ) { return self::error( __( 'This form has changed. Reload the page before sending your message.', 'kontelio' ), array(), 'expired' ); }
 		$data = array( 'name' => '', 'email' => '', 'subject' => '', 'message' => '', 'fields' => array() );
 		$errors = array(); $has_value = false;
 		foreach ( $schema as $field ) {
@@ -146,38 +146,38 @@ final class TSCB_Fields {
 			$raw = isset( $input[ $key ] ) ? $input[ $key ] : '';
 			$limit = self::limit( $field, $settings );
 			if ( ! is_string( $raw ) || strlen( $raw ) > $limit * 4 || wp_check_invalid_utf8( $raw ) !== $raw ) {
-				$errors[ $key ] = __( 'The entry is too long or contains invalid characters.', 'contactbridge' ); continue;
+				$errors[ $key ] = __( 'The entry is too long or contains invalid characters.', 'kontelio' ); continue;
 			}
 			$value = trim( 'textarea' === $field['type'] ? sanitize_textarea_field( $raw ) : sanitize_text_field( $raw ) );
 			if ( 'checkbox' === $field['type'] ) {
-				if ( ! in_array( $raw, array( '', '1' ), true ) || ( $field['required'] && '1' !== $raw ) ) { $errors[ $key ] = __( 'Please confirm this checkbox.', 'contactbridge' ); }
+				if ( ! in_array( $raw, array( '', '1' ), true ) || ( $field['required'] && '1' !== $raw ) ) { $errors[ $key ] = __( 'Please confirm this checkbox.', 'kontelio' ); }
 				$has_value = $has_value || '1' === $raw;
-				$value = '1' === $raw ? __( 'Yes', 'contactbridge' ) : __( 'No', 'contactbridge' );
+				$value = '1' === $raw ? __( 'Yes', 'kontelio' ) : __( 'No', 'kontelio' );
 			} else {
 				if ( ( $field['required'] && '' === $value ) || TSCB_Submission::length( $value ) > $limit ) {
 					/* translators: %d: maximum permitted character count. */
-					$errors[ $key ] = sprintf( __( 'Please complete this field using no more than %d characters.', 'contactbridge' ), $limit );
+					$errors[ $key ] = sprintf( __( 'Please complete this field using no more than %d characters.', 'kontelio' ), $limit );
 				}
 				if ( '' !== $value ) {
 					$has_value = true;
-					if ( 'email' === $field['type'] && ( ! is_email( trim( $raw ) ) || preg_match( '/[\r\n]/', $raw ) ) ) { $errors[ $key ] = __( 'Please enter a valid email address.', 'contactbridge' ); }
-					if ( 'tel' === $field['type'] && ( ! preg_match( '/^[0-9+(). \/#*x-]{3,50}$/iD', trim( $raw ) ) || strlen( preg_replace( '/[^0-9]/', '', $raw ) ) < 3 ) ) { $errors[ $key ] = __( 'Please enter a valid phone number.', 'contactbridge' ); }
+					if ( 'email' === $field['type'] && ( ! is_email( trim( $raw ) ) || preg_match( '/[\r\n]/', $raw ) ) ) { $errors[ $key ] = __( 'Please enter a valid email address.', 'kontelio' ); }
+					if ( 'tel' === $field['type'] && ( ! preg_match( '/^[0-9+(). \/#*x-]{3,50}$/iD', trim( $raw ) ) || strlen( preg_replace( '/[^0-9]/', '', $raw ) ) < 3 ) ) { $errors[ $key ] = __( 'Please enter a valid phone number.', 'kontelio' ); }
 				}
-				if ( 'select' === $field['type'] && '' !== $raw && ! in_array( $raw, $field['options'], true ) ) { $errors[ $key ] = __( 'Please choose one of the available options.', 'contactbridge' ); }
+				if ( 'select' === $field['type'] && '' !== $raw && ! in_array( $raw, $field['options'], true ) ) { $errors[ $key ] = __( 'Please choose one of the available options.', 'kontelio' ); }
 			}
 			$data['fields'][] = array( 'id' => $field['id'], 'type' => $field['type'], 'label' => $field['label'], 'value' => $value );
 			if ( in_array( $field['id'], array( 'name', 'subject' ), true ) ) { $data[ $field['id'] ] = sanitize_text_field( $value ); }
 			if ( 'email' === $field['type'] && '' === $data['email'] && '' !== $value && ! isset( $errors[ $key ] ) ) { $data['email'] = sanitize_email( $value ); }
 		}
-		if ( $errors ) { return self::error( __( 'Please check the highlighted details.', 'contactbridge' ), $errors ); }
-		if ( ! $has_value ) { return self::error( __( 'Please complete at least one form field.', 'contactbridge' ) ); }
-		if ( '' === $data['subject'] ) { $data['subject'] = __( 'Contact inquiry', 'contactbridge' ); }
+		if ( $errors ) { return self::error( __( 'Please check the highlighted details.', 'kontelio' ), $errors ); }
+		if ( ! $has_value ) { return self::error( __( 'Please complete at least one form field.', 'kontelio' ) ); }
+		if ( '' === $data['subject'] ) { $data['subject'] = __( 'Contact inquiry', 'kontelio' ); }
 		$data['message'] = self::details( $data['fields'] );
-		if ( TSCB_Submission::length( $data['message'] ) > 12000 ) { return self::error( __( 'Your answers are too long in total. Please shorten them and try again.', 'contactbridge' ) ); }
-		if ( self::full_content( 'whatsapp', $settings ) && ( TSCB_Submission::length( $data['message'] ) > 500 || TSCB_Submission::length( implode( '', self::whatsapp_parameters( $data ) ) ) > 900 ) ) { return self::error( __( 'Your answers are too long for WhatsApp. All labels and answers together may contain at most 500 characters; please shorten your entries.', 'contactbridge' ) ); }
+		if ( TSCB_Submission::length( $data['message'] ) > 12000 ) { return self::error( __( 'Your answers are too long in total. Please shorten them and try again.', 'kontelio' ) ); }
+		if ( self::full_content( 'whatsapp', $settings ) && ( TSCB_Submission::length( $data['message'] ) > 500 || TSCB_Submission::length( implode( '', self::whatsapp_parameters( $data ) ) ) > 900 ) ) { return self::error( __( 'Your answers are too long for WhatsApp. All labels and answers together may contain at most 500 characters; please shorten your entries.', 'kontelio' ) ); }
 		$body = self::notification( $data );
 		$units = TSCB_Submission::length( $body ) + preg_match_all( '/[\x{10000}-\x{10FFFF}]/u', $body, $unused );
-		if ( self::full_content( 'telegram', $settings ) && $units > 4000 ) { return self::error( __( 'Your answers are too long for Telegram. Please shorten them; emoji may count as two text units.', 'contactbridge' ) ); }
+		if ( self::full_content( 'telegram', $settings ) && $units > 4000 ) { return self::error( __( 'Your answers are too long for Telegram. Please shorten them; emoji may count as two text units.', 'kontelio' ) ); }
 		return $data;
 	}
 }

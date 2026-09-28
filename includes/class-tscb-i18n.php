@@ -1,5 +1,5 @@
 <?php
-/** Plugin-scoped language selection and editable factory texts. @package ContactBridge */
+/** Plugin-scoped language selection and editable factory texts. @package Kontelio */
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
@@ -15,8 +15,8 @@ class TSCB_I18n {
 	/** Read the raw option to avoid recursively translating settings defaults. */
 	public static function language() {
 		$options = get_option( 'tscb_settings', array() );
-		$value = is_array( $options ) && isset( $options['language'] ) ? $options['language'] : 'de_DE';
-		return in_array( $value, array( 'de_DE', 'en_US', 'wordpress' ), true ) ? $value : 'de_DE';
+		$value = is_array( $options ) && isset( $options['language'] ) ? $options['language'] : 'wordpress';
+		return in_array( $value, array( 'de_DE', 'en_US', 'wordpress' ), true ) ? $value : 'wordpress';
 	}
 
 	public static function locale() {
@@ -25,7 +25,7 @@ class TSCB_I18n {
 
 	/** Select only this domain's files; never change the WordPress/user locale. */
 	public static function translation_file( $file, $domain, $locale ) {
-		if ( 'contactbridge' !== $domain ) {
+		if ( 'kontelio' !== $domain ) {
 			return $file;
 		}
 		$selected = 'wordpress' === self::language() ? $locale : self::language();
@@ -33,31 +33,37 @@ class TSCB_I18n {
 			return $file;
 		}
 		$extension = '.mo' === substr( $file, -3 ) ? '.mo' : '.l10n.php';
-		$pack = WP_LANG_DIR . '/plugins/contactbridge-' . $selected . $extension;
+		$pack = WP_LANG_DIR . '/plugins/kontelio-' . $selected . $extension;
 		if ( is_readable( $pack ) ) {
 			return $pack;
 		}
-		$pack_mo = WP_LANG_DIR . '/plugins/contactbridge-' . $selected . '.mo';
+		$pack_mo = WP_LANG_DIR . '/plugins/kontelio-' . $selected . '.mo';
 		if ( '.l10n.php' === $extension && is_readable( $pack_mo ) ) {
 			return $pack_mo;
 		}
-		$bundled = TSCB_PATH . 'languages/contactbridge-' . $selected . $extension;
-		if ( is_readable( $bundled ) ) {
-			return $bundled;
+		// Regional German locales can use the installed base language pack.
+		if ( 0 === strpos( $selected, 'de_' ) && 'de_DE' !== $selected ) {
+			$fallback = WP_LANG_DIR . '/plugins/kontelio-de_DE' . $extension;
+			if ( is_readable( $fallback ) ) {
+				return $fallback;
+			}
+			$fallback_mo = WP_LANG_DIR . '/plugins/kontelio-de_DE.mo';
+			if ( '.l10n.php' === $extension && is_readable( $fallback_mo ) ) {
+				return $fallback_mo;
+			}
 		}
-		// Regional German and English locales use the complete bundled base catalogs.
-		$base = 0 === strpos( $selected, 'de_' ) ? 'de_DE' : 'en_US';
-		$fallback = TSCB_PATH . 'languages/contactbridge-' . $base . $extension;
-		return is_readable( $fallback ) ? $fallback : $file;
+		// Missing packs fall back to the English source strings. Return the selected
+		// path even when absent so JIT loading cannot substitute another language.
+		return $pack;
 	}
 
-	/** Load at init, including before publication when no language pack exists. */
+	/** Load native WordPress language packs; English requires no catalog. */
 	public static function load() {
 		// An explicit plugin language may change while WordPress keeps the same locale.
 		// Core's reloadable unload retains catalog caches, so clear this domain only.
-		WP_Translation_Controller::get_instance()->unload_textdomain( 'contactbridge' );
-		unload_textdomain( 'contactbridge', true );
-		load_textdomain( 'contactbridge', TSCB_PATH . 'languages/contactbridge-' . self::locale() . '.mo', determine_locale() );
+		WP_Translation_Controller::get_instance()->unload_textdomain( 'kontelio' );
+		unload_textdomain( 'kontelio', true );
+		load_textdomain( 'kontelio', WP_LANG_DIR . '/plugins/kontelio-' . self::locale() . '.mo', determine_locale() );
 	}
 
 	public static function switch_site() {
