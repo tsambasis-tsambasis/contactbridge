@@ -1,4 +1,4 @@
-=== Kontelio - Contact Forms with Telegram, WhatsApp and Email ===
+=== Kontelio - Contact Forms ===
 Contributors: solutionfirst
 Tags: contact form, telegram, whatsapp, email, shortcode
 Requires at least: 6.6

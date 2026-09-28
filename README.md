@@ -1,4 +1,4 @@
-# Kontelio - Contact Forms with Telegram, WhatsApp and Email
+# Kontelio - Contact Forms
 
 ![Kontelio](.wordpress-org/banner-1544x500.png)
 

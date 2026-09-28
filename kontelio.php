@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: Kontelio - Contact Forms with Telegram, WhatsApp and Email
+ * Plugin Name: Kontelio - Contact Forms
  * Description: Free, ad-free contact forms with email, Telegram, WhatsApp and optional protected local inquiries.
  * Version: 1.0.0
  * Requires at least: 6.6
