@@ -1,1 +1,2 @@
-deac58e5427eb28770bf7dbe0073b28b300c3cd83dcd7bcc93c0d0f38663d343  contactbridge-1.0.0.zip
+3e2f015bfb49bcfdb7dd1e7d3fce0c1c34f5da7303fdfa8ea236486efe8d3184  kontelio-1.0.0.zip
+66778077dc29fc31abd2b8b6eced59689a66ba625e5f1abc7a2f3aef03ebe9d4  kontelio-german-1.0.0.zip
